@@ -17,7 +17,11 @@ async function initIndex() {
 
     setDynamicGreeting();
 
-    const newsletters = await fetchNewsletters();
+    let newsletters = await fetchNewsletters();
+
+    // Sort newsletters by date (newest first)
+    newsletters.sort((a, b) => new Date(b.date) - new Date(a.date));
+
     window.allNewsletters = newsletters; // Store for search
     currentFilteredNewsletters = newsletters;
     renderPage(1);

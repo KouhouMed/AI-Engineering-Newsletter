@@ -1,0 +1,994 @@
+Delivered-To: mohamedkouhou@gmail.com
+Received: by 2002:a05:6124:3512:b0:3dc:661a:9ab9 with SMTP id eh18csp1378042vlb;
+        Mon, 9 Jun 2025 06:03:58 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHHoFIY3bdvVlfqykZr5mPiTTOzmjOK8G/7kGf5aeYUvsaa/dBvjhQe6mcDuft5r1bboLH0
+X-Received: by 2002:a05:622a:4c87:b0:4a4:3798:3276 with SMTP id d75a77b69052e-4a5b9dbe2e7mr225465851cf.45.1749474237927;
+        Mon, 09 Jun 2025 06:03:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1749474237; cv=none;
+        d=google.com; s=arc-20240605;
+        b=IviQtPURGsbiReqYlz9i7A892ZyiTxv/jcq1eAXyShBrUpPblavdJ6uhVNr3ywy8I9
+         5n26v2xK359qkzOrFgGqiKWtyfbD/N7I6mNZES/3ioJ1mWTr1PaOtIV0z0bQHCDm9B6G
+         IImD9/qV5mdTqX5j+ciUM+QyD1H4XYZuuoQke4NaTuzaeYV1I7ZO2IUVa0L9j/63ffKf
+         Nk3nbYLIHeyv4PFJNmzfrb85lzV4CUKdBBifsrmE2xPrinwmAJK+/lTkmpINswrN8L1x
+         lzPbxyGL0BaftDmTxD0MK/JL+zJzCMKjqp+wBTEJsk18OoPqlgBYLTJsT9TXu6DkUk5i
+         xf/w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:sid:list-unsubscribe-post:list-unsubscribe:feedback-id:reply-to
+         :subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=WpxdLyHCYmpr36A7e2LGmngUQ3Qb/j46MxV079HsveU=;
+        fh=oJNjDw8DTqGeUb+omsh4Xn3z5QOYFzPyOWGWF6z0SOE=;
+        b=HwMQFKssbzSfJEKtehcKmvI/zl7oS+tq7VM9muWbBlyCLLCBXkiG5ueRY1CWXUhyyr
+         jFxUZ73U3TzWzyBmZUu4AQ0ZRlhJLC4TuWMOjXr0OMm+Sc9EYWaVYBQl825Vl/lAHSfd
+         jWcgztSj9RNpiThsKtQ8oz/u9NmEg3YGUT9Fm/EeZRSuMxq3SWq6e/OZpm5b5WfVhbYw
+         INA6zjMHWw5CX9rb2QmyF1Dib660Yr5RJisXqJZFSaofRny+TEkuasc4uvSQm2O2GVFV
+         M+iVDZilUJB1Q/XwWZGunvzpQVG924k8cfsUL/uBa3dLbm33WuS2qCk8ZdFTKZtfT3+6
+         i78g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.beehiiv.com header.s=s1 header.b=CzqIuUE6;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="IlPS/Abf";
+       spf=pass (google.com: domain of bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com designates 159.183.29.70 as permitted sender) smtp.mailfrom="bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=beehiiv.com
+Return-Path: <bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com>
+Received: from o166.ptr78.mail.beehiiv.com (o166.ptr78.mail.beehiiv.com. [159.183.29.70])
+        by mx.google.com with ESMTPS id d75a77b69052e-4a6198ad36dsi78793371cf.461.2025.06.09.06.03.57
+        for <mohamedkouhou@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 09 Jun 2025 06:03:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com designates 159.183.29.70 as permitted sender) client-ip=159.183.29.70;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.beehiiv.com header.s=s1 header.b=CzqIuUE6;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="IlPS/Abf";
+       spf=pass (google.com: domain of bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com designates 159.183.29.70 as permitted sender) smtp.mailfrom="bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=beehiiv.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mail.beehiiv.com;
+	h=content-type:from:mime-version:subject:reply-to:feedback-id:
+	list-unsubscribe:list-unsubscribe-post:to:cc:content-type:feedback-id:from:subject:to;
+	s=s1; bh=WpxdLyHCYmpr36A7e2LGmngUQ3Qb/j46MxV079HsveU=;
+	b=CzqIuUE65Bnk4Q1RVYG7aN3cyoMKoOhBPdyZCs5NE2RKQElWBcKlnceiH1GNeB/7LSqF
+	K8y+6sUJ8Qm7PlcFvejzRvLA3a5VKhh4WAI7EjCA+r35DovhK0Mmyuhq20VH08p1Sk3rr3
+	4O9kdlor0/ZnK7lLiYQpkjParKvke63AqvHYV8KIolq6VUpZ+rz57cgN5H4FQIPLEus7lL
+	kyx0BFS6iU1+m6Gj5Ky3hpal7UoNvfX2vebnHwOL5F2l73cHlJxD+tVCyllZ3HE8UAy1tE
+	0l4nJCArMGjWsuDPywULr5NqEhxAlCJNpA6oyww8s2lEB3rbjVNgnf/Ei3ntFa8A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:feedback-id:
+	list-unsubscribe:list-unsubscribe-post:to:cc:content-type:feedback-id:from:subject:to;
+	s=smtpapi; bh=WpxdLyHCYmpr36A7e2LGmngUQ3Qb/j46MxV079HsveU=;
+	b=IlPS/AbfH/co+U4iZ7Hf+tFBECzkTlAdsXh/hqYvS2CzYv5DLfeUx4ntRisTNrUi4q6P
+	wddemDTSZve7xJz8axshssIq+9M22Z8xUMpxGimJfJOnQlz4gcqNqO3whVmpdJqE+TrYLA
+	v6EKeSwqrdaPXazBFxMrQG9qBbhfTBO7w=
+Received: by recvd-canary-69c768f6d6-jqxn6 with SMTP id recvd-canary-69c768f6d6-jqxn6-1-6846DBB1-12
+	2025-06-09 13:03:45.108771435 +0000 UTC m=+482126.207692157
+Received: from NDI2MzM5MDI (unknown)
+	by geopod-ismtpd-22 (SG) with HTTP
+	id ERGm43MtSnu-fWZeWcyTZw
+	Mon, 09 Jun 2025 13:03:45.062 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=a4293047fae3b52d595a7c38d04000cfd76480364e0c841620abdeb4234b
+Date: Mon, 09 Jun 2025 13:03:57 +0000 (UTC)
+From: AI Engineering <aiengineering@mail.beehiiv.com>
+Mime-Version: 1.0
+Message-ID: <ERGm43MtSnu-fWZeWcyTZw@geopod-ismtpd-22>
+Subject: Build a Machine Learning Model Using Just Natural Language
+Reply-To: AI Engineering <ai.engineering.sumanth@gmail.com>
+Feedback-ID: 
+ =?us-ascii?Q?569723e3-84ab-4ec1-9268-2e735bea90fe=3Anewsletter=3Aee0aaff6-3e4e-?=
+ =?us-ascii?Q?4900-88b4-a9b4a51ee2d6=3A2bba56f5114e362?=
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aee0aaff6-3e4e-4900-88b4-a9b4a51ee2d6+28735b41-2ec7-4eb?=
+ =?us-ascii?Q?7-acc6-0aa3cb1a6790+569723e3-84ab-4ec1-?=
+ =?us-ascii?Q?9268-2e735bea90fe=40unsub=2Ebeehiiv=2Ecom=3E=2C?=
+ =?us-ascii?Q?_=3Chttps=3A=2F=2Faiengineering=2Ebeehiiv=2Ecom=2Funsubscribe=2FeyJ0eXAiOiJKV1Q?=
+ =?us-ascii?Q?iLCJhbGciOiJIUzI1NiJ9=2EeyJzdWJzY3JpYmVyX?=
+ =?us-ascii?Q?2lkIjoiMjg3MzViNDEtMmVjNy00ZWI3LWFjYzYt?=
+ =?us-ascii?Q?MGFhM2NiMWE2NzkwIiwicG9zdF9pZCI6IjU2OTc?=
+ =?us-ascii?Q?yM2UzLTg0YWItNGVjMS05MjY4LTJlNzM1YmVhOT?=
+ =?us-ascii?Q?BmZSIsImxhc3RfcmVzb3VyY2VfZ3VpZCI6IlBvc?=
+ =?us-ascii?Q?3Q6NTY5NzIzZTMtODRhYi00ZWMxLTkyNjgtMmU3?=
+ =?us-ascii?Q?MzViZWE5MGZlIn0=2EzjHVtMeaIGMjfIaWG6=5FBBJ5?=
+ =?us-ascii?Q?2WIA04Sx1U9lJLOXSTaE=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+sId: ee0aaff6-3e4e-4900-88b4-a9b4a51ee2d6
+x-beehiiv-ids: 
+ =?us-ascii?Q?{=22account=5Fname=22=3A=22https=3A=2F=2Faiengineering=2Ebeehiiv=2Ecom=2F=22=2C=22campaign?=
+ =?us-ascii?Q?=5Fid=22=3A=22569723e3-84ab-4ec1-9268-2e735bea9?=
+ =?us-ascii?Q?0fe=22=2C=22category=22=3A=22newsletter=22=2C=22email=5Fgen?=
+ =?us-ascii?Q?erated=5Fat=22=3A1749474224=2C=22user=5Fid=22=3A=22ee0aaf?=
+ =?us-ascii?Q?f6-3e4e-4900-88b4-a9b4a51ee2d6=22}?=
+x-beehiiv-type: newsletter
+x-list-id: ee0aaff6-3e4e-4900-88b4-a9b4a51ee2d6
+x-list-owner: <mailto:ai.engineering.sumanth@gmail.com>
+x-newsletter: 
+ =?us-ascii?Q?https=3A=2F=2Faiengineering=2Ebeehiiv=2Ecom=2Fp=2Fbuild-a-machine-learning-m?=
+ =?us-ascii?Q?odel-using-just-natural-language?=
+x-newsletter-id: https://aiengineering.beehiiv.com/
+x-newsletter-signup: https://aiengineering.beehiiv.com/subscribe
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EekyNxagh4b7LFzedssaxAB=2FRYmMfHMvupA41zo66Mwkcd=2FwUH0gIPwv1N?=
+ =?us-ascii?Q?lkAXPd6Z6txtIAm9zaW6tcNVr3pdvwqDIsj69f5?=
+ =?us-ascii?Q?b4o8XP2yuK1huIi43CPgHVPmqcKj2QDFo4I6GQk?=
+ =?us-ascii?Q?Qa1wWMsJULWlYlF+ViT52Hvu+1mQhtg+qPR7vr7?=
+ =?us-ascii?Q?9SUwNyNGxRUhTLVHP7sEWVWhfuA8rWEo9ty3KG1?=
+ =?us-ascii?Q?dAEOqJSBeVdjA=2Fsjv8xEmqsvMov8dlRQpkkdi+M?=
+ =?us-ascii?Q?lMdAjT5A8JnrAo=2FwdssKDV6VkA=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprD1ZcmFObA4po1bG?=
+ =?us-ascii?Q?aUE6gycYObA=2FCMj4uRjCl4QB72E4P+C88FJcHwK?=
+ =?us-ascii?Q?rQcDE47kZEi=2FmnhHO3jBvIuqwjGxdM1OYUpFrEK?=
+ =?us-ascii?Q?JhKiBlnRa41Gq9TBLookOsk4toQjm6r+zl=2FlGw=2F?=
+ =?us-ascii?Q?bg6RtEXpoNMDbZ0mj5iEfbpKZK=2FXE7rCRTsjv+j?=
+ =?us-ascii?Q?QTYATtmV6I6wMG4YKV1HYbXUEtFt0S8lsEYG69M?=
+ =?us-ascii?Q?cyr68YcM8vIbLSj6tvAx813G1TE5z3aMU+uoAJv?=
+ =?us-ascii?Q?MlQ4cTTWvCS6LAksDBLrOhfteD2TCvHPPu=2Fb9x1?=
+ =?us-ascii?Q?h4EXMqOEeDaQ=3D=3D?=
+To: "mohamedkouhou@gmail.com" <mohamedkouhou@gmail.com>
+X-Entity-ID: u001.0HCrxgJCQAVVGKXTne9JeQ==
+
+--a4293047fae3b52d595a7c38d04000cfd76480364e0c841620abdeb4234b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+----------
+##  In today=E2=80=99s newsletter:
+
+* Build Machine Learning Models just using Natural Language
+
+* Search and get the LLM Ready Data for AI Agents
+
+* 100+ Fine-tuning notebooks for LLaMA, Qwen, DeepSeek, Gemma, and Phi, all=
+ in one place.
+
+_Reading time: 3 minutes._
+
+
+----------
+
+----------
+## **[Plexe AI](https://github.com/plexe-ai/plexe)**** **
+
+Build Machine Learning models just using natural language!=20
+
+_**[Plexe AI](https://github.com/plexe-ai/plexe)**_ lets you create machine=
+ learning models by describing them in plain language.
+
+Simply explain what you want, and the AI-powered system builds a fully func=
+tional model through an automated agentic approach.
+
+Here is why it's a game changer:
+
+* Natural Language Models: Define models in plain English.
+
+* AI Agent Team: Automates planning, coding, testing, and packaging.
+
+* One-Call Model Build: Create models with a single method.
+
+* Ray Support: Fast, distributed training and evaluation.
+
+* Smart Data Handling: Auto schema inference and data generation.
+
+=F0=9F=91=89 It=E2=80=99s 100% open source. You can find the repo here =E2=
+=86=92 [Plexe AI](https://github.com/plexe-ai/plexe) =20
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/6770c684-1579-4=
+14b-be79-fc02ecb1c2bd/Screenshot_2025-05-31_at_12.32.26_PM.png?t=3D17492230=
+36)
+Follow image link: (https://github.com/plexe-ai/plexe)
+Caption: Plexe AI
+
+
+----------
+
+----------
+## **[Search and get the LLM Ready Data for AI Agents](https://docs.firecra=
+wl.dev/features/search)**
+
+Search the web and get LLM ready data with just a few lines of Python code!
+
+Firecrawl released the new search endpoint that lets you perform web search=
+es, and scrape their full content in a single operation.
+
+Key Features:
+
+* Choose specific output formats (markdown, HTML, links, screenshots)
+
+* Search the web with customizable parameters (language, country, etc.)
+
+* Optionally retrieve content from search results in various formats
+
+* Control the number of results and set timeouts
+
+Check out the below code to get started.
+
+=F0=9F=91=89 [Documentation ](https://docs.firecrawl.dev/features/search)
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/88ecb3e2-8c15-4=
+db9-8c87-4e8e1cf16df7/Twitter__89_.png?t=3D1749233300)
+Follow image link: (https://docs.firecrawl.dev/features/search)
+Caption:=20
+
+
+----------
+
+----------
+## **[Fine-tune Large Language Models](https://github.com/unslothai/noteboo=
+ks/)**
+
+Unsloth AI released this repository containing 100+ fine-tuning notebooks f=
+or LLaMA, Qwen, DeepSeek, Gemma, and Phi, all in one place.
+
+Includes complete guides & examples for:
+
+* Use cases: Tool-calling, Classification, Synthetic data & more
+
+* End-to-end workflow: Data prep, training, running & saving models
+
+* BERT, TTS Vision models & more
+
+* Training methods like: GRPO, DPO, Continued Pretraining, SFT, Text Comple=
+tion & more!
+
+* Llama, Qwen, DeepSeek, Gemma, Phi & more
+
+It=E2=80=99s 100% Open Source
+
+=F0=9F=91=89 [Github Repo](https://github.com/unslothai/notebooks/)
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/38d34c3b-4025-4=
+931-8251-be1ad0deaa8b/1749043630385.jpeg?t=3D1749233603)
+Follow image link: (https://github.com/unslothai/notebooks/)
+Caption:=20
+
+
+----------
+
+----------
+**That=E2=80=99s a Wrap**
+
+
+----------
+
+----------
+That=E2=80=99s all for today. Thank you for reading today=E2=80=99s edition=
+. See you in the next issue with more AI Engineering insights.
+
+**PS:** We curate this AI Engineering content for free, and your support me=
+ans everything. If you find value in what you read, consider sharing it wit=
+h a friend or two.
+
+**Your feedback is valuable: **If there=E2=80=99s a topic you=E2=80=99re st=
+uck on or curious about, reply to this email. We=E2=80=99re building this f=
+or you, and your feedback helps shape what we send.
+
+
+----------
+
+----------
+## **WORK WITH US**
+
+Looking to promote your company, product, or service to **120K+ AI develope=
+rs**? Get in touch today by replying to this email.
+
+
+----------
+=E2=80=94=E2=80=94=E2=80=94
+
+You are reading a plain text version of this post. For the best experience,=
+ copy and paste this link in your browser to view the post online:
+https://aiengineering.beehiiv.com/p/build-a-machine-learning-model-using-ju=
+st-natural-language
+
+--a4293047fae3b52d595a7c38d04000cfd76480364e0c841620abdeb4234b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html><html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xml=
+ns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com=
+:office:office" style=3D"font-size:16px;"><head></head><head><meta charset=
+=3D"utf-8"/><!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compatible" content=
+=3D"IE=3Dedge"/><!--<![endif]--><meta name=3D"viewport" content=3D"width=3D=
+device-width,initial-scale=3D1"/><meta name=3D"x-apple-disable-message-refo=
+rmatting"/><meta name=3D"format-detection" content=3D"telephone=3Dno,addres=
+s=3Dno,email=3Dno,date=3Dno,url=3Dno"/><meta name=3D"color-scheme" content=
+=3D"light"/><meta name=3D"supported-color-schemes" content=3D"light"/><titl=
+e>Build a Machine Learning Model Using Just Natural Language</title><!--[if=
+ mso]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:Pi=
+xelsPerInch></o:OfficeDocumentSettings></xml><![endif]--><style>
+  :root { color-scheme: light; supported-color-schemes: light; }
+  body { margin: 0; padding: 0; min-width: 100%!important; -ms-text-size-ad=
+just: 100% !important; -webkit-transform: scale(1) !important; -webkit-text=
+-size-adjust: 100% !important; -webkit-font-smoothing: antialiased !importa=
+nt; }
+  .body { word-wrap: normal; word-spacing:normal; }
+  table.mso { width: 100%; border-collapse: collapse; padding: 0; table-lay=
+out: fixed; }
+  img { border: 0; outline: none; }
+  table {  mso-table-lspace: 0px; mso-table-rspace: 0px; }
+  td, a, span {  mso-line-height-rule: exactly; }
+  #root [x-apple-data-detectors=3Dtrue],
+  a[x-apple-data-detectors=3Dtrue],
+  #MessageViewBody a { color: inherit !important; text-decoration: inherit =
+!important; font-size: inherit !important; font-family: inherit !important;=
+ font-weight: inherit !important; line-height: inherit !important; }
+  span.MsoHyperlink { color: inherit !important; mso-style-priority: 99 !im=
+portant; }
+  span.MsoHyperlinkFollowed { color: inherit !important; mso-style-priority=
+: 99 !important; }
+  .a { background-color:#FFFFFF; }
+  .b { background-color:#030712; }
+  .c  { background-color:#FFFFFF; }
+  .d { background-color:#EAEBEC; }
+  .d2 { background-color:#FFFFFF; }
+  .d3 { background-color:#FFFFFF; }
+  h1 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h2 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h3 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h4 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h5 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h6 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a, ul, li, ol, p=
+, p a { margin: 0;padding: 0; }
+  h1 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:28px;color:#2A2A2A;line-height:1.75;padding-bottom:4px;p=
+adding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h2 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:24px;color:#2A2A2A;line-height:1.5;padding-bottom:4px;pa=
+dding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h3 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:20px;color:#2A2A2A;line-height:1.25;padding-bottom:4px;p=
+adding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h4 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:18px;color:#2A2A2A;line-height:1.125;padding-bottom:4px;=
+padding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h5 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:16px;color:#2A2A2A;line-height:1;padding-bottom:4px;padd=
+ing-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h6 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:14px;color:#2A2A2A;line-height:0.875;padding-bottom:4px;=
+padding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  p { font-family:'Helvetica',Arial,sans-serif;font-weight:400;color:#2D2D2=
+D;font-size:16px;line-height:1.5;padding-bottom:12px;padding-top:12px;mso-m=
+argin-top-alt:12px;mso-margin-bottom-alt:12px; }
+  p a, .e a, ul a, li a, .h a, .h2 a, .h3 a { word-break:break-word;color:#=
+0C4A6E !important;text-decoration:underline;text-decoration-color:#0C4A6E;f=
+ont-style:italic; }
+  p a span, .e a span, ul a span, li a span { color: inherit }
+  p .bold { font-weight:bold;color:#2D2D2D; }
+  p span[style*=3D"font-size"] { line-height: 1.6; }
+  .f p { font-size:12px;line-height:15px;color:#2D2D2D;padding:0; }
+  .f p a { color:#2D2D2D !important; }
+  .g p { font-family:'Helvetica',Arial,sans-serif;font-size:14px;line-heigh=
+t:20px;font-weight:normal;margin:0; }
+  .g p a  { text-decoration: underline; }
+  .i p { font-family:'Helvetica',Arial,sans-serif;line-height:1.5;font-size=
+:15px;color:#2D2D2D; }
+  .i p a { color:#2D2D2D !important; }
+  .i2 p { font-family:'Helvetica',Arial,sans-serif;line-height:1.5;font-siz=
+e:15px;color:#2D2D2D; }
+  .i2 p a { color:#2D2D2D !important; }
+  .i3 p { font-family:'Helvetica',Arial,sans-serif;line-height:1.8;font-siz=
+e:24px;color:#2D2D2D; }
+  .i3 p a { color:#2D2D2D !important; }
+  .h p a { color:#0C4A6E !important; }
+  .h2 p a { color:#0C4A6E !important; }
+  .h3 p a { color:#0C4A6E !important; }
+  .f p a, .i p a, .i2 p a, .i3 p a, .h p a, .h2 p a, .h3 p a { text-decorat=
+ion:underline; }
+  .j { border-top:3px solid #030712; }
+  .k p { padding-left:15px;padding-bottom:0px;padding-top:6px;mso-margin-to=
+p-alt:6px;mso-margin-bottom-alt:0px;mso-margin-left-alt:15px; }
+  .o { background-color:#FFFFFF;border:1px solid #F1F1F1;border-radius:5px;=
+ }
+  .o p { font-family:'Helvetica',Arial,sans-serif;padding:0px;margin:0px; }
+  .l p,
+  .l p a { font-size:14px;line-height:20px;font-weight: bold;color:#2D2D2D;=
+padding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .m p,
+  .m p a { font-size:13px;line-height:18px;font-weight:400;color:#2D2D2D;pa=
+dding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .n p,
+  .n p a { font-size:12px;line-height:17px;font-weight:400;color:#2D2D2D;pa=
+dding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .p { background-color:#FFFFFF;max-width:520px;border:1px solid #E1E8ED;bo=
+rder:1px solid rgba(80, 80, 80, 0.3);border-radius:5px; }
+  .q { font-size:16px;font-family:Helvetica,Roboto,Calibri,sans-serif !impo=
+rtant;border:1px solid #e1e8ed;border:1px solid rgba(80, 80, 80, 0.3);borde=
+r-radius:10px;background-color:#FFFFFF; }
+  .q p { font-size:16px;font-family:system-ui,Helvetica,Roboto,Calibri,sans=
+-serif !important;color:#222222;padding:4px 0; }
+  .r { border:1px solid #E1E8ED !important;border-radius:5px; }
+  .s p { font-size: 14px; line-height: 17px; font-weight: 400; color: #6978=
+82; text-decoration: none; }
+  .t p { font-family:'Helvetica',Arial,sans-serif;font-size:12px;line-heigh=
+t:1.5;font-weight:400;color:#000000;font-style:italic;padding:0px; }
+  .v { border-radius:10px;border:solid 0px #030712;background-color:#030712=
+;font-family:'Verdana',Geneva,sans-serif;color:#FFFFFF; }
+  .v a { text-decoration:none;display:block;color:#FFFFFF; }
+  .w p { font-size:12px;line-height:15px;font-weight:400;color:#FFFFFF; }
+  .w p a { text-decoration: underline !important;color:#FFFFFF !important; =
+}
+  ul { font-family:'Helvetica',Arial,sans-serif;margin:0px 0px 0px 25px !im=
+portant;padding:0px !important;color:#2D2D2D;line-height:24px;list-style:di=
+sc;font-size:16px; }
+  ul > li { font-family:'Helvetica',Arial,sans-serif;margin:10px 0px 0px 0p=
+x !important;padding: 0px 0px 0px 0px !important; color: #2D2D2D; list-styl=
+e:disc; }
+  ol { font-family:'Helvetica',Arial,sans-serif;margin: 0px 0px 0px 25px !i=
+mportant;padding:0px !important;color:#2D2D2D;line-height:24px;list-style:d=
+ecimal;font-size:16px; }
+  ol > li { font-family:'Helvetica',Arial,sans-serif;margin:10px 0px 0px 0p=
+x !important;padding: 0px 0px 0px 0px !important; color: #2D2D2D; list-styl=
+e:decimal; }
+  .e h3,
+  .e p,
+  .e span { padding-bottom:0px;padding-top:0px;mso-margin-top-alt:0px;mso-m=
+argin-bottom-alt:0px; }
+  .e span,
+  .e li { font-family:'Helvetica',Arial,sans-serif;font-size:16px;color:#2D=
+2D2D;line-height:24px; }
+  .rec { font-family:  ui-sans-serif, system-ui, -apple-system, BlinkMacSys=
+temFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-ser=
+if, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color E=
+moji" !important; }
+  .rec__button:hover { background-color: #f9fafb !important; }
+  .copyright a {color: inherit !important; text-decoration: none !important=
+; font-size: inherit !important; font-family: inherit !important; font-weig=
+ht: inherit !important; line-height: inherit !important;}
+  .txt_social p { padding: 0; word-break: break-all; }
+  .table, .table-c, .table-h { border: 1px solid #C0C0C0; }
+  .table-c { padding:5px; background-color:#FFFFFF; }
+  .table-c p { color: #2D2D2D; font-family:'Helvetica',Arial,sans-serif !im=
+portant;overflow-wrap: break-word; }
+  .table-h { padding:5px; background-color:#F1F1F1; }
+  .table-h p { color: #2A2A2A; font-family:'Trebuchet MS','Lucida Grande',T=
+ahoma,sans-serif !important;overflow-wrap: break-word; }
+  @media only screen and (max-width:667px) {
+    .aa { width: 100% !important; }
+    .bb img { width: 100% !important; height: auto !important; max-width: n=
+one !important; }
+    .cc { padding: 0px 8px !important; }
+    .ee { padding-top:10px !important;padding-bottom:10px !important; }
+    .ff ul, .ff ol { margin: 0px 0px 0px 10px !important;padding: 0px !impo=
+rtant; }
+    .ff li { margin:10px 0px 0px 10px !important; }
+    .r {height:140px !important;}
+    .s p { font-size:13px !important;line-height:15px !important; }
+    .mob-hide {display:none !important;}
+    .mob-stack {display:block !important;width:100% !important;}
+    .mob-w-full {width:100% !important;}
+    .mob-block {display:block !important;}
+    .embed-img {padding:0px 0px 12px 0px !important;}
+    .socialShare {padding-top:15px !important;}
+    .rec { padding-left:15px!important;padding-right:15px!important; }
+    .bodyWrapper { padding:10px 4px 10px 4px !important; }
+    .social-mobile {float:left !important;margin-top:10px !important;}
+  }
+  @media screen and (max-width: 480px) {
+    u + .a .gg { width: 100% !important; width: 100vw !important; }
+    .tok-heart { padding-top:75% !important; }
+    .tok-play { padding-top: 250px !important; }
+  }
+  @media screen and (max-width: 320px) {
+    .tok-heart { padding-top:65% !important; }
+  }
+  .u { border: 1px solid #CACACA !important; border-radius: 2px !important;=
+ background-color: #ffffff !important; padding: 0px 13px 0px 13px !importan=
+t; font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Se=
+goe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif !important;fon=
+t-size: 12px !important; color: #767676 !important; }
+  .u a { text-decoration: none; display: block !important; color: #767676 !=
+important; margin: 0px !important; }
+  .u span, .u img { color: #767676 !important;margin:0px !important; max-he=
+ight:32px !important;background-color:#ffffff !important; }
+</style><!--[if mso]><style type=3D"text/css">
+    sup { font-size: 100% !important;vertical-align: .5em !important;mso-te=
+xt-raise: -1.5% !important;line-height: 0 !important; }
+    ul { margin-left:0px !important; margin-right:10px !important; margin-t=
+op:20px !important; margin-bottom:20px !important; }
+    ul li { margin-left: 0px !important; mso-special-format: decimal; }
+    ol { margin-left:0px !important; margin-right:10px !important; margin-t=
+op:20px !important; margin-bottom:20px !important; }
+    ol li { margin-left: 0px !important; mso-special-format: decimal; }
+    li.listItem { margin-left:15px !important; margin-top:0px !important; }
+    .paddingDesktop { padding: 10px 0 !important; }
+    .edm_outlooklist { margin-left: -20px !important; }
+    .embedImage { display:none !important; }
+</style><![endif]--><style></style></head><body class=3D"a" style=3D"margin=
+:0px auto;padding:0px;word-wrap:normal;word-spacing:normal;background-color=
+:#FFFFFF;"><div role=3D"article" aria-roledescription=3D"email" aria-label=
+=3D"email_name" lang=3D"en" style=3D"font-size:1rem"><div style=3D"display:=
+none;max-height:0px;overflow:hidden;"> .. with just a prompt &#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204; </div><table role=3D"none" width=3D"10=
+0%" border=3D"0" cellspacing=3D"0" align=3D"center" cellpadding=3D"0" class=
+=3D"gg"><tr><td align=3D"center" valign=3D"top"><table role=3D"none" width=
+=3D"670" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"aa" styl=
+e=3D"width:670px;table-layout:fixed;"><tr><td class=3D"bodyWrapper" align=
+=3D"center" valign=3D"top" style=3D"padding:10px 5px 10px 5px;"><table role=
+=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" a=
+lign=3D"center"><tr><td align=3D"center" valign=3D"top" style=3D"border-wid=
+th:0px 0px 0px 0px;border-style: solid; border-color: #FFFFFF;border-radius=
+:10px 10px 0px 0px;background-color:#FFFFFF;" class=3D"c"><table role=3D"no=
+ne" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center"><tr id=3D"header"><td style=3D"padding:15px 15px 0px 15px;"><di=
+v style=3D"padding-top:0px;padding-right:0px;padding-bottom:20px;padding-le=
+ft:0px;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0" align=3D"center"><tr><td class=3D"f" align=3D"right" val=
+ign=3D"top"><p> June 09, 2025 &nbsp; | &nbsp; <a href=3D"https://link.mail.=
+beehiiv.com/ss/c/u001.ZjNtPLJ73PCW3XxrAs_SNIw2kahvc0FhQ6HFupMs-wM2l0grXLkFT=
+JUlIpHHgBogug1vqHnTy5Is1gzIMEZwySkeOEIgXcqKNv8slzsScEJFsTCWRd7NIicY6WYzS-y7=
+rsxbwPEYiW4KWPu_vty1sxV1pyNcjzHCbBS6Ixw4vOA2FSdAtHEUx_dfJcxOgl9UdrDk8YWuNj8=
+n1uK2CjOeFZLP0yAnJ_hP9D_bqkSW0t4rwurnGpuUU9SQFNvJE31biS4t22w6MPMCaQKbqQS9wa=
+AVNUNzwebl5q_TqStjg57ud10CTTz7tFqeVaeGsOCV8y0uMT9HswKeyyMce_2E7qhLTg2hj7pmX=
+Fu4moi-WKP4-28Ax9gS1-ldBqsSk9dl2jNzwWDSRaklGliXSmfa7qc737AKGw1nwuFRJnDJ1ci8=
+ZlRdZIUGnn5LtsTkhseh1M0I0s6CII51n7OGgLaenf-tt21ln_haQJTnOdx2pfQytnSkB3_eQ_S=
+RPWdUhq76pM8hG8Zoy0wgefPMOf-HDUIeHfAiEzo7FONMQ_-m6SIdr7lNOphnl3aE9sYBtu_kSY=
+UCLKPR7pZldz6yk1IOwcQ6YYLkRYc86joAW6uiFobnEaJQnXhJ8tBQhM1CeW7n825GXSlSPm5Or=
+3vQE10nibPqNtPeyv4kqJZp10sgXKpDHZ7rDx7mySwttZoQx-tEIsPX79WRnxbdkmwrPqPTGkDO=
+eWQI9bhSsjtZATu8M8mxtUhoctHXkNFpDIh-nvkCmjQeH765d55S5JufGmNHMKhShBXBaR5j9rI=
+Z145kTHRX_7yE5rkJRZDSwzp6DOiNMYsq4mL7Hvr0t0xwasoHzuKBbmaZe81PmKO68Z5DsKi-x2=
+sFH63rnrnj8jZZZNM-S4PF4lhgh72hGrINOZ7q3Q/4h7/5UjE75D2S5GHBapSDtBrlQ/h0/h001=
+.WyaoOub-JPBjiSmU4TdZeub9yGnDsrTb1vQDiddpv0U">Read Online</a></p></td></tr>=
+<tr><td class=3D"dd" align=3D"center" valign=3D"top" style=3D"padding:15px =
+0;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0" align=3D"center"><tr><td align=3D"center" valign=3D"top"><h1 =
+style=3D"text-align:left;font-family:'Trebuchet MS','Lucida Grande',Tahoma,=
+sans-serif;font-weight:Bold;font-size:32px;color:#2A2A2A;padding:2px 0;line=
+-height:38px;"> Build a Machine Learning Model Using Just Natural Language =
+</h1><p style=3D"text-align:left;font-family:'Helvetica',Arial,sans-serif;f=
+ont-weight:normal;font-size:20px;color:#3E3E3E;padding:5px 0;line-height:24=
+px;"> .. with just a prompt </p></td></tr></table></td></tr><tr><td align=
+=3D"center" valign=3D"top" class=3D"dd"><table role=3D"none" width=3D"100%"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td =
+aling=3D"center" valign=3D"middle" class=3D"mob-stack"><table role=3D"none"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left" class=3D"m=
+ob-stack" style=3D"width:100%;"><tr><td align=3D"left" valign=3D"middle" st=
+yle=3D"padding: 5px 0px 5px 0px;"><table role=3D"none" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" align=3D"left"><tr><td align=3D"center" valign=
+=3D"middle"><img src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale=
+-down,format=3Dauto,onerror=3Dredirect,quality=3D80/uploads/user/profile_pi=
+cture/0d0a6732-ad89-4db8-8fd3-ae0552a463f7/thumb_NH-IIitW_400x400.jpg" widt=
+h=3D"40" alt=3D"" style=3D"display:block;max-width:40px;border-radius:50%;p=
+osition:relative;border:4px solid rgba(0,0,0,0) !important;left:-4px;box-si=
+zing:content-box;z-index:10;" border=3D"0"/></td><td width=3D"5" style=3D"w=
+idth:5px;">&nbsp;</td><td align=3D"left" valign=3D"middle" class=3D"g" styl=
+e=3D"position:relative;left:8px;width:100%;"><p style=3D"padding:0px;color:=
+#2D2D2D;"><a href=3D"https://link.mail.beehiiv.com/ss/c/u001.anzhxTgRwBHOEc=
+Nie9uXl4xnS4v0NC4FylgPipG6S6mnfGADB4t63IVoGRFM9gcrPIO_trdwByYCFqA7DGy2D0mci=
+EYIAO0QATaQlQWRyc50kYYivmomz5NYUnTgMF89gAQdM9fQgKFZMAi9MCyK1UJgctVYHqQ7khjR=
+DaFO4Z2lBE76DhUUP1Jz504xgFdhTKrd9fFpeh3NMiVVzy9FRz7IBETIVUFnGa58uHFcLb0sQ5z=
+KlpDhEiLAFV9D9JnL99mVU4JE33f-2L6hDfaEDG_DpYiUsGuxKeLGm-uffJs/4h7/5UjE75D2S5=
+GHBapSDtBrlQ/h1/h001.aGY2zvRR1zwqKz4shUTR7VmNnGZgdwDqk1uVY7TUkT8" target=3D=
+"_blank" style=3D"color:#2D2D2D !important;text-decoration:underline !impor=
+tant;">Sumanth P</a></p></td></tr></table></td></tr></table></td></tr></tab=
+le></td></tr><tr><td style=3D"height:0px;width:0px;"><div style=3D"height:1=
+px;" data-open-tracking=3D"true"> <img src=3D"https://link.mail.beehiiv.com=
+/ss/o/u001.kApawdKBJJ7lcBKzmfFGeQ/4h7/5UjE75D2S5GHBapSDtBrlQ/ho.gif" alt=3D=
+"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;wid=
+th:1px !important;border-width:0 !important;margin-top:0 !important;margin-=
+bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padd=
+ing-top:0 !important;padding-bottom:0 !important;padding-right:0 !important=
+;padding-left:0 !important;"/> </div></td></tr></table></div></td></tr><tr =
+id=3D"content-blocks"><td class=3D"email-card-body" align=3D"center" valign=
+=3D"top" style=3D"padding-bottom:15px;"><table role=3D"none" width=3D"100%"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td>=
+<table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0" style=3D""><tr><td bgcolor=3D"transparent" style=3D"background-co=
+lor:transparent;border-color:#222222;border-radius:6px;border-style:solid;b=
+order-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" widt=
+h=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=
+=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#2A2A2A;font-weight:no=
+rmal;padding:0px 15px;text-align:left;"><h2 style=3D"color:#2A2A2A;font-wei=
+ght:normal;mso-line-height-alt:150.0%;"><span style=3D""> In today=E2=80=99=
+s newsletter:</span></h2></td></tr><tr><td style=3D"padding-bottom:12px;pad=
+ding-left:37px;padding-right:27px;padding-top:12px;" class=3D"ee"><div styl=
+e=3D"margin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:n=
+ormal;list-style-type:disc;margin-bottom:12px !important;margin-top:12px !i=
+mportant;padding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=
+=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break=
+-word;"><span style=3D"">Build Machine Learning Models just using Natural L=
+anguage</span></p></li><li class=3D"listItem ultext"><p style=3D"mso-line-h=
+eight-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><span =
+style=3D"">Search and get the LLM Ready Data for AI Agents</span></p></li><=
+li class=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding=
+:0px;text-align:left;word-break:break-word;"><span style=3D"">100+ Fine-tun=
+ing notebooks for LLaMA, Qwen, DeepSeek, Gemma, and Phi, all in one place.<=
+/span></p></li></ul></div></td></tr><tr><td class=3D"dd" align=3D"left" sty=
+le=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"=
+mso-line-height-alt:150.0%;"><span style=3D""><i>Reading time: 3 minutes.</=
+i></span></p></td></tr></table></td></tr></table></td></tr><tr><td class=3D=
+"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:br=
+eak-word;"><p style=3D"mso-line-height-alt:150.0%;"></p></td></tr><tr><td><=
+table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" style=3D""><tr><td bgcolor=3D"transparent" style=3D"background-col=
+or:transparent;border-color:#222222;border-radius:4px;border-style:solid;bo=
+rder-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=
+=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D=
+"dd" align=3D"left" valign=3D"top" style=3D"color:#2A2A2A;font-weight:norma=
+l;padding:0px 15px;text-align:left;"><h2 style=3D"color:#2A2A2A;font-weight=
+:normal;mso-line-height-alt:150.0%;"><span style=3D""><b><a class=3D"link" =
+href=3D"https://link.mail.beehiiv.com/ss/c/u001.fEwxncMfw7gJKZ9GjSmhxVFEJTf=
+tWqeAPZCsyVoivTwHLcwbNKZgprt31exX2_1vmAvTXTeYjBd0xlF-X-bCEpPJlWBEBakCmzLzyd=
+7uat5uyddR303vUIhGG9RnhX81StWZ8WkLgHv6CjhPQROS9u-iNQxVgaXl8E7jGIcz8wyf9ca23=
+TfYKelEoUD2OTNfepqG5OWwVYU9MBaU4IHUx6uO24mV54KbB5UpRJyho4Zv8Emud_kazgtjIdOl=
+oLIEF4tTxgNKIx1kzd5DskwR4Lz3keISbLtatyw0ZefldKw/4h7/5UjE75D2S5GHBapSDtBrlQ/=
+h2/h001.VXONAUPncA0Onf7xEIj86ciWFN7J8HAVgPWJTlTGPPk" target=3D"_blank" rel=
+=3D"noopener noreferrer nofollow"><span>Plexe AI</span></a></b></span><span=
+ style=3D""><b>=C2=A0</b></span></h2></td></tr><tr><td class=3D"dd" align=
+=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"=
+><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"">Build Machine Le=
+arning models just using natural language! </span></p></td></tr><tr><td cla=
+ss=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-bre=
+ak:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D""><=
+span style=3D"text-decoration:underline;"><b><a class=3D"link" href=3D"http=
+s://link.mail.beehiiv.com/ss/c/u001.fEwxncMfw7gJKZ9GjSmhxVFEJTftWqeAPZCsyVo=
+ivTwHLcwbNKZgprt31exX2_1vmAvTXTeYjBd0xlF-X-bCEpPJlWBEBakCmzLzyd7uat5uyddR30=
+3vUIhGG9RnhX81StWZ8WkLgHv6CjhPQROS9u-iNQxVgaXl8E7jGIcz8wyf9ca23TfYKelEoUD2O=
+TNfepqG5OWwVYU9MBaU4IHUx6uO24mV54KbB5UpRJyho4ahUsXDPswUjRh_wDGijy3m73utRGUb=
+UD-cicNXnrHwzRCpG7KHUt2ZUEQAc6GZob8/4h7/5UjE75D2S5GHBapSDtBrlQ/h3/h001.0Lab=
+DOj2sVrxDHmFkh8ffdIFid9TlSDgN8gLJgq668o" target=3D"_blank" rel=3D"noopener =
+noreferrer nofollow"><span>Plexe AI</span></a></b></span></span><span style=
+=3D""> lets you create machine learning models by describing them in plain =
+language.</span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"=
+padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-li=
+ne-height-alt:150.0%;"><span style=3D"">Simply explain what you want, and t=
+he AI-powered system builds a fully functional model through an automated a=
+gentic approach.</span></p></td></tr><tr><td class=3D"dd" align=3D"left" st=
+yle=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D=
+"mso-line-height-alt:150.0%;"><span style=3D"">Here is why it&#39;s a game =
+changer:</span></p></td></tr><tr><td style=3D"padding-bottom:12px;padding-l=
+eft:37px;padding-right:27px;padding-top:12px;" class=3D"ee"><div style=3D"m=
+argin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:normal;=
+list-style-type:disc;margin-bottom:12px !important;margin-top:12px !importa=
+nt;padding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=3D"mso-=
+line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;">=
+<span style=3D"">Natural Language Models: Define models in plain English.</=
+span></p></li><li class=3D"listItem ultext"><p style=3D"mso-line-height-alt=
+:150.0%;padding:0px;text-align:left;word-break:break-word;"><span style=3D"=
+">AI Agent Team: Automates planning, coding, testing, and packaging.</span>=
+</p></li><li class=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.=
+0%;padding:0px;text-align:left;word-break:break-word;"><span style=3D"">One=
+-Call Model Build: Create models with a single method.</span></p></li><li c=
+lass=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px=
+;text-align:left;word-break:break-word;"><span style=3D"">Ray Support: Fast=
+, distributed training and evaluation.</span></p></li><li class=3D"listItem=
+ ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left=
+;word-break:break-word;"><span style=3D"">Smart Data Handling: Auto schema =
+inference and data generation.</span></p></li></ul></div></td></tr><tr><td =
+class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-=
+break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"=
+">=F0=9F=91=89 It=E2=80=99s 100% open source. You can find the repo here </=
+span><span style=3D"color:rgb(45, 45, 45);font-family:Helvetica, Arial, san=
+s-serif;font-size:16px;font-weight:400;">=E2=86=92</span><span style=3D"">=
+=C2=A0</span><span style=3D""><a class=3D"link" href=3D"https://link.mail.b=
+eehiiv.com/ss/c/u001.fEwxncMfw7gJKZ9GjSmhxVFEJTftWqeAPZCsyVoivTwHLcwbNKZgpr=
+t31exX2_1vmAvTXTeYjBd0xlF-X-bCEpPJlWBEBakCmzLzyd7uat5uyddR303vUIhGG9RnhX81S=
+tWZ8WkLgHv6CjhPQROS9u-iNQxVgaXl8E7jGIcz8wyf9ca23TfYKelEoUD2OTNfepqG5OWwVYU9=
+MBaU4IHUx6uO24mV54KbB5UpRJyho4bM7Mv9RLDgBcEvFLKDQDcHJlqYhbmaL_8_MyRNmOFCFxb=
+VQWydnaP4dsouRE7lQqs/4h7/5UjE75D2S5GHBapSDtBrlQ/h4/h001.Ju2lncylIOvezsMKslU=
+oHuroVH9wYGYvMYrsQEbIO44" target=3D"_blank" rel=3D"noopener noreferrer nofo=
+llow"><span>Plexe AI</span></a></span><span style=3D"">=C2=A0</span></p></t=
+d></tr><tr><td align=3D"center" valign=3D"top" style=3D"padding-bottom:20px=
+;padding-left:15px;padding-right:15px;padding-top:20px; " class=3D"dd"><tab=
+le role=3D"none" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"=
+margin:0 auto 0 auto;"><tr><td align=3D"center" valign=3D"top" style=3D"wid=
+th:630px;"><a href=3D"https://link.mail.beehiiv.com/ss/c/u001.fEwxncMfw7gJK=
+Z9GjSmhxVFEJTftWqeAPZCsyVoivTwHLcwbNKZgprt31exX2_1vmAvTXTeYjBd0xlF-X-bCEpPJ=
+lWBEBakCmzLzyd7uat5uyddR303vUIhGG9RnhX81StWZ8WkLgHv6CjhPQROS9u-iNQxVgaXl8E7=
+jGIcz8wyf9ca23TfYKelEoUD2OTNfepqG5OWwVYU9MBaU4IHUx6uO24mV54KbB5UpRJyho4Y1SQ=
+8Mt-EYDOOij4npRjb_Fp6_YpAjHOzQZnSRojfwmtrIXKfHBJEWTvpO3AO_4vg/4h7/5UjE75D2S=
+5GHBapSDtBrlQ/h5/h001.mULwNJzFrEe9aasAwQW0-DH_6JRkInEjMgGD36YNre0" rel=3D"n=
+oopener noreferrer nofollow" style=3D"text-decoration:none;" target=3D"_bla=
+nk"><img src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,fo=
+rmat=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/6770c684-157=
+9-414b-be79-fc02ecb1c2bd/Screenshot_2025-05-31_at_12.32.26_PM.png?t=3D17492=
+23036" alt=3D"" height=3D"auto" width=3D"630" style=3D"display:block;width:=
+100%;" border=3D"0"/></a></td></tr><tr><td align=3D"center" valign=3D"top" =
+class=3D"t" style=3D"width:630px; padding: 4px 0px 4px 0px;"><a href=3D"htt=
+ps://link.mail.beehiiv.com/ss/c/u001.fEwxncMfw7gJKZ9GjSmhxVFEJTftWqeAPZCsyV=
+oivTwHLcwbNKZgprt31exX2_1vmAvTXTeYjBd0xlF-X-bCEpPJlWBEBakCmzLzyd7uat5uyddR3=
+03vUIhGG9RnhX81StWZ8WkLgHv6CjhPQROS9u-iNQxVgaXl8E7jGIcz8wyf9ca23TfYKelEoUD2=
+OTNfepqG5OWwVYU9MBaU4IHUx6uO24mV54KbB5UpRJyho4ZF1p10ElolbeI0T3On9vvZhIvEluF=
+3ZjUbLR3Wxl5xhck8I0izhRRDMzP6HU8qNkw/4h7/5UjE75D2S5GHBapSDtBrlQ/h6/h001.VVT=
+qiaBMgWukctusBu2b6KaxJ522IMBOCjvCoudKYm8" target=3D"_blank" rel=3D"noopener=
+ noreferrer nofollow" style=3D"text-decoration:underline;text-decoration-co=
+lor:#000000;"><p><span style=3D"">Plexe AI</span></p></a></td></tr></table>=
+</td></tr></table></td></tr></table></td></tr><tr><td class=3D"dd" align=3D=
+"left" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p=
+ style=3D"mso-line-height-alt:150.0%;"></p></td></tr><tr><td><table role=3D=
+"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D""><tr><td bgcolor=3D"transparent" style=3D"background-color:transparen=
+t;border-color:rgb(0, 0, 0);border-radius:4px;border-style:solid;border-wid=
+th:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" ali=
+gn=3D"left" valign=3D"top" style=3D"color:#2A2A2A;font-weight:normal;paddin=
+g:0px 15px;text-align:left;"><h2 style=3D"color:#2A2A2A;font-weight:normal;=
+mso-line-height-alt:150.0%;"><span style=3D""><b><a class=3D"link" href=3D"=
+https://link.mail.beehiiv.com/ss/c/u001.B-3_AN5WaEGk3SSwBlstU-34_v8OyHxn1fW=
+awCGbkVCzHpcHZiMMpI0PojudykQ32SUFGuDXQsc4_jhnt3a42-IqVEedqiTefQ9GK4ZXK6XFXF=
+m9gt385GPpUHHlEMd7ZLKCKSFTa5cRLaoJSoImN4VSGciZiyEAqpZNhskBvkVbcZ7JS1o0TXJUz=
+EBo55JspceFfg4TeurCZTNwhL9NH0309_WAwaSyGtxGtX6G2aBbqFNNo_HPBZ49rjVsytBXPmVm=
+J3L14cL2WCpuUJk7brcGFAa8XHxd-k5IW0TnscTYFftyvrd20YG7lIe8GNfe/4h7/5UjE75D2S5=
+GHBapSDtBrlQ/h7/h001.Ei3E2iQK9PAbXqNiR6ofzSlDdTkIfDg4X3UpbtnKnAk" target=3D=
+"_blank" rel=3D"noopener noreferrer nofollow"><span>Search and get the LLM =
+Ready Data for AI Agents</span></a></b></span></h2></td></tr><tr><td class=
+=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break=
+:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"">Sea=
+rch the web and get LLM ready data with just a few lines of Python code!</s=
+pan></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px =
+15px;text-align:left;word-break:break-word;"><p style=3D"mso-line-height-al=
+t:150.0%;"><span style=3D"">Firecrawl released the new search endpoint that=
+ lets you perform web searches, and scrape their full content in a single o=
+peration.</span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"=
+padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-li=
+ne-height-alt:150.0%;"><span style=3D"">Key Features:</span></p></td></tr><=
+tr><td style=3D"padding-bottom:12px;padding-left:37px;padding-right:27px;pa=
+dding-top:12px;" class=3D"ee"><div style=3D"margin-left:0px;" class=3D"edm_=
+outlooklist"><ul style=3D"font-weight:normal;list-style-type:disc;margin-bo=
+ttom:12px !important;margin-top:12px !important;padding:0px 0px 0px 0px;"><=
+li class=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding=
+:0px;text-align:left;word-break:break-word;"><span style=3D"">Choose specif=
+ic output formats (markdown, HTML, links, screenshots)</span></p></li><li c=
+lass=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px=
+;text-align:left;word-break:break-word;"><span style=3D"">Search the web wi=
+th customizable parameters (language, country, etc.)</span></p></li><li cla=
+ss=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px;t=
+ext-align:left;word-break:break-word;"><span style=3D"">Optionally retrieve=
+ content from search results in various formats</span></p></li><li class=3D=
+"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-a=
+lign:left;word-break:break-word;"><span style=3D"">Control the number of re=
+sults and set timeouts</span></p></li></ul></div></td></tr><tr><td class=3D=
+"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:br=
+eak-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"">Check =
+out the below code to get started.</span></p></td></tr><tr><td class=3D"dd"=
+ align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-=
+word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"">=F0=9F=91=
+=89</span><span style=3D"color:rgb(45, 45, 45);font-family:Helvetica, Arial=
+, sans-serif;font-size:16px;font-weight:400;">=C2=A0</span><span style=3D""=
+><a class=3D"link" href=3D"https://link.mail.beehiiv.com/ss/c/u001.B-3_AN5W=
+aEGk3SSwBlstU-34_v8OyHxn1fWawCGbkVCzHpcHZiMMpI0PojudykQ32SUFGuDXQsc4_jhnt3a=
+42-IqVEedqiTefQ9GK4ZXK6XFXFm9gt385GPpUHHlEMd7ZLKCKSFTa5cRLaoJSoImN4VSGciZiy=
+EAqpZNhskBvkVbcZ7JS1o0TXJUzEBo55JspceFfg4TeurCZTNwhL9NH0309_WAwaSyGtxGtX6G2=
+aA1B-oJaeFMu3DADmVlHGw3Eji5Y8iXRHXWM6ULBhfVLME4UDK-qEMjWIFZiJGtfRneEguCnc61=
+BiBlDlcQ35lw/4h7/5UjE75D2S5GHBapSDtBrlQ/h8/h001.q-VLiebYAxVu_zwRjdIk6-9buVM=
+lYlvC0tIaJfvDM0o" target=3D"_blank" rel=3D"noopener noreferrer nofollow"><s=
+pan>Documentation </span></a></span></p></td></tr><tr><td align=3D"center" =
+valign=3D"top" style=3D"padding-bottom:20px;padding-left:15px;padding-right=
+:15px;padding-top:20px; " class=3D"dd"><table role=3D"none" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td a=
+lign=3D"center" valign=3D"top" style=3D"width:630px;"><a href=3D"https://li=
+nk.mail.beehiiv.com/ss/c/u001.B-3_AN5WaEGk3SSwBlstU-34_v8OyHxn1fWawCGbkVCzH=
+pcHZiMMpI0PojudykQ32SUFGuDXQsc4_jhnt3a42-IqVEedqiTefQ9GK4ZXK6XFXFm9gt385GPp=
+UHHlEMd7ZLKCKSFTa5cRLaoJSoImN4VSGciZiyEAqpZNhskBvkVbcZ7JS1o0TXJUzEBo55Jspce=
+Ffg4TeurCZTNwhL9NH0309_WAwaSyGtxGtX6G2aDWrRwKZsEVh1trT-pqBKFmqbspYtyqSUxwdd=
+rvGmFqmyccZUTMHByhxklGaXZtmjKxmSeqbHIw_JBVlMScV1GA/4h7/5UjE75D2S5GHBapSDtBr=
+lQ/h9/h001.8FItYW945NHo2tG-SY6K2S_MgGIeFgzvscm2taxP2_c" rel=3D"noopener nor=
+eferrer nofollow" style=3D"text-decoration:none;" target=3D"_blank"><img sr=
+c=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto=
+,onerror=3Dredirect,quality=3D80/uploads/asset/file/88ecb3e2-8c15-4db9-8c87=
+-4e8e1cf16df7/Twitter__89_.png?t=3D1749233300" alt=3D"" height=3D"auto" wid=
+th=3D"630" style=3D"display:block;width:100%;" border=3D"0"/></a></td></tr>=
+</table></td></tr></table></td></tr></table></td></tr><tr><td class=3D"dd" =
+align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-w=
+ord;"><p style=3D"mso-line-height-alt:150.0%;"></p></td></tr><tr><td><table=
+ role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" style=3D""><tr><td bgcolor=3D"#F9FAFB" style=3D"background-color:#F9FAF=
+B;border-color:#222222;border-radius:4px;border-style:solid;border-width:2p=
+x;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D=
+"left" valign=3D"top" style=3D"color:#2A2A2A;font-weight:normal;padding:0px=
+ 15px;text-align:left;"><h2 style=3D"color:#2A2A2A;font-weight:normal;mso-l=
+ine-height-alt:150.0%;"><span style=3D"color:rgb(0, 0, 0);"><b><a class=3D"=
+link" href=3D"https://link.mail.beehiiv.com/ss/c/u001.fEwxncMfw7gJKZ9GjSmhx=
+aZu8NrjCiX631f3S8rvOSLRSEY_dzgV7wtyBTR2QpzCUBaK19OBsDPdcA-A2iGd2LCG7oQq0oUR=
+wVeUTwQyxnX5jcsqkG-Mz2UF7EmgNqSkaKbx1R149wAoLNPE-_7wrYtuvfmoROJwmwvnJOthmLR=
+b8M68VwYuqdvs814gArgme4aX00OPI3yinDRgyZ06oS7IKadfLriI7I7L6l91tF9U0qNUHwujHE=
+IlhU7aD_-20KI7Ca84GLDBi9R3eufFWCH8P7vXC0zpTxLKEXuhFc-dXk7mxfgjwchIxQdZgyBU/=
+4h7/5UjE75D2S5GHBapSDtBrlQ/h10/h001.WIu_VtO4lDhKadn4U3xxLRfUQ3ZACkCnySSA2Bf=
+D7cs" target=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>Fine-tun=
+e Large Language Models</span></a></b></span></h2></td></tr><tr><td class=
+=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break=
+:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"color=
+:rgb(0, 0, 0);">Unsloth AI released this repository containing 100+ fine-tu=
+ning notebooks for LLaMA, Qwen, DeepSeek, Gemma, and Phi, all in one place.=
+</span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0=
+px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-line-height=
+-alt:150.0%;"><span style=3D"color:rgb(0, 0, 0);">Includes complete guides =
+& examples for:</span></p></td></tr><tr><td style=3D"padding-bottom:12px;pa=
+dding-left:37px;padding-right:27px;padding-top:12px;" class=3D"ee"><div sty=
+le=3D"margin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:=
+normal;list-style-type:disc;margin-bottom:12px !important;margin-top:12px !=
+important;padding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=
+=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break=
+-word;"><span style=3D"color:rgb(0, 0, 0);">Use cases: Tool-calling, Classi=
+fication, Synthetic data & more</span></p></li><li class=3D"listItem ultext=
+"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-b=
+reak:break-word;"><span style=3D"color:rgb(0, 0, 0);">End-to-end workflow: =
+Data prep, training, running & saving models</span></p></li><li class=3D"li=
+stItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-alig=
+n:left;word-break:break-word;"><span style=3D"color:rgb(0, 0, 0);">BERT, TT=
+S Vision models & more</span></p></li><li class=3D"listItem ultext"><p styl=
+e=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:brea=
+k-word;"><span style=3D"color:rgb(0, 0, 0);">Training methods like: GRPO, D=
+PO, Continued Pretraining, SFT, Text Completion & more!</span></p></li><li =
+class=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0p=
+x;text-align:left;word-break:break-word;"><span style=3D"color:rgb(0, 0, 0)=
+;">Llama, Qwen, DeepSeek, Gemma, Phi & more</span></p></li></ul></div></td>=
+</tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-ali=
+gn:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><s=
+pan style=3D"color:rgb(0, 0, 0);">It=E2=80=99s 100% Open Source</span></p><=
+/td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text=
+-align:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;=
+"><span style=3D"color:rgb(0, 0, 0);">=F0=9F=91=89 </span><span style=3D"co=
+lor:rgb(0, 0, 0);"><a class=3D"link" href=3D"https://link.mail.beehiiv.com/=
+ss/c/u001.fEwxncMfw7gJKZ9GjSmhxaZu8NrjCiX631f3S8rvOSLRSEY_dzgV7wtyBTR2QpzCU=
+BaK19OBsDPdcA-A2iGd2LCG7oQq0oURwVeUTwQyxnX5jcsqkG-Mz2UF7EmgNqSkaKbx1R149wAo=
+LNPE-_7wrYtuvfmoROJwmwvnJOthmLRb8M68VwYuqdvs814gArgme4aX00OPI3yinDRgyZ06oS7=
+IKadfLriI7I7L6l91tF-A3Meqkcy_x79RJwpZ8TOtepevOfZG5xDP4ilnwtlqc_g8EzBdmpsk8V=
+FhVbdbJbq_cztHCzkTHYECkydKHLvb/4h7/5UjE75D2S5GHBapSDtBrlQ/h11/h001.w3cyS4vW=
+Z_qYSsZHKowN82Uv7dTeeB4UORrD_qEGVws" target=3D"_blank" rel=3D"noopener nore=
+ferrer nofollow"><span>Github Repo</span></a></span></p></td></tr><tr><td a=
+lign=3D"center" valign=3D"top" style=3D"padding-bottom:20px;padding-left:15=
+px;padding-right:15px;padding-top:20px; " class=3D"dd"><table role=3D"none"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 =
+auto;"><tr><td align=3D"center" valign=3D"top" style=3D"width:630px;"><a hr=
+ef=3D"https://link.mail.beehiiv.com/ss/c/u001.fEwxncMfw7gJKZ9GjSmhxaZu8NrjC=
+iX631f3S8rvOSLRSEY_dzgV7wtyBTR2QpzCUBaK19OBsDPdcA-A2iGd2LCG7oQq0oURwVeUTwQy=
+xnX5jcsqkG-Mz2UF7EmgNqSkaKbx1R149wAoLNPE-_7wrYtuvfmoROJwmwvnJOthmLRb8M68VwY=
+uqdvs814gArgme4aX00OPI3yinDRgyZ06oS7IKadfLriI7I7L6l91tF_EYjpd3l4ofAvLxmG99q=
+DABeaBlcaMrgGxbIg5uwbSsGIezRVSD-8Xr0m-2s_M8stuLrBxWGHyRqbCCigqW8sa/4h7/5UjE=
+75D2S5GHBapSDtBrlQ/h12/h001.04vFw6I0E_6YvYDm--tBCSABIugAZC6RFmTlmfvfWR8" re=
+l=3D"noopener noreferrer nofollow" style=3D"text-decoration:none;" target=
+=3D"_blank"><img src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale=
+-down,format=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/38d3=
+4c3b-4025-4931-8251-be1ad0deaa8b/1749043630385.jpeg?t=3D1749233603" alt=3D"=
+" height=3D"auto" width=3D"630" style=3D"display:block;width:100%;" border=
+=3D"0"/></a></td></tr></table></td></tr></table></td></tr></table></td></tr=
+><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:l=
+eft;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"></p></=
+td></tr><tr><td><table role=3D"none" width=3D"100%" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"#222222" style=3D"b=
+ackground-color:#222222;border-color:#222222;border-radius:6px;border-style=
+:solid;border-width:2px;padding:3.0px 3.0px 3.0px 3.0px;"><table role=3D"no=
+ne" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td=
+ class=3D"dd" align=3D"center" style=3D"padding:0px 15px;text-align:center;=
+word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span styl=
+e=3D"color:#F9FAFB;"><b>That=E2=80=99s a Wrap</b></span></p></td></tr></tab=
+le></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"left" style=3D=
+"padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-l=
+ine-height-alt:150.0%;"></p></td></tr><tr><td><table role=3D"none" width=3D=
+"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td =
+bgcolor=3D"transparent" style=3D"background-color:transparent;border-color:=
+#222222;border-radius:6px;border-style:solid;border-width:2px;padding:0.0px=
+ 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%" border=3D"0" cells=
+pacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D"left" style=3D=
+"padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-l=
+ine-height-alt:150.0%;"><span style=3D"">That=E2=80=99s all for today. Than=
+k you for reading today=E2=80=99s edition. See you in the next issue with m=
+ore AI Engineering insights.</span></p></td></tr><tr><td class=3D"dd" align=
+=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"=
+><p style=3D"mso-line-height-alt:150.0%;"><span style=3D""><b>PS:</b></span=
+><span style=3D"color:rgb(0, 0, 0);font-size:medium;font-weight:400;"> We c=
+urate this AI Engineering content for free, and your support means everythi=
+ng. If you find value in what you read, consider sharing it with a friend o=
+r two.</span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"pad=
+ding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-line-=
+height-alt:150.0%;"><span style=3D""><b>Your feedback is valuable: </b></sp=
+an><span style=3D"">If there=E2=80=99s a topic you=E2=80=99re stuck on or c=
+urious about, reply to this email. We=E2=80=99re building this for you, and=
+ your feedback helps shape what we send.</span></p></td></tr></table></td><=
+/tr></table></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:=
+0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-line-heigh=
+t-alt:150.0%;"></p></td></tr><tr><td><table role=3D"none" width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=
+=3D"transparent" style=3D"background-color:transparent;border-color:#222222=
+;border-radius:6px;border-style:solid;border-width:2px;padding:0.0px 0.0px =
+0.0px 0.0px;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D"left" valign=3D"top"=
+ style=3D"color:#2A2A2A;font-weight:normal;padding:0px 15px;text-align:left=
+;"><h2 style=3D"color:#2A2A2A;font-weight:normal;mso-line-height-alt:150.0%=
+;"><span style=3D""><b>WORK WITH US</b></span></h2></td></tr><tr><td class=
+=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break=
+:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"color=
+:rgb(0, 0, 0);font-size:medium;font-weight:400;">Looking to promote your co=
+mpany, product, or service to </span><span style=3D"color:rgb(0, 0, 0);font=
+-size:medium;font-weight:400;"><b>120K+ AI developers</b></span><span style=
+=3D"color:rgb(0, 0, 0);font-size:medium;font-weight:400;">? </span><span st=
+yle=3D"">Get in touch today by replying to this email.</span></p></td></tr>=
+</table></td></tr></table></td></tr></table></td></tr></table></td></tr><tr=
+><td align=3D"center" valign=3D"top"><table role=3D"none" width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td><tr=
+><td class=3D"b" align=3D"center" valign=3D"top" bgcolor=3D"#030712" style=
+=3D"padding:0px 0px 0px 0px;border-style:solid;border-width: 0px 0px 0px 0p=
+x;border-color: #FFFFFF;border-bottom-left-radius:10px;border-bottom-right-=
+radius:10px;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" align=3D"center"><tr><td height=3D"10" style=3D"li=
+ne-height:1px;font-size:1px;height:10px;"> &nbsp; </td></tr><tr><td class=
+=3D"w" align=3D"center" valign=3D"top" style=3D"padding:15px 15px 15px 15px=
+;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" align=3D"center"><tr><td align=3D"center" valign=3D"top"><p st=
+yle=3D"font-family:'Verdana',Geneva,sans-serif;color:#FFFFFF!important;"> U=
+pdate your email preferences or unsubscribe <a class=3D"link" href=3D"https=
+://link.mail.beehiiv.com/ss/c/u001.ZjNtPLJ73PCW3XxrAs_SNIw2kahvc0FhQ6HFupMs=
+-wM2w_8zZ0sIhcXGwURiLHSx1U7BKXW27zS--tbb2VmkcaCmVIGHgPbia2-3_VV48qmEgJbXdnq=
+DTU7z60tLbDIyyPO52CRTSnS2eZkW4CCuxvQJzHjvk4TMvmTjkHnNzMp9Zdvp_cdqoUqIIgwSF2=
+xoGVBLmd5iZkwYsRul-LXVZKW9-CKNOXHjvzc_hpJpFYR4P_EB42jOd0Cr8iRdesMvMPARVKu48=
+ljPIaN3UtQAaLollNADpDyJHdGw0eMmOhRrKt4ljm1X83LmCHYy6_bOHWEW3-0ASYnL_z8GX2zb=
+WF5d9aRwNJcmfQAYg-Xaa_UBmm9UnIpvhng_Kyo1LnkkNAwwVISJOUsn9f27uIduPjngUnLpRqi=
+ZLEazxCi3grBVYXM75VjxkPP0mYADo7EhgfO5-_om7TE4rXNNt9SxtbDuOpuonhSXxWwkMCZwOL=
+cKwdFCIs6WvByEZqXD3auNBKHS4K8O_0lkFmDNOMQY8cuw6w0bO83vcV5YU6kx6tGI51cP3lFjP=
+gjosnjo_2rdaL7_j8SvuVH-ou6Z7s9qCZZ9RruGZLLpLIeOv2Gl_ug5SJER-41so1MSc1yvmJkw=
+pYMO0few061KO-P-8vhcNx7RA7KGsMOlCB9BykDOjh00bDoB0byI3KowQ7fW3wDWGg7fyviBuVY=
+CNomeotZJWnHSXfxkiai1NkwUnf5vVTFUPPR6TAg8ufWRoeXF9tntv_smaqvD4nQgRKu5AHei0x=
+qeNm66IXGolyrPtSfAwXdnwWcSNh9mm8UjOcx0J8UhJ_OKIGtc2RS10AIFbO8TarN8dyTSEVVrY=
+xE9QytGRc0/4h7/5UjE75D2S5GHBapSDtBrlQ/h13/h001.qFH-rg-dD838xrdYTc6wkKPpUGFu=
+e-16VQ_4WCUOHwY" style=3D"text-decoration:underline;text-decoration-color:#=
+FFFFFF!important;color:#FFFFFF!important;"> here</a></p><p class=3D"copyrig=
+ht" style=3D"font-family:'Verdana',Geneva,sans-serif;color:#FFFFFF!importan=
+t;"> &copy; 2025 AI Engineering </p><p style=3D"font-family:'Verdana',Genev=
+a,sans-serif;color:#FFFFFF!important;"> 228 Park Ave S, #29976, New York, N=
+ew York 10003, United States </p></td></tr><tr style=3D"display: table-row =
+!important;"><td align=3D"center" valign=3D"top" style=3D"padding-top:20px;=
+" style=3D"display:table-cell !important;"><table role=3D"none" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" style=3D"display:tab=
+le !important;"><tr style=3D"display:table-row !important;"><td class=3D"u"=
+ align=3D"center" valign=3D"middle" height=3D"32" style=3D"height:32px;disp=
+lay:table-cell !important; max-height: 32px !important;margin:0px !importan=
+t; background-color: #ffffff !important;"><a style=3D"line-height:32px !imp=
+ortant;text-decoration:none;display:block !important;" href=3D"https://link=
+.mail.beehiiv.com/ss/c/u001.anzhxTgRwBHOEcNie9uXl5sB1z7_5vGmkoTc4GPISXi4r9C=
+FenQQEsQ8Qf89wj-gaSSUv5UzB454Z4rRozxerj2y4tnBCioRhqOlP2lLnHBP_iItQdr54N2ypu=
+plo0xlD5VAwTNB4nMnK2zGfBSR12Pj6OJoJC5-_IteiHaOppuY2GEvyaPzEywMPThi_GnyrtVrS=
+-4IcQcOBvuMnS6pyOqkMcAl9nRoaAh23tqdNZq_mAjyDhFGPBfA2_Akq3R9/4h7/5UjE75D2S5G=
+HBapSDtBrlQ/h14/h001.lpAd4C7v_knQmEMi7ilMoI8GcAio8VTxeUcQl_CQnew"><img src=
+=3D"https://media.beehiiv.com/output-onlinepngtools.png" width=3D"16" alt=
+=3D"beehiiv logo" style=3D"display:inline-block !important;max-width:16px !=
+important; vertical-align:-3px !important;width: 16px !important;" border=
+=3D"0"/><span style=3D"padding-left:11px !important;display: inline-block !=
+important;">Powered by beehiiv</span></a></td></tr></table></td></tr><tr><t=
+d align=3D"left" valign=3D"top" height=3D"2" style=3D"height:2px;"><a href=
+=3D'https://link.mail.beehiiv.com/ss/c/u001.zTocUfcYSJ_RY3UOoZIY6du1AlUAy8K=
+v1Kx7Sb7RwctmsFbXMwF_6kgFvoHZcU5D6jISPMPRk52KLMkovok4PxWSHCqQff2uDJ2XhSjiVU=
+8/4h7/5UjE75D2S5GHBapSDtBrlQ/h15/h001.ulw4Q9owaNud5oHK70PWMowZW2aR1STbvgJkF=
+sKtnPc' style=3D"color: #030712 !important; cursor: default; font-size: 1px=
+; text-decoration: none;"> Terms of Service </a></td></tr></table></td></tr=
+></table></td></tr></td></tr></table></td></tr></table></td></tr></table></=
+td></tr></table></div></body></html>
+--a4293047fae3b52d595a7c38d04000cfd76480364e0c841620abdeb4234b--

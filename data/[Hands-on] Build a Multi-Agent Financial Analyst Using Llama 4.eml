@@ -1,0 +1,1288 @@
+Delivered-To: mohamedkouhou@gmail.com
+Received: by 2002:a05:6124:c2:b0:3dc:661a:9ab9 with SMTP id t2csp2387092vlm;
+        Mon, 5 May 2025 06:04:43 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFn6muNTIPZGWKbYK39GlvtyZfjbkKdZBxeR3NbB9IEq9xv3rOyARuY9W3cIuss4jqv7EKy
+X-Received: by 2002:a17:90b:5626:b0:30a:20d6:ed35 with SMTP id 98e67ed59e1d1-30a61a5150cmr8721075a91.23.1746450283588;
+        Mon, 05 May 2025 06:04:43 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1746450283; cv=none;
+        d=google.com; s=arc-20240605;
+        b=TjRGXEnKUn2hOdN4Kh1kkpqxSOmKKqqsKUVdZmPeq6ZypYP5CHWlgWDcTYOHiWA99C
+         1c2twJqhzydmumVPvTFQue56ry21jNwP2q/DBN5R0vqLQAX4ThcgnKxmFqgG7YybMVWl
+         b/TuIPBA8FaKxyvfFOBn2lF9PkcK+nKtw4aaDSketeGAkh1U4B3RvMStxy26+YTZ+V4c
+         P9gM8au/aXGBsrqESMaJbaHtifrK5fJ4Ai+eNtZ/j+stYTXAFcmrajnpdN45MhBXju1J
+         u/qWYoqXBdVqG78QlJJWFv5W4l0ITt/WBH+DIYkceAi27eQP9vmpY6m1DWWn3zCu5WPE
+         bVYQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:sid:list-unsubscribe-post:list-unsubscribe:feedback-id:reply-to
+         :subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=6akie1pFjM17FpsxMq2MOgHf7cDtmvX4tSt9eSVFFAo=;
+        fh=oJNjDw8DTqGeUb+omsh4Xn3z5QOYFzPyOWGWF6z0SOE=;
+        b=QFNAAE0ACkEBRCoq77Hj3oCt1T1G+bdFAVZ9pTnySU/DN/ic+SzbFrDg408G8dOf9x
+         ES93itauRg79jz7sSgPbKd8P2sZMotlMMu/UMyvxgZ+lw/Lcszp8EYjLfeySNy1xn+0j
+         pm6uQ2v5zI0v2PTZB3Qn1BwoJTdONejcrs7f5nH9xOkoobhOlXIkOZfScXtno7VDMNjL
+         DATv8pIcxBTdJtUz3nuuFbFRNrTyNXAdRZIgocbkfOO7ENWPHBLkBfazUqw00TFRpx8a
+         uj0QdnR1UCkbSmEbmveg75GMZI7AonVCWrmLB6aQGoU0OR5dUg+HgnG6/J+P+uJmaupe
+         vl4A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.beehiiv.com header.s=s1 header.b=XI2l17zY;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="XPo/DB9M";
+       spf=pass (google.com: domain of bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com designates 159.183.29.70 as permitted sender) smtp.mailfrom="bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=beehiiv.com
+Return-Path: <bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com>
+Received: from o166.ptr78.mail.beehiiv.com (o166.ptr78.mail.beehiiv.com. [159.183.29.70])
+        by mx.google.com with ESMTPS id 98e67ed59e1d1-30a47478bd8si11962928a91.64.2025.05.05.06.04.43
+        for <mohamedkouhou@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 05 May 2025 06:04:43 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com designates 159.183.29.70 as permitted sender) client-ip=159.183.29.70;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.beehiiv.com header.s=s1 header.b=XI2l17zY;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="XPo/DB9M";
+       spf=pass (google.com: domain of bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com designates 159.183.29.70 as permitted sender) smtp.mailfrom="bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=beehiiv.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mail.beehiiv.com;
+	h=content-type:from:mime-version:subject:reply-to:feedback-id:
+	list-unsubscribe:list-unsubscribe-post:to:cc:content-type:feedback-id:from:subject:to;
+	s=s1; bh=6akie1pFjM17FpsxMq2MOgHf7cDtmvX4tSt9eSVFFAo=;
+	b=XI2l17zY6iuYNxTo6qWiqUrG1DssVzUwzgbOqiC5M++SWnk3pmJ5XX2Tkuk2BbyMtDbr
+	1y1Nt3hd3+7EjeSmw7abyusH6ts5RX92gdhKiOpdh7/4rFg1rBXtcGStErxrF1i56Vs0YH
+	xzRiaIPItqmik+OtUvboVU9U/oo515LSk2QFszQ4721DnT0vOVCKozNLAiuikezhmvZqbM
+	Owd5CE/tBOB3YeK+6/5R7bOpZ31DrSW+EPv7NLuxX02cfG9DrbK8lquhAQf58GdPWBhK+8
+	YYfCFhNN0RvuzlaYqfZ4PKLWEzi0QDLBmCq7zGE4w42xmIl/kEmwz78L+uVUmo7g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:feedback-id:
+	list-unsubscribe:list-unsubscribe-post:to:cc:content-type:feedback-id:from:subject:to;
+	s=smtpapi; bh=6akie1pFjM17FpsxMq2MOgHf7cDtmvX4tSt9eSVFFAo=;
+	b=XPo/DB9MLS0uwfUoYKGm6pKsxk/lYDIJdsrdIHks9zySGWa48LqVCq/Ii05DKnz+QbKF
+	USDwxnuf+cHn5IFz6ycK0y0zlAZxyeZAS1Bn6cIhVwWixJ3cEhzB8Hzwfw8mk7VjZ9j0Az
+	5BpuQcrmgVl4+qxbOFdLEmIiZ1MoHVoxo=
+Received: by recvd-84ff9c6c5c-mxfdk with SMTP id recvd-84ff9c6c5c-mxfdk-1-6818B759-63
+	2025-05-05 13:04:25.479962615 +0000 UTC m=+2300011.521373973
+Received: from NDI2MzM5MDI (unknown)
+	by geopod-ismtpd-36 (SG) with HTTP
+	id oVOp9titSiGk0NW23QY2WQ
+	Mon, 05 May 2025 13:04:25.386 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=2a0cf8720176364a6062ec80d8724321be9c103f59fc52eb6691ef7beae4
+Date: Mon, 05 May 2025 13:04:42 +0000 (UTC)
+From: AI Engineering <aiengineering@mail.beehiiv.com>
+Mime-Version: 1.0
+Message-ID: <oVOp9titSiGk0NW23QY2WQ@geopod-ismtpd-36>
+Subject: [Hands-on] Build a Multi-Agent Financial Analyst Using Llama 4
+Reply-To: AI Engineering <ai.engineering.sumanth@gmail.com>
+Feedback-ID: 
+ =?us-ascii?Q?107715c8-df7b-49b1-a67a-b8fa043ef376=3Anewsletter=3Aee0aaff6-3e4e-?=
+ =?us-ascii?Q?4900-88b4-a9b4a51ee2d6=3A2bba56f5114e362?=
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aee0aaff6-3e4e-4900-88b4-a9b4a51ee2d6+28735b41-2ec7-4eb?=
+ =?us-ascii?Q?7-acc6-0aa3cb1a6790+107715c8-df7b-49b1-?=
+ =?us-ascii?Q?a67a-b8fa043ef376=40unsub=2Ebeehiiv=2Ecom=3E=2C?=
+ =?us-ascii?Q?_=3Chttps=3A=2F=2Faiengineering=2Ebeehiiv=2Ecom=2Funsubscribe=2FeyJ0eXAiOiJKV1Q?=
+ =?us-ascii?Q?iLCJhbGciOiJIUzI1NiJ9=2EeyJzdWJzY3JpYmVyX?=
+ =?us-ascii?Q?2lkIjoiMjg3MzViNDEtMmVjNy00ZWI3LWFjYzYt?=
+ =?us-ascii?Q?MGFhM2NiMWE2NzkwIiwicG9zdF9pZCI6IjEwNzc?=
+ =?us-ascii?Q?xNWM4LWRmN2ItNDliMS1hNjdhLWI4ZmEwNDNlZj?=
+ =?us-ascii?Q?M3NiIsImxhc3RfcmVzb3VyY2VfZ3VpZCI6IlBvc?=
+ =?us-ascii?Q?3Q6MTA3NzE1YzgtZGY3Yi00OWIxLWE2N2EtYjhm?=
+ =?us-ascii?Q?YTA0M2VmMzc2In0=2EGSboyhF-x7HBYe=5FV2xPwsKS?=
+ =?us-ascii?Q?c=5FuuS5wzvjyga2PgtMwM=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+sId: ee0aaff6-3e4e-4900-88b4-a9b4a51ee2d6
+x-beehiiv-ids: 
+ =?us-ascii?Q?{=22account=5Fname=22=3A=22https=3A=2F=2Faiengineering=2Ebeehiiv=2Ecom=2F=22=2C=22campaign?=
+ =?us-ascii?Q?=5Fid=22=3A=22107715c8-df7b-49b1-a67a-b8fa043ef?=
+ =?us-ascii?Q?376=22=2C=22category=22=3A=22newsletter=22=2C=22email=5Fgen?=
+ =?us-ascii?Q?erated=5Fat=22=3A1746450265=2C=22user=5Fid=22=3A=22ee0aaf?=
+ =?us-ascii?Q?f6-3e4e-4900-88b4-a9b4a51ee2d6=22}?=
+x-beehiiv-type: newsletter
+x-list-id: ee0aaff6-3e4e-4900-88b4-a9b4a51ee2d6
+x-list-owner: <mailto:ai.engineering.sumanth@gmail.com>
+x-newsletter: 
+ =?us-ascii?Q?https=3A=2F=2Faiengineering=2Ebeehiiv=2Ecom=2Fp=2Fhands-on-build-a-multi-age?=
+ =?us-ascii?Q?nt-financial-analyst-using-llama-4?=
+x-newsletter-id: https://aiengineering.beehiiv.com/
+x-newsletter-signup: https://aiengineering.beehiiv.com/subscribe
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EekyNxagh4b7LFzedssaxAB=2FRYmMfHMvupA41zo66Mwkcd=2FwUH0gIPwv1N?=
+ =?us-ascii?Q?lkAXPd6Z6txtIAm9zaW6tcNVr3pdvwqDIsj69f5?=
+ =?us-ascii?Q?b4o8XP2yuK2PLPbhTnoVMAO=2F8Zqb2DkeKCr3s=2FG?=
+ =?us-ascii?Q?kvgEw8diubhBGJh8jGFZ7bsjday5ikyK+m=2Fo+Ha?=
+ =?us-ascii?Q?B57q6JFzeAIAj8CyjK3gZ+V7WbEvJvKOFgzAjeX?=
+ =?us-ascii?Q?QncYictufoU0hXBEFyh5EBByBW8gUkyZQ+MxGTD?=
+ =?us-ascii?Q?4cUH9kaRHoqzfl+leOjwGZIrDQ=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprD1ZcmFObA4po1bG?=
+ =?us-ascii?Q?aUE6gycYObA=2FCMj4uRjCl4QB72E4P+C88FJcHwK?=
+ =?us-ascii?Q?rQcDE47kZEgiRAv9QGRMCg+4ox1rY=2FV6k77MR+G?=
+ =?us-ascii?Q?Tv+a1hxpZXfqXsAy2dZZPRc5ekg6E3ewLWbDtLD?=
+ =?us-ascii?Q?kgsloM6WSyAieLvTLLh6MX8oKm=2F1yvn1QKmpIED?=
+ =?us-ascii?Q?wVDuzTubHf7eQkUS+XwnytVGiKqmj70Oml7Qtlc?=
+ =?us-ascii?Q?ueslyLPzTU4fBZTUcacKBDoMn+PwARgAO9OZpys?=
+ =?us-ascii?Q?xrnR0TlKe=2F9EliF4=2F43LwXfcqqKtBqTbUk52Nc1?=
+ =?us-ascii?Q?VdQ7MBNhUK+w=3D=3D?=
+To: "mohamedkouhou@gmail.com" <mohamedkouhou@gmail.com>
+X-Entity-ID: u001.0HCrxgJCQAVVGKXTne9JeQ==
+
+--2a0cf8720176364a6062ec80d8724321be9c103f59fc52eb6691ef7beae4
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+----------
+##  In today=E2=80=99s newsletter:
+
+* [Hands-on] Multi-Agent Financial Analyst using Llama 4 and Crew AI
+
+* Fire-1 Agent from Firecrawl: Scrape entire webistes with just a prompt
+
+* Markitdown from Microsoft: Turn any document into LLM ready data
+
+* Top Tutorial: Stanford AI Agents Course=20
+
+_Reading time: 3 minutes._
+
+
+----------
+
+----------
+## Multi-Agent Financial Analyst using Llama 4 =F0=9F=93=88
+
+Meta recently released Llama 4, featuring two models: Llama 4 Maverick, a 4=
+00B parameter mixture-of-experts model designed for deep reasoning, and Lla=
+ma 4 Scout, a smaller, efficient model optimized for long context on a sing=
+le GPU.
+
+Today, let us show you how to build a multi-agent financial analyst.
+
+Input a simple query like a stock symbol, and the agent stack delivers:
+
+* A clear Executive Summary
+
+* A structured Performance Report
+
+* Actionable insights in a clean, readable format
+
+The code repository is linked later in the issue.
+
+### Tech Stack:
+
+* SambaNova AI for Llama 4 Maverick inference
+
+* CrewAI for multi-agent orchestration
+
+* Custom YFinance tool to fetch real-time stock data
+
+Let=E2=80=99s implement it!
+
+**Step 1: Get API Access**
+
+Grab a API key from [SambaNova AI](https://sambanova.ai) to use the Llama-4=
+ Maverick and set it as an env variable.
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/6668a2a1-a4ed-4=
+4f7-9796-0ac21a68de36/Twitter__73_.png?t=3D1746347301)
+Caption:=20
+
+**Step 2: Create a custom YFinance tool**
+
+To give our Finance agent direct access to real-time data, we create a cust=
+om CrewAI tool using BaseTool package. This ensures agents fetch live data,=
+ not rely on old knowledge.
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/cddb8187-4ff3-4=
+4d3-b8a4-1100783336a8/Twitter__74_.png?t=3D1746347318)
+Caption:=20
+
+**Step 3: Define Agents**
+
+We define two agents using Crew AI, both powered by Llama-4-Maverick from S=
+ambanova:
+
+* StockAnalyst Agent: The role of this agent is like a seasoned Wall Street=
+ analyst. It uses YFinance to fetch live stock data and breaks it down to u=
+nderstand the market pulse for the given symbol.
+
+* ReportWriter Agent: This agent acts as a report specialist. It takes the =
+raw analysis and turns it into a well-written, professional report that is =
+easy to understand and presentable.
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/bad2474b-b882-4=
+036-8f76-1db0cf1307d1/Twitter__75_.png?t=3D1746347346)
+Caption:=20
+
+**Step 4: Define Tasks for the Agents**
+
+* **Analysis Task:** This task directs the StockAnalyst Agent to use the `s=
+tock_data_tool` to retrieve live data and analyze key metrics such as price=
+, 52-week range, P/E ratio, and other financial indicators. The output is a=
+ set of findings that highlight the stock=E2=80=99s current performance.
+
+* **Report Task:** This task instructs the ReportWriter Agent to take the a=
+nalysis from the StockAnalyst Agent and format it into a well-structured, p=
+rofessional report, presenting the findings in a clean and understandable m=
+anner.
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/007c5e42-4400-4=
+044-8a90-6dba05ca7571/Twitter__76_.png?t=3D1746347363)
+Caption:=20
+
+**Step 5: Assembling the Crew**
+
+Finally combine the agents and tasks using **CrewAI**, linking them togethe=
+r to execute the analysis and generate the final report with a single input=
+.
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/52a972b8-f8c8-4=
+263-8447-23d5b7c78940/Twitter__77_.png?t=3D1746347388)
+Caption:=20
+
+=E2=80=8BYou can find the entire code for the app in this [GitHub repo ](ht=
+tps://github.com/Sumanth077/awesome-ai-apps-and-agents/tree/main/multi_agen=
+t_financial_analyst)=E2=86=92 (don=E2=80=99t forget to star the repo)
+
+
+----------
+
+----------
+## [FIRE-1: A Prompt-Based Web Scraping Agent ](https://www.firecrawl.dev/b=
+log/launch-week-iii-day-2-announcing-fire-1)=F0=9F=94=A5
+
+Firecrawl has released **FIRE-1**, a new AI agent designed to scrape websit=
+es using only a prompt!
+
+It can navigate dynamic websites, interact with content, and fill out forms=
+ to gather the information you're looking for.
+
+Just add an "agent" object to your API request with instructions on what to=
+ find.
+
+The agent handles the rest - planning its own path through complex websites=
+ to gather exactly what you need.
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/528cb570-5a1d-4=
+a72-8d42-24ea08cbfd3a/Screenshot_2025-05-04_at_2.26.16_PM.png?t=3D174634899=
+3)
+Caption:=20
+
+
+----------
+
+----------
+## Top Open Source Repo - [Markitdown](https://github.com/microsoft/markitd=
+own)
+
+Turn any document into Markdown format!
+
+Microsoft has released MarkItDown, a lightweight Python library that conver=
+ts any document to Markdown for use with LLMs.
+
+**Key Features:**
+
+* **Supports multiple formats:** Convert PDFs, Word, Excel, PowerPoint, ima=
+ges, and audio.
+
+* **Auto-extracts metadata:** Pulls EXIF data, runs OCR, and generates tran=
+scripts.
+
+* **Multiple interfaces:**  Use via CLI, Python API, or Docker.
+
+* **Describes images:** Adds LLM-generated alt text for visuals.
+
+* **Handles batch jobs:** Process multiple files at once with ease
+
+This tool streamlines the process of preparing diverse data types for LLM a=
+pplications, making it easier to integrate various document formats into AI=
+ workflows
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/229ccd79-8113-4=
+29e-af11-a67545a74999/1744442451347.jpeg?t=3D1746347978)
+Caption:=20
+
+
+----------
+
+----------
+## [Top Tutorial - Stanford AI Agents Course](https://youtu.be/kJLiOGle3Lw?=
+si=3DTMiNlIzpyjX4rS3R)=20
+
+Stanford published a 1-hour lecture on Agentic AI, a compact yet comprehens=
+ive resource for anyone looking to understand or build agent-based LLM syst=
+ems.
+
+This session breaks down the fundamentals of how modern agents reflect, pla=
+n, reason, and interact with tools, ideal for engineers moving beyond basic=
+ prompting.
+
+Key Topics Covered:
+
+* **LLM training & optimization:** How models are adapted for different tas=
+ks
+
+* **Prompt design:**  Techniques for guiding model behavior effectively
+
+* **Reflection:** How agents self-evaluate and iterate on outputs
+
+* **Planning:** Structuring multi-step reasoning processes
+
+* **Tool use:** Integrating external functions and APIs
+
+* **Agentic principles:** What defines an agentic system
+
+* **Hands-on example:**  Building a customer support AI agent
+
+* **Design patterns:**  Structuring reliable agent workflows
+
+* **Ethical considerations:**  Key risks and deployment guidelines
+
+This lecture provides a clear and practical overview of Agentic AI, useful =
+for anyone working on LLM infrastructure or applied AI systems.
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/b6e35d0d-f730-4=
+5de-8af2-f0e064ccbc72/1745753899067.jpeg?t=3D1746347725)
+Caption:=20
+
+
+----------
+
+----------
+**That=E2=80=99s a Wrap**
+
+
+----------
+
+----------
+That=E2=80=99s all for today. Thank you for reading today=E2=80=99s edition=
+. See you in the next issue with more AI Engineering insights.
+
+**PS:** We curate this AI Engineering content for free, and your support me=
+ans everything. If you find value in what you read, consider sharing it wit=
+h a friend or two.
+
+**Your feedback is valuable: **If there=E2=80=99s a topic you=E2=80=99re st=
+uck on or curious about, reply to this email. We=E2=80=99re building this f=
+or you, and your feedback helps shape what we send.
+
+
+----------
+
+----------
+## **WORK WITH US**
+
+Looking to promote your company, product, or service to **100K+ AI develope=
+rs**? Get in touch today by replying to this email.
+
+
+----------
+=E2=80=94=E2=80=94=E2=80=94
+
+You are reading a plain text version of this post. For the best experience,=
+ copy and paste this link in your browser to view the post online:
+https://aiengineering.beehiiv.com/p/hands-on-build-a-multi-agent-financial-=
+analyst-using-llama-4
+
+--2a0cf8720176364a6062ec80d8724321be9c103f59fc52eb6691ef7beae4
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html><html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xml=
+ns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com=
+:office:office" style=3D"font-size:16px;"><head></head><head><meta charset=
+=3D"utf-8"/><!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compatible" content=
+=3D"IE=3Dedge"/><!--<![endif]--><meta name=3D"viewport" content=3D"width=3D=
+device-width,initial-scale=3D1"/><meta name=3D"x-apple-disable-message-refo=
+rmatting"/><meta name=3D"format-detection" content=3D"telephone=3Dno,addres=
+s=3Dno,email=3Dno,date=3Dno,url=3Dno"/><meta name=3D"color-scheme" content=
+=3D"light"/><meta name=3D"supported-color-schemes" content=3D"light"/><titl=
+e>[Hands-on] Build a Multi-Agent Financial Analyst Using Llama 4</title><!-=
+-[if mso]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</=
+o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]--><style>
+  :root { color-scheme: light; supported-color-schemes: light; }
+  body { margin: 0; padding: 0; min-width: 100%!important; -ms-text-size-ad=
+just: 100% !important; -webkit-transform: scale(1) !important; -webkit-text=
+-size-adjust: 100% !important; -webkit-font-smoothing: antialiased !importa=
+nt; }
+  .body { word-wrap: normal; word-spacing:normal; }
+  table.mso { width: 100%; border-collapse: collapse; padding: 0; table-lay=
+out: fixed; }
+  img { border: 0; outline: none; }
+  table {  mso-table-lspace: 0px; mso-table-rspace: 0px; }
+  td, a, span {  mso-line-height-rule: exactly; }
+  #root [x-apple-data-detectors=3Dtrue],
+  a[x-apple-data-detectors=3Dtrue],
+  #MessageViewBody a { color: inherit !important; text-decoration: inherit =
+!important; font-size: inherit !important; font-family: inherit !important;=
+ font-weight: inherit !important; line-height: inherit !important; }
+  span.MsoHyperlink { color: inherit !important; mso-style-priority: 99 !im=
+portant; }
+  span.MsoHyperlinkFollowed { color: inherit !important; mso-style-priority=
+: 99 !important; }
+  .a { background-color:#FFFFFF; }
+  .b { background-color:#030712; }
+  .c  { background-color:#FFFFFF; }
+  .d { background-color:#EAEBEC; }
+  .d2 { background-color:#FFFFFF; }
+  .d3 { background-color:#FFFFFF; }
+  h1 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h2 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h3 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h4 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h5 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h6 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a, ul, li, ol, p=
+, p a { margin: 0;padding: 0; }
+  h1 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:28px;color:#2A2A2A;line-height:1.75;padding-bottom:4px;p=
+adding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h2 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:24px;color:#2A2A2A;line-height:1.5;padding-bottom:4px;pa=
+dding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h3 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:20px;color:#2A2A2A;line-height:1.25;padding-bottom:4px;p=
+adding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h4 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:18px;color:#2A2A2A;line-height:1.125;padding-bottom:4px;=
+padding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h5 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:16px;color:#2A2A2A;line-height:1;padding-bottom:4px;padd=
+ing-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h6 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:14px;color:#2A2A2A;line-height:0.875;padding-bottom:4px;=
+padding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  p { font-family:'Helvetica',Arial,sans-serif;font-weight:400;color:#2D2D2=
+D;font-size:16px;line-height:1.5;padding-bottom:12px;padding-top:12px;mso-m=
+argin-top-alt:12px;mso-margin-bottom-alt:12px; }
+  p a, .e a, ul a, li a, .h a, .h2 a, .h3 a { word-break:break-word;color:#=
+0C4A6E !important;text-decoration:underline;text-decoration-color:#0C4A6E;f=
+ont-style:italic; }
+  p a span, .e a span, ul a span, li a span { color: inherit }
+  p .bold { font-weight:bold;color:#2D2D2D; }
+  p span[style*=3D"font-size"] { line-height: 1.6; }
+  .f p { font-size:12px;line-height:15px;color:#2D2D2D;padding:0; }
+  .f p a { color:#2D2D2D !important; }
+  .g p { font-family:'Helvetica',Arial,sans-serif;font-size:14px;line-heigh=
+t:20px;font-weight:normal;margin:0; }
+  .g p a  { text-decoration: underline; }
+  .i p { font-family:'Helvetica',Arial,sans-serif;line-height:1.5;font-size=
+:15px;color:#2D2D2D; }
+  .i p a { color:#2D2D2D !important; }
+  .i2 p { font-family:'Helvetica',Arial,sans-serif;line-height:1.5;font-siz=
+e:15px;color:#2D2D2D; }
+  .i2 p a { color:#2D2D2D !important; }
+  .i3 p { font-family:'Helvetica',Arial,sans-serif;line-height:1.8;font-siz=
+e:24px;color:#2D2D2D; }
+  .i3 p a { color:#2D2D2D !important; }
+  .h p a { color:#0C4A6E !important; }
+  .h2 p a { color:#0C4A6E !important; }
+  .h3 p a { color:#0C4A6E !important; }
+  .f p a, .i p a, .i2 p a, .i3 p a, .h p a, .h2 p a, .h3 p a { text-decorat=
+ion:underline; }
+  .j { border-top:3px solid #030712; }
+  .k p { padding-left:15px;padding-bottom:0px;padding-top:6px;mso-margin-to=
+p-alt:6px;mso-margin-bottom-alt:0px;mso-margin-left-alt:15px; }
+  .o { background-color:#FFFFFF;border:1px solid #F1F1F1;border-radius:5px;=
+ }
+  .o p { font-family:'Helvetica',Arial,sans-serif;padding:0px;margin:0px; }
+  .l p,
+  .l p a { font-size:14px;line-height:20px;font-weight: bold;color:#2D2D2D;=
+padding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .m p,
+  .m p a { font-size:13px;line-height:18px;font-weight:400;color:#2D2D2D;pa=
+dding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .n p,
+  .n p a { font-size:12px;line-height:17px;font-weight:400;color:#2D2D2D;pa=
+dding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .p { background-color:#FFFFFF;max-width:520px;border:1px solid #E1E8ED;bo=
+rder:1px solid rgba(80, 80, 80, 0.3);border-radius:5px; }
+  .q { font-size:16px;font-family:Helvetica,Roboto,Calibri,sans-serif !impo=
+rtant;border:1px solid #e1e8ed;border:1px solid rgba(80, 80, 80, 0.3);borde=
+r-radius:10px;background-color:#FFFFFF; }
+  .q p { font-size:16px;font-family:system-ui,Helvetica,Roboto,Calibri,sans=
+-serif !important;color:#222222;padding:4px 0; }
+  .r { border:1px solid #E1E8ED !important;border-radius:5px; }
+  .s p { font-size: 14px; line-height: 17px; font-weight: 400; color: #6978=
+82; text-decoration: none; }
+  .t p { font-family:'Helvetica',Arial,sans-serif;font-size:12px;line-heigh=
+t:1.5;font-weight:400;color:#000000;font-style:italic;padding:0; }
+  .v { border-radius:10px;border:solid 0px #030712;background-color:#030712=
+;font-family:'Verdana',Geneva,sans-serif;color:#FFFFFF; }
+  .v a { text-decoration:none;display:block;color:#FFFFFF; }
+  .w p { font-size:12px;line-height:15px;font-weight:400;color:#FFFFFF; }
+  .w p a { text-decoration: underline !important;color:#FFFFFF !important; =
+}
+  ul { font-family:'Helvetica',Arial,sans-serif;margin:0px 0px 0px 25px !im=
+portant;padding:0px !important;color:#2D2D2D;line-height:24px;list-style:di=
+sc;font-size:16px; }
+  ul > li { font-family:'Helvetica',Arial,sans-serif;margin:10px 0px 0px 0p=
+x !important;padding: 0px 0px 0px 0px !important; color: #2D2D2D; list-styl=
+e:disc; }
+  ol { font-family:'Helvetica',Arial,sans-serif;margin: 0px 0px 0px 25px !i=
+mportant;padding:0px !important;color:#2D2D2D;line-height:24px;list-style:d=
+ecimal;font-size:16px; }
+  ol > li { font-family:'Helvetica',Arial,sans-serif;margin:10px 0px 0px 0p=
+x !important;padding: 0px 0px 0px 0px !important; color: #2D2D2D; list-styl=
+e:decimal; }
+  .e h3,
+  .e p,
+  .e span { padding-bottom:0px;padding-top:0px;mso-margin-top-alt:0px;mso-m=
+argin-bottom-alt:0px; }
+  .e span,
+  .e li { font-family:'Helvetica',Arial,sans-serif;font-size:16px;color:#2D=
+2D2D;line-height:24px; }
+  .rec { font-family:  ui-sans-serif, system-ui, -apple-system, BlinkMacSys=
+temFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-ser=
+if, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color E=
+moji" !important; }
+  .rec__button:hover { background-color: #f9fafb !important; }
+  .copyright a {color: inherit !important; text-decoration: none !important=
+; font-size: inherit !important; font-family: inherit !important; font-weig=
+ht: inherit !important; line-height: inherit !important;}
+  .txt_social p { padding: 0; word-break: break-all; }
+  .table, .table-c, .table-h { border: 1px solid #C0C0C0; }
+  .table-c { padding:5px; background-color:#FFFFFF; }
+  .table-c p { color: #2D2D2D; font-family:'Helvetica',Arial,sans-serif !im=
+portant;overflow-wrap: break-word; }
+  .table-h { padding:5px; background-color:#F1F1F1; }
+  .table-h p { color: #2A2A2A; font-family:'Trebuchet MS','Lucida Grande',T=
+ahoma,sans-serif !important;overflow-wrap: break-word; }
+  @media only screen and (max-width:667px) {
+    .aa { width: 100% !important; }
+    .bb img { width: 100% !important; height: auto !important; max-width: n=
+one !important; }
+    .cc { padding: 0px 8px !important; }
+    .ee { padding-top:10px !important;padding-bottom:10px !important; }
+    .ff ul, .ff ol { margin: 0px 0px 0px 10px !important;padding: 0px !impo=
+rtant; }
+    .ff li { margin:10px 0px 0px 10px !important; }
+    .r {height:140px !important;}
+    .s p { font-size:13px !important;line-height:15px !important; }
+    .mob-hide {display:none !important;}
+    .mob-stack {display:block !important;width:100% !important;}
+    .mob-w-full {width:100% !important;}
+    .mob-block {display:block !important;}
+    .embed-img {padding:0px 0px 12px 0px !important;}
+    .socialShare {padding-top:15px !important;}
+    .rec { padding-left:15px!important;padding-right:15px!important; }
+    .bodyWrapper { padding:10px 4px 10px 4px !important; }
+    .social-mobile {float:left !important;margin-top:10px !important;}
+  }
+  @media screen and (max-width: 480px) {
+    u + .a .gg { width: 100% !important; width: 100vw !important; }
+    .tok-heart { padding-top:75% !important; }
+    .tok-play { padding-top: 250px !important; }
+  }
+  @media screen and (max-width: 320px) {
+    .tok-heart { padding-top:65% !important; }
+  }
+  .u { border: 1px solid #CACACA !important; border-radius: 2px !important;=
+ background-color: #ffffff !important; padding: 0px 13px 0px 13px !importan=
+t; font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Se=
+goe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif !important;fon=
+t-size: 12px !important; color: #767676 !important; }
+  .u a { text-decoration: none; display: block !important; color: #767676 !=
+important; margin: 0px !important; }
+  .u span, .u img { color: #767676 !important;margin:0px !important; max-he=
+ight:32px !important;background-color:#ffffff !important; }
+</style><!--[if mso]><style type=3D"text/css">
+    sup { font-size: 100% !important;vertical-align: .5em !important;mso-te=
+xt-raise: -1.5% !important;line-height: 0 !important; }
+    ul { margin-left:0px !important; margin-right:10px !important; margin-t=
+op:20px !important; margin-bottom:20px !important; }
+    ul li { margin-left: 0px !important; mso-special-format: decimal; }
+    ol { margin-left:0px !important; margin-right:10px !important; margin-t=
+op:20px !important; margin-bottom:20px !important; }
+    ol li { margin-left: 0px !important; mso-special-format: decimal; }
+    li.listItem { margin-left:15px !important; margin-top:0px !important; }
+    .paddingDesktop { padding: 10px 0 !important; }
+    .edm_outlooklist { margin-left: -20px !important; }
+    .embedImage { display:none !important; }
+</style><![endif]--><style></style></head><body class=3D"a" style=3D"margin=
+:0px auto;padding:0px;word-wrap:normal;word-spacing:normal;background-color=
+:#FFFFFF;"><div role=3D"article" aria-roledescription=3D"email" aria-label=
+=3D"email_name" lang=3D"en" style=3D"font-size:1rem"><div style=3D"display:=
+none;max-height:0px;overflow:hidden;"> .. PLUS: Fire-1 Agent, Markitdown to=
+ turn any document into LLM ready data &#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204; </div><table role=3D"none" width=3D"100%" border=3D"0" cells=
+pacing=3D"0" align=3D"center" cellpadding=3D"0" class=3D"gg"><tr><td align=
+=3D"center" valign=3D"top"><table role=3D"none" width=3D"670" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" class=3D"aa" style=3D"width:670px;table=
+-layout:fixed;"><tr><td class=3D"bodyWrapper" align=3D"center" valign=3D"to=
+p" style=3D"padding:10px 5px 10px 5px;"><table role=3D"none" width=3D"100%"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td =
+align=3D"center" valign=3D"top" style=3D"border-width:0px 0px 0px 0px;borde=
+r-style: solid; border-color: #FFFFFF;border-radius:10px 10px 0px 0px;backg=
+round-color:#FFFFFF;" class=3D"c"><table role=3D"none" width=3D"100%" borde=
+r=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr id=3D"head=
+er"><td style=3D"padding:15px 15px 0px 15px;"><div style=3D"padding-top:0px=
+;padding-right:0px;padding-bottom:20px;padding-left:0px;"><table role=3D"no=
+ne" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center"><tr><td class=3D"f" align=3D"right" valign=3D"top"><p> May 05, =
+2025 &nbsp; | &nbsp; <a href=3D"https://link.mail.beehiiv.com/ss/c/u001.ZjN=
+tPLJ73PCW3XxrAs_SNIw2kahvc0FhQ6HFupMs-wMcirBwS0hl8Li52wJBJHYzNz17I4afIcM3SP=
+54JFmQIpEH2d3dhOWUqF08_uqP97TCqBTSsoAMNt2sGXf83EMIRb43B4dQ2N99mEO6-RTCcGdTu=
+RN0mXckD7_Xr917tBdcYjTPUUJBNGeR3tGKlI47-MHdMCIC6G0oXOdv_pFMB9kMcRef8TyS3QMl=
+wx7B9egVqQfXrOBDXzlFfw1YEQ8msDaKcPdgnZTefr4sEg-qDpI04YjrRRXgpAbgwyq2f4bHfNO=
+gst_HlcNPzxpo82h1o7VcU_Q1T9cdo3d_tRtvumM0Y5NMUeVel3Ng78b89fzBMZSVTryP2IyxJz=
+ONfvcSxM5NN-Ur8pOWQDKHv6gq7qdZ7DWqlg9do6WD5PfpZumLCtEWgt9NYYwI6whncvxoMHvVB=
+s9aW39giPN1UZxAzxUx6glt55hucVdFRFN8oo7afWViGualq9dpGPcJUdnjD1uoApnjbVSXnRhg=
+E1ENz_RTlz2Rsb8PGRdSJEHMt3PfxGto-znsS-V2KHNCjiUJXm8Cf15x4gbl8qAV61eyjnsaBa6=
+y6Q64oNb6uVYEnFAs20ObuAJmD-z2unzGytizkcYoHCq2wRjEjSDKDr_LH3oT1FOh0R6Bb_RXVo=
+JjuMHRoxHpL42tlAHvLHHQFqjkooWDGY6-7h-i_RxOrVYOL1zeq69BuLEtdAGvDYCI3walFqxwP=
+z-9RwM-jAIiljlQN5-Sdy9utFhbJZaUbQH-Tj8WQ0aso65Bn-Pj8P2nlAUPgCsrRUcmu8bZEumj=
+JOMCLxohKx5a7i94hR53lOE0DBLqIa0zkrw97D7b5Br6q1kWT1YgNowvmP2b12_X9Dc_HsefGrR=
+-2a9u2QTYOjAvVg/4g8/nteXjQ1eQAOXdUA9zXKMyw/h0/h001.MVaybBbo3wLsadZDp5VePo82=
+rhFvndpD0mUQ5tC35sM"><span class=3D"translation_missing" title=3D"translati=
+on missing: en.templates.posts.email.v3.header.read_online">Read Online</sp=
+an></a></p></td></tr><tr><td class=3D"dd" align=3D"center" valign=3D"top" s=
+tyle=3D"padding:15px 0;"><table role=3D"none" width=3D"100%" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td align=3D"center=
+" valign=3D"top"><h1 style=3D"text-align:left;font-family:'Trebuchet MS','L=
+ucida Grande',Tahoma,sans-serif;font-weight:Bold;font-size:32px;color:#2A2A=
+2A;padding:2px 0;line-height:38px;"> [Hands-on] Build a Multi-Agent Financi=
+al Analyst Using Llama 4 </h1><p style=3D"text-align:left;font-family:'Helv=
+etica',Arial,sans-serif;font-weight:normal;font-size:20px;color:#3E3E3E;pad=
+ding:5px 0;line-height:24px;"> .. PLUS: Fire-1 Agent, Markitdown to turn an=
+y document into LLM ready data </p></td></tr></table></td></tr><tr><td alig=
+n=3D"center" valign=3D"top" class=3D"dd"><table role=3D"none" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td=
+ aling=3D"center" valign=3D"middle" class=3D"mob-stack"><table role=3D"none=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left" class=3D"=
+mob-stack" style=3D"width:100%;"><tr><td align=3D"left" valign=3D"middle" s=
+tyle=3D"padding: 5px 0px 5px 0px;"><table role=3D"none" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" align=3D"left"><tr><td align=3D"center" valig=
+n=3D"middle"><img src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscal=
+e-down,format=3Dauto,onerror=3Dredirect,quality=3D80/uploads/user/profile_p=
+icture/0d0a6732-ad89-4db8-8fd3-ae0552a463f7/thumb_NH-IIitW_400x400.jpg" wid=
+th=3D"40" alt=3D"" style=3D"display:block;max-width:40px;border-radius:50%;=
+position:relative;border:4px solid rgba(0,0,0,0) !important;left:-4px;box-s=
+izing:content-box;z-index:10;" border=3D"0"/></td><td width=3D"5" style=3D"=
+width:5px;">&nbsp;</td><td align=3D"left" valign=3D"middle" class=3D"g" sty=
+le=3D"position:relative;left:8px;width:100%;"><p style=3D"padding:0px;color=
+:#2D2D2D;"><a href=3D"https://link.mail.beehiiv.com/ss/c/u001.anzhxTgRwBHOE=
+cNie9uXl4xnS4v0NC4FylgPipG6S6mnfGADB4t63IVoGRFM9gcrPIO_trdwByYCFqA7DGy2D0mc=
+iEYIAO0QATaQlQWRyc50kYYivmomz5NYUnTgMF89gAQdM9fQgKFZMAi9MCyK1aU4D-L-XJst0I-=
+FQR6g3Utw7T73eJ9q20V8eZgv-0vS75Dsa8Pyh9MiX1wCEe49zbTAjVLKYQUtJK9DkGP0JGCLZs=
+hHbgN3SMV2awDvtVNktMwmKxt2vrqA5vHUCxHRiKR_FDhhJSoJYYEiNuTkJ5Q/4g8/nteXjQ1eQ=
+AOXdUA9zXKMyw/h1/h001.Ym0CMiyFjmuIhlczCaIxI-ettFasTdqqGc0-RROVNf8" target=
+=3D"_blank" style=3D"color:#2D2D2D !important;text-decoration:underline !im=
+portant;">Sumanth P</a></p></td></tr></table></td></tr></table></td><td ali=
+gn=3D"left" valign=3D"middle" class=3D"mob-stack"><table role=3D"none" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"right" class=3D"socia=
+l-mobile"><tr><td align=3D"left" valign=3D"middle"><table role=3D"none" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left" style=3D"width=
+:100%"><tr><td align=3D"center" valign=3D"middle"><a href=3D"https://link.m=
+ail.beehiiv.com/ss/c/u001.anzhxTgRwBHOEcNie9uXl4-z4heGB1uqqUSHQTjz8dhMhJlxn=
+Sx77lKOiFq1bycBZsR38Kg2S_9IYoXGW4Iz9K8vJqKyaa_1i9u7rTX7VAD4QsDEhKDZ0YkPzPqM=
+4cYKRI_aV1sGYcgLeV_Dizwme6qEx49_PfDDplIclZI9QtQOFLYfx-oOxbZhD52LUfanc2Uc4oB=
+kM38F58GYVMBe3i8VAwsLGDP2grhOOqUY1h7_piHTO16kl5MFS4WgnpKXBIGAIxHfTr7FHmoJoB=
+xWOBp3QvtUz-wwM-23rtwe3KH6wlCdwQDIbPHGhlpVytwEYAJJDO1eltV_elD2YBzYCRZEbt-pf=
+3HHIN87LxmnCGvpVbCjserqJl7b2gztfOakoeOlOY1FPdsqpgnZRO3Ty0phARo2sTaLfehpwnYM=
+MFu2qKUGg1CHxR_iyzQshvUg7sUlhM-B8VlwMdcQvus6hw/4g8/nteXjQ1eQAOXdUA9zXKMyw/h=
+2/h001.owQgJmiSQoOJDPXIDwYUv4GqqPq_j8q_Blu7x5yLRmM" style=3D"text-decoratio=
+n:none; display:block;"><table role=3D"none" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0" align=3D"center"><tr><td align=3D"center" valign=3D"midd=
+le" style=3D"border: 1px solid #E5E7EB; border-radius: 100%; width: 18px; h=
+eight: 18px; padding: 8px;"><img style=3D"display:block; width:100%; height=
+:100%; max-width:18px; max-height:18px; object-fit: contain;" alt=3D"share =
+on facebook" width=3D"18" border=3D"0" src=3D"https://media.beehiiv.com/cdn=
+-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80/s=
+tatic_assets/header/facebook.png"/></td></tr></table></a></td><td width=3D"=
+8" style=3D"width:8px;">&nbsp;</td><td align=3D"center" valign=3D"middle"><=
+a href=3D"https://link.mail.beehiiv.com/ss/c/u001.wz0frdqEfXa7HDEi98Gntb1uX=
+LM9f6FUA-0CLPLghq4UXw6f5kQE-ox-FyxWnzH0sjOTQamN9LdwB6XBCXxW4nBpZB0_OXGNBTp5=
+QrN2W5fzqQcsBRKWPzXsaeaCpW4Xbk3RCxeA4Eq7Fti83GOZfHOVEI6Nh9ml8zf4wTtcmwdc-59=
+m9FR4dQUq3ITsSsIeyv2h3ZmevkIWSLeOJrifSDb9WZEdxGLYJB1KlHPHHUYY6gRATr52nMOow7=
+luBkd49SuCnJ-S0vmB-eZ5MWd1P6tMtPE8nxdwmjWm6ma9eFHqcVFZSWxInRa7FNGQxPwzPYNq_=
+LHbLei8yJsfo55wjxRoBQFBaiKrmjGEPwN928i-mGDfsz0fhp1uV6BDTq_uB9ZbawF2Ml_-iGhS=
+un33hVYmDpIemSIjzrvR1gd3DlLkiimRA0omewn9Mc82jyxYT2AlopCmawAl3d6noSxMFuBZtOp=
+Kcx-5ZUZDFLfTTDHpLCGMYPNz-0-5kgWeySo848DqKKuVMEJCvyZQKUQatffbgA1yGq_nlCC6Eq=
+bd70inHX7S0coxfdg1A4pkjEMA/4g8/nteXjQ1eQAOXdUA9zXKMyw/h3/h001.GEaXc6yr6DJe-=
+-WGWr1on7FN-n2AWpEUCHUlBKq0jkc" style=3D"text-decoration:none; display:bloc=
+k;"><table role=3D"none" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" a=
+lign=3D"center"><tr><td align=3D"center" valign=3D"middle" style=3D"border:=
+ 1px solid #E5E7EB; border-radius: 100%; width: 18px; height: 18px; padding=
+: 8px;"><img style=3D"display:block; width:100%; height:100%; max-width:18p=
+x; max-height:18px; object-fit: contain;" alt=3D"share on twitter" width=3D=
+"18" height=3D"18" border=3D"0" src=3D"https://media.beehiiv.com/cdn-cgi/im=
+age/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80/static_a=
+ssets/header/x.png"/></td></tr></table></a></td><td width=3D"8" style=3D"wi=
+dth:8px;">&nbsp;</td><td align=3D"center" valign=3D"middle"><a href=3D"http=
+s://link.mail.beehiiv.com/ss/c/u001.anzhxTgRwBHOEcNie9uXl1LZAgsCdygTbgzWSeP=
+ZMDHnRjeNPDofsfllhWns6-nSrh0UfkXJ__VLYrlnLeFj1ymt2S_qfPcwcWuUemwamhRdJ0-HtS=
+3URrgy3zsupXEdGJrnOl1gVc4LFKB9cSY7dtbjrgKQMV3_u7NjmXDB9L8lt1Qacon-nFib8P22m=
+m-SN0s1fKMdSgKX84zpr1Mj1cfEkELNScLc-VP23-ju11y1GXU7Y46YqZnz2RcqvJKdaR0DGArO=
+fGYksxJTIPrZ6BD4QcutBVFsDcDw47q8OhbGrMLM6ooYmWz9dnkV7-cRotbrxnR1WY9mwpj7v1-=
+z0ms2Vtm7BowlvE0-Fd6b6OLrEB5XixkAXaBxRDSanDKeRNvJ2-ACtsROae7Zpo1k5eO6wlnILs=
+74b1qFwRsKBz_UqAMGcI9fnF_wjvJfRSX4RVYCBqYZsGvSGyE4SfEmQJjrc_pqJo2uwi9D5fTl0=
+mpageylhDR0J8uv5DgcQ9jaxZVVWUHZIpLCbuQLz3Xud7cDHvk5B7l3w5vmnHelybg/4g8/nteX=
+jQ1eQAOXdUA9zXKMyw/h4/h001.swVIpc1HOCBeXtHx7ZAsOW4r_DtTUKzqB7dOofjMc1M" sty=
+le=3D"text-decoration:none; display:block;"><table role=3D"none" border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td align=3D"ce=
+nter" valign=3D"middle" style=3D"border: 1px solid #E5E7EB; border-radius: =
+100%; width: 18px; height: 18px; padding: 8px;"><img style=3D"display:block=
+; width:100%; height:100%; max-width:18px; max-height:18px; object-fit: con=
+tain;" alt=3D"share on threads" width=3D"18" height=3D"18" border=3D"0" src=
+=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,=
+onerror=3Dredirect,quality=3D80/static_assets/header/threads.png"/></td></t=
+r></table></a></td><td width=3D"8" style=3D"width:8px;">&nbsp;</td><td alig=
+n=3D"center" valign=3D"middle"><a href=3D"https://link.mail.beehiiv.com/ss/=
+c/u001.anzhxTgRwBHOEcNie9uXl6BkbL8eSc_pwkaY_CKmETASLRnbreOk0cpBzKzkS5p4aclJ=
+QVFG92mH9wCSsnyGhPgsxOftngp1lH5FKBHl470WSKvgVgHtIVUPmNOJjh6UvGmK0iyp693uPsx=
+qcP6QFBwZdp07VCGOBFdotz4cw8AtJyxby5dqaxextbXqYSTh_gEvFibR5CYX5DIIfFwPAYj0UJ=
+buEF-M6qP5HIda8BaMMqwwc5RMcMmSC5j0fiIWA0jVCVm0D-IF97R_Rn0nC9SP362fgoX4UvQIB=
+EqbjnDBnww-1ELtvrEWTCwl1Ye00sC3XxAC1RLeY_rb724MKBK2k3iTmSEuhf73HijNR7w7pHln=
+Y4qw2Fmf2AjoyG_VsvJoIlkU8dqjMP6AtAVvs3U2-MI2J6j5q6Dx1oLdAAYzqTxbylOx1IUtwaW=
+PclJezradwStqRG-iy9g1hOizWA/4g8/nteXjQ1eQAOXdUA9zXKMyw/h5/h001.TeFbVKGmFvRo=
+iqfry4u7szrbc923pTqHFbgPTNpxSEM" style=3D"text-decoration:none; display:blo=
+ck;"><table role=3D"none" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+align=3D"center"><tr><td align=3D"center" valign=3D"middle" style=3D"border=
+: 1px solid #E5E7EB; border-radius: 100%; width: 18px; height: 18px; paddin=
+g: 8px;"><img style=3D"display:block; width:100%; height:100%; max-width:18=
+px; max-height:18px; object-fit: contain;" alt=3D"share on linkedin" width=
+=3D"18" height=3D"18" border=3D"0" src=3D"https://media.beehiiv.com/cdn-cgi=
+/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80/stati=
+c_assets/header/linkedin.png"/></td></tr></table></a></td></tr></table></td=
+></tr></table></td></tr></table></td></tr><tr><td style=3D"height:0px;width=
+:0px;"><div style=3D"height:1px;" data-open-tracking=3D"true"> <img src=3D"=
+https://link.mail.beehiiv.com/ss/o/u001.kApawdKBJJ7lcBKzmfFGeQ/4g8/nteXjQ1e=
+QAOXdUA9zXKMyw/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/> </div></td></tr=
+></table></div></td></tr><tr id=3D"content-blocks"><td class=3D"email-card-=
+body" align=3D"center" valign=3D"top" style=3D"padding-bottom:15px;"><table=
+ role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" align=3D"center"><tr><td><table role=3D"none" width=3D"100%" border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"transp=
+arent" style=3D"background-color:transparent;border-color:#222222;border-ra=
+dius:6px;border-style:solid;border-width:2px;padding:0.0px 0.0px 0.0px 0.0p=
+x;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0"><tr><td class=3D"dd" align=3D"left" valign=3D"top" style=3D"c=
+olor:#2A2A2A;font-weight:normal;padding:0px 15px;text-align:left;"><h2 styl=
+e=3D"color:#2A2A2A;font-weight:normal;"><span style=3D""> In today=E2=80=99=
+s newsletter:</span></h2></td></tr><tr><td style=3D"padding-bottom:12px;pad=
+ding-left:37px;padding-right:27px;padding-top:12px;" class=3D"ee"><div styl=
+e=3D"margin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:n=
+ormal;list-style-type:disc;margin-bottom:12px !important;margin-top:12px !i=
+mportant;padding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=
+=3D"line-height:1.5;padding:0px;text-align:left;word-break:break-word;"><sp=
+an style=3D"">[Hands-on] Multi-Agent Financial Analyst using Llama 4 and Cr=
+ew AI</span></p></li><li class=3D"listItem ultext"><p style=3D"line-height:=
+1.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D"">Fi=
+re-1 Agent from Firecrawl: Scrape entire webistes with just a prompt</span>=
+</p></li><li class=3D"listItem ultext"><p style=3D"line-height:1.5;padding:=
+0px;text-align:left;word-break:break-word;"><span style=3D"">Markitdown fro=
+m Microsoft: Turn any document into LLM ready data</span></p></li><li class=
+=3D"listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-align:lef=
+t;word-break:break-word;"><span style=3D"">Top Tutorial: Stanford AI Agents=
+ Course </span></p></li></ul></div></td></tr><tr><td class=3D"dd" align=3D"=
+left" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p =
+style=3D"line-height:1.5;"><span style=3D""><i>Reading time: 3 minutes.</i>=
+</span></p></td></tr></table></td></tr></table></td></tr><tr><td class=3D"d=
+d" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:brea=
+k-word;"><p style=3D"line-height:1.5;"></p></td></tr><tr><td><table role=3D=
+"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D""><tr><td bgcolor=3D"transparent" style=3D"background-color:transparen=
+t;border-color:#222222;border-radius:4px;border-style:solid;border-width:2p=
+x;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D=
+"left" valign=3D"top" style=3D"color:#2A2A2A;font-weight:normal;padding:0px=
+ 15px;text-align:left;"><h2 style=3D"color:#2A2A2A;font-weight:normal;"><sp=
+an style=3D"">Multi-Agent Financial Analyst using Llama 4 </span>=F0=9F=93=
+=88</h2></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px =
+15px;text-align:left;word-break:break-word;"><p style=3D"line-height:1.5;">=
+<span style=3D"">Meta recently released Llama 4, featuring two models: Llam=
+a 4 Maverick, a 400B parameter mixture-of-experts model designed for deep r=
+easoning, and Llama 4 Scout, a smaller, efficient model optimized for long =
+context on a single GPU.</span></p></td></tr><tr><td class=3D"dd" align=3D"=
+left" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p =
+style=3D"line-height:1.5;"><span style=3D"">Today, let us show you how to b=
+uild a multi-agent financial analyst.</span></p></td></tr><tr><td class=3D"=
+dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:bre=
+ak-word;"><p style=3D"line-height:1.5;"><span style=3D"">Input a simple que=
+ry like a stock symbol, and the agent stack delivers:</span></p></td></tr><=
+tr><td style=3D"padding-bottom:12px;padding-left:37px;padding-right:27px;pa=
+dding-top:12px;" class=3D"ee"><div style=3D"margin-left:0px;" class=3D"edm_=
+outlooklist"><ul style=3D"font-weight:normal;list-style-type:disc;margin-bo=
+ttom:12px !important;margin-top:12px !important;padding:0px 0px 0px 0px;"><=
+li class=3D"listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-a=
+lign:left;word-break:break-word;"><span style=3D"">A clear Executive Summar=
+y</span></p></li><li class=3D"listItem ultext"><p style=3D"line-height:1.5;=
+padding:0px;text-align:left;word-break:break-word;"><span style=3D"">A stru=
+ctured Performance Report</span></p></li><li class=3D"listItem ultext"><p s=
+tyle=3D"line-height:1.5;padding:0px;text-align:left;word-break:break-word;"=
+><span style=3D"">Actionable insights in a clean, readable format</span></p=
+></li></ul></div></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"pad=
+ding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"line-heig=
+ht:1.5;"><span style=3D"">The code repository is linked later in the issue.=
+</span></p></td></tr><tr><td class=3D"dd" align=3D"left" valign=3D"top" sty=
+le=3D"color:#2A2A2A;font-weight:normal;padding:0px 15px;text-align:left;"><=
+h3 style=3D"color:#2A2A2A;font-weight:normal;"><span style=3D"">Tech Stack:=
+</span></h3></td></tr><tr><td style=3D"padding-bottom:12px;padding-left:37p=
+x;padding-right:27px;padding-top:12px;" class=3D"ee"><div style=3D"margin-l=
+eft:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:normal;list-st=
+yle-type:disc;margin-bottom:12px !important;margin-top:12px !important;padd=
+ing:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=3D"line-height=
+:1.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D"">S=
+ambaNova AI for Llama 4 Maverick inference</span></p></li><li class=3D"list=
+Item ultext"><p style=3D"line-height:1.5;padding:0px;text-align:left;word-b=
+reak:break-word;"><span style=3D"">CrewAI for multi-agent orchestration</sp=
+an></p></li><li class=3D"listItem ultext"><p style=3D"line-height:1.5;paddi=
+ng:0px;text-align:left;word-break:break-word;"><span style=3D"">Custom YFin=
+ance tool to fetch real-time stock data</span></p></li></ul></div></td></tr=
+><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:l=
+eft;word-break:break-word;"><p style=3D"line-height:1.5;"><span style=3D"">=
+Let=E2=80=99s implement it!</span></p></td></tr><tr><td class=3D"dd" align=
+=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"=
+><p style=3D"line-height:1.5;"><span style=3D""><b>Step 1: Get API Access</=
+b></span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding=
+:0px 15px;text-align:left;word-break:break-word;"><p style=3D"line-height:1=
+.5;"><span style=3D"">Grab a API key from </span><span style=3D""><a class=
+=3D"link" href=3D"https://link.mail.beehiiv.com/ss/c/u001.DC7eOTD5ropKJ9hS1=
+NJ4Uu_8812ZBvylClkDZHpV9nXh0TvRu_l4pAZJeJtZtegMFa1JAyhzMpugz5uHv2QFRQc9IKrV=
+TzVyjJK9T1kKRT2mRFnVl4Oa1ZYQfEmpEqWkeVX8G0uqB7LPtXqtThUl1nguJ7B8Rlcd4q-xeSB=
+vVu50g2WUvWPWPcw-2use5WunOSye3PReBgrS9uBwzXOYY1UHPueR59xKTsPQrNW5dlxNAiXIkk=
+q-IabDclN73Kc_4zWYGPRMqwsnzEmbXgteJS0XoIxx-3nzWr-nnypEnwc/4g8/nteXjQ1eQAOXd=
+UA9zXKMyw/h6/h001.7kX2UJvHPbxsxxIk_qmXlN2n8xIkyq7eQ11yrteIl_g" target=3D"_b=
+lank" rel=3D"noopener noreferrer nofollow"><span>SambaNova AI</span></a></s=
+pan><span style=3D""> to use the Llama-4 Maverick and set it as an env vari=
+able.</span></p></td></tr><tr><td align=3D"center" valign=3D"top" style=3D"=
+padding-bottom:20px;padding-left:15px;padding-right:15px;padding-top:20px; =
+" class=3D"dd"><table role=3D"none" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td align=3D"center" valign=
+=3D"top" style=3D"width:630px;"><img src=3D"https://media.beehiiv.com/cdn-c=
+gi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80/upl=
+oads/asset/file/6668a2a1-a4ed-44f7-9796-0ac21a68de36/Twitter__73_.png?t=3D1=
+746347301" alt=3D"" height=3D"auto" width=3D"630" style=3D"display:block;wi=
+dth:100%;" border=3D"0"/></td></tr></table></td></tr><tr><td class=3D"dd" a=
+lign=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-wo=
+rd;"><p style=3D"line-height:1.5;"><span style=3D""><b>Step 2: Create a cus=
+tom YFinance tool</b></span></p></td></tr><tr><td class=3D"dd" align=3D"lef=
+t" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p sty=
+le=3D"line-height:1.5;"><span style=3D"">To give our Finance agent direct a=
+ccess to real-time data, we create a custom CrewAI tool using BaseTool pack=
+age. This ensures agents fetch live data, not rely on old knowledge.</span>=
+</p></td></tr><tr><td align=3D"center" valign=3D"top" style=3D"padding-bott=
+om:20px;padding-left:15px;padding-right:15px;padding-top:20px; " class=3D"d=
+d"><table role=3D"none" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" st=
+yle=3D"margin:0 auto 0 auto;"><tr><td align=3D"center" valign=3D"top" style=
+=3D"width:630px;"><img src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=
+=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/f=
+ile/cddb8187-4ff3-44d3-b8a4-1100783336a8/Twitter__74_.png?t=3D1746347318" a=
+lt=3D"" height=3D"auto" width=3D"630" style=3D"display:block;width:100%;" b=
+order=3D"0"/></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"left=
+" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p styl=
+e=3D"line-height:1.5;"><span style=3D""><b>Step 3: Define Agents</b></span>=
+</p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px=
+;text-align:left;word-break:break-word;"><p style=3D"line-height:1.5;"><spa=
+n style=3D"">We define two agents using Crew AI, both powered by Llama-4-Ma=
+verick from Sambanova:</span></p></td></tr><tr><td style=3D"padding-bottom:=
+12px;padding-left:37px;padding-right:27px;padding-top:12px;" class=3D"ee"><=
+div style=3D"margin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"font-=
+weight:normal;list-style-type:disc;margin-bottom:12px !important;margin-top=
+:12px !important;padding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p=
+ style=3D"line-height:1.5;padding:0px;text-align:left;word-break:break-word=
+;"><span style=3D"">StockAnalyst Agent: The role of this agent is like a se=
+asoned Wall Street analyst. It uses YFinance to fetch live stock data and b=
+reaks it down to understand the market pulse for the given symbol.</span></=
+p></li><li class=3D"listItem ultext"><p style=3D"line-height:1.5;padding:0p=
+x;text-align:left;word-break:break-word;"><span style=3D"">ReportWriter Age=
+nt: This agent acts as a report specialist. It takes the raw analysis and t=
+urns it into a well-written, professional report that is easy to understand=
+ and presentable.</span></p></li></ul></div></td></tr><tr><td align=3D"cent=
+er" valign=3D"top" style=3D"padding-bottom:20px;padding-left:15px;padding-r=
+ight:15px;padding-top:20px; " class=3D"dd"><table role=3D"none" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><=
+td align=3D"center" valign=3D"top" style=3D"width:630px;"><img src=3D"https=
+://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=
+=3Dredirect,quality=3D80/uploads/asset/file/bad2474b-b882-4036-8f76-1db0cf1=
+307d1/Twitter__75_.png?t=3D1746347346" alt=3D"" height=3D"auto" width=3D"63=
+0" style=3D"display:block;width:100%;" border=3D"0"/></td></tr></table></td=
+></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-al=
+ign:left;word-break:break-word;"><p style=3D"line-height:1.5;"><span style=
+=3D""><b>Step 4: Define Tasks for the Agents</b></span></p></td></tr><tr><t=
+d style=3D"padding-bottom:12px;padding-left:37px;padding-right:27px;padding=
+-top:12px;" class=3D"ee"><div style=3D"margin-left:0px;" class=3D"edm_outlo=
+oklist"><ul style=3D"font-weight:normal;list-style-type:disc;margin-bottom:=
+12px !important;margin-top:12px !important;padding:0px 0px 0px 0px;"><li cl=
+ass=3D"listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-align:=
+left;word-break:break-word;"><span style=3D""><b>Analysis Task:</b></span><=
+span style=3D""> This task directs the StockAnalyst Agent to use the </span=
+><span style=3D""><code>stock_data_tool</code></span><span style=3D""> to r=
+etrieve live data and analyze key metrics such as price, 52-week range, P/E=
+ ratio, and other financial indicators. The output is a set of findings tha=
+t highlight the stock=E2=80=99s current performance.</span></p></li><li cla=
+ss=3D"listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-align:l=
+eft;word-break:break-word;"><span style=3D""><b>Report Task:</b></span><spa=
+n style=3D""> This task instructs the ReportWriter Agent to take the analys=
+is from the StockAnalyst Agent and format it into a well-structured, profes=
+sional report, presenting the findings in a clean and understandable manner=
+.</span></p></li></ul></div></td></tr><tr><td align=3D"center" valign=3D"to=
+p" style=3D"padding-bottom:20px;padding-left:15px;padding-right:15px;paddin=
+g-top:20px; " class=3D"dd"><table role=3D"none" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td align=3D"cent=
+er" valign=3D"top" style=3D"width:630px;"><img src=3D"https://media.beehiiv=
+.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,qualit=
+y=3D80/uploads/asset/file/007c5e42-4400-4044-8a90-6dba05ca7571/Twitter__76_=
+.png?t=3D1746347363" alt=3D"" height=3D"auto" width=3D"630" style=3D"displa=
+y:block;width:100%;" border=3D"0"/></td></tr></table></td></tr><tr><td clas=
+s=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-brea=
+k:break-word;"><p style=3D"line-height:1.5;"><span style=3D""><b>Step 5: As=
+sembling the Crew</b></span></p></td></tr><tr><td class=3D"dd" align=3D"lef=
+t" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p sty=
+le=3D"line-height:1.5;"><span style=3D"">Finally combine the agents and tas=
+ks using </span><span style=3D""><b>CrewAI</b></span><span style=3D"">, lin=
+king them together to execute the analysis and generate the final report wi=
+th a single input.</span></p></td></tr><tr><td align=3D"center" valign=3D"t=
+op" style=3D"padding-bottom:20px;padding-left:15px;padding-right:15px;paddi=
+ng-top:20px; " class=3D"dd"><table role=3D"none" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td align=3D"c=
+enter" valign=3D"top" style=3D"width:630px;"><img src=3D"https://media.beeh=
+iiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,qua=
+lity=3D80/uploads/asset/file/52a972b8-f8c8-4263-8447-23d5b7c78940/Twitter__=
+77_.png?t=3D1746347388" alt=3D"" height=3D"auto" width=3D"630" style=3D"dis=
+play:block;width:100%;" border=3D"0"/></td></tr></table></td></tr><tr><td c=
+lass=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-b=
+reak:break-word;"><p style=3D"line-height:1.5;"><span style=3D"">=E2=80=8BY=
+ou can find the entire code for the app in this </span><span style=3D""><a =
+class=3D"link" href=3D"https://link.mail.beehiiv.com/ss/c/u001.fEwxncMfw7gJ=
+KZ9GjSmhxZiIbpcYtO9xlT3_XZy_XqBAAJ59EO4zMacNSceZqmoyWYg_yFJCXGzjVS1Jwx5ejXP=
+rwMLASPuYEfZY2EIx8kqLF-YxJ5mhnfS7nTXRSoItydwDQizp6jnqwqLCECiZQ-xZraJLURVaBY=
+Hd_Ji_xgLncsNFU6Akkpfi7Dkjk-nHzL-Sm5A9VZjJi8i8CYFi18Z2f2jjWtKOuO44wdzDZexMp=
+H3gV9WteUOw35up0CMwPNaO2xEnY8tx1NRD3xFumGdq4oMoAog6JgDbJyScOv4Deky9nEGhQ4fZ=
+yhThE9eRTJeQTHaWUPM7JGq0iqfG4mFgIZVQlOGEIAtBAKsDpXhwdx2HsScBBVTIegqaoaH9/4g=
+8/nteXjQ1eQAOXdUA9zXKMyw/h7/h001.7cAKM2p9Q_NXBxfrjJg6yJL61kuP7fwVnKXAaszPjw=
+w" target=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>GitHub repo=
+ </span></a></span><span style=3D"">=E2=86=92 (don=E2=80=99t forget to star=
+ the repo)</span></p></td></tr></table></td></tr></table></td></tr><tr><td =
+class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-=
+break:break-word;"><p style=3D"line-height:1.5;"></p></td></tr><tr><td><tab=
+le role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D""><tr><td bgcolor=3D"transparent" style=3D"background-color=
+:transparent;border-color:#222222;border-radius:4px;border-style:solid;bord=
+er-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=
+=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D=
+"dd" align=3D"left" valign=3D"top" style=3D"color:#2A2A2A;font-weight:norma=
+l;padding:0px 15px;text-align:left;"><h2 style=3D"color:#2A2A2A;font-weight=
+:normal;"><span style=3D""><a class=3D"link" href=3D"https://link.mail.beeh=
+iiv.com/ss/c/u001.anzhxTgRwBHOEcNie9uXl0-b4yDTdyCKcG-SCgggFFyMz_8hx3JZ-MyZH=
+oVRAECDdXY1BPz2C-Xo4JUOWVnNNV4siV_BNuig4f7za5V6tETg_L2QONhRcrbBHDS35gwEqGXF=
+ejAST205NaCYqsp0mwqvejTOHY9YEp8JaeJAFnJMCFfexsUF8OTQ3w4YRCJfeUEmDBJp9krWZ-a=
+-Mb_yQzGKjgSxooIz8y8GrbzlRo78M_TOg5DylG8HO3ZENfZm0HsJo3J_AbcfHlp8akcc7b4tir=
+8aow2oDC9jp6csLyUd6yfDb6-YzYaH8FX9lbAfWO77S0PltSRoRuonoiXCvsfgUpzwOdmezHh16=
+RGX6z4/4g8/nteXjQ1eQAOXdUA9zXKMyw/h8/h001.KX2SInJVPtGvHpzgkiaigOe-C181p4DzE=
+CvAqE6g1bE" target=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>FI=
+RE-1: A Prompt-Based Web Scraping Agent </span></a></span>=F0=9F=94=A5</h2>=
+</td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;tex=
+t-align:left;word-break:break-word;"><p style=3D"line-height:1.5;"><span st=
+yle=3D"">Firecrawl has released </span><span style=3D""><b>FIRE-1</b></span=
+><span style=3D"">, a new AI agent designed to scrape websites using only a=
+ prompt!</span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"p=
+adding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"line-he=
+ight:1.5;"><span style=3D"">It can navigate dynamic websites, interact with=
+ content, and fill out forms to gather the information you&#39;re looking f=
+or.</span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"paddin=
+g:0px 15px;text-align:left;word-break:break-word;"><p style=3D"line-height:=
+1.5;"><span style=3D"">Just add an &quot;agent&quot; object to your API req=
+uest with instructions on what to find.</span></p></td></tr><tr><td class=
+=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break=
+:break-word;"><p style=3D"line-height:1.5;"><span style=3D"">The agent hand=
+les the rest - planning its own path through complex websites to gather exa=
+ctly what you need.</span></p></td></tr><tr><td align=3D"center" valign=3D"=
+top" style=3D"padding-bottom:20px;padding-left:15px;padding-right:15px;padd=
+ing-top:20px; " class=3D"dd"><table role=3D"none" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td align=3D"c=
+enter" valign=3D"top" style=3D"width:630px;"><img src=3D"https://media.beeh=
+iiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,qua=
+lity=3D80/uploads/asset/file/528cb570-5a1d-4a72-8d42-24ea08cbfd3a/Screensho=
+t_2025-05-04_at_2.26.16_PM.png?t=3D1746348993" alt=3D"" height=3D"auto" wid=
+th=3D"630" style=3D"display:block;width:100%;" border=3D"0"/></td></tr></ta=
+ble></td></tr></table></td></tr></table></td></tr><tr><td class=3D"dd" alig=
+n=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-word;=
+"><p style=3D"line-height:1.5;"></p></td></tr><tr><td><table role=3D"none" =
+width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"">=
+<tr><td bgcolor=3D"transparent" style=3D"background-color:transparent;borde=
+r-color:#222222;border-radius:4px;border-style:solid;border-width:2px;paddi=
+ng:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%" border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D"left" =
+valign=3D"top" style=3D"color:#2A2A2A;font-weight:normal;padding:0px 15px;t=
+ext-align:left;"><h2 style=3D"color:#2A2A2A;font-weight:normal;"><span styl=
+e=3D"">Top Open Source Repo - </span><span style=3D""><a class=3D"link" hre=
+f=3D"https://link.mail.beehiiv.com/ss/c/u001.fEwxncMfw7gJKZ9GjSmhxcPwd4Tlnk=
+NDuO-uFzI7GW9L9BO_ZAXSU7IpG5TKtgGsITiAWlZ3yUG_qxjt06ahy8kGKd482LKt4JPbrRUuL=
+B37eYKueH8iCAU7ElZg2ubyGZz_cC2eSghLOkFg5tVp4lvT4rg6fSqA8P9IU1LakqWSUcy19Zz0=
+FCUmCqK83WGMNbfHdpf2B0orQjoe9CYC0a_TVXOeH8Yio_X38Zf4_9zKsIRTlrY0G2n6QzMjsnY=
+KZHWtxT6UgXhjOQmOMx8KGKmTGXV6ZzuhB7nfRwIIgPw8Ym3kLKAscSOENLCk13Uq/4g8/nteXj=
+Q1eQAOXdUA9zXKMyw/h9/h001.bLVHHRGnSjisBGBL7Ay7O-hHOoqyJOq0r8hliOHYa1c" targ=
+et=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>Markitdown</span><=
+/a></span></h2></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"paddi=
+ng:0px 15px;text-align:left;word-break:break-word;"><p style=3D"line-height=
+:1.5;"><span style=3D"">Turn any document into Markdown format!</span></p><=
+/td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text=
+-align:left;word-break:break-word;"><p style=3D"line-height:1.5;"><span sty=
+le=3D"">Microsoft has released MarkItDown, a lightweight Python library tha=
+t converts any document to Markdown for use with LLMs.</span></p></td></tr>=
+<tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:le=
+ft;word-break:break-word;"><p style=3D"line-height:1.5;"><span style=3D""><=
+b>Key Features:</b></span></p></td></tr><tr><td style=3D"padding-bottom:12p=
+x;padding-left:37px;padding-right:27px;padding-top:12px;" class=3D"ee"><div=
+ style=3D"margin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"font-wei=
+ght:normal;list-style-type:disc;margin-bottom:12px !important;margin-top:12=
+px !important;padding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p st=
+yle=3D"line-height:1.5;padding:0px;text-align:left;word-break:break-word;">=
+<span style=3D""><b>Supports multiple formats:</b></span><span style=3D""> =
+Convert PDFs, Word, Excel, PowerPoint, images, and audio.</span></p></li><l=
+i class=3D"listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-al=
+ign:left;word-break:break-word;"><span style=3D""><b>Auto-extracts metadata=
+:</b></span><span style=3D""> Pulls EXIF data, runs OCR, and generates tran=
+scripts.</span></p></li><li class=3D"listItem ultext"><p style=3D"line-heig=
+ht:1.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D""=
+><b>Multiple interfaces:</b></span><span style=3D""> Use via CLI, Python AP=
+I, or Docker.</span></p></li><li class=3D"listItem ultext"><p style=3D"line=
+-height:1.5;padding:0px;text-align:left;word-break:break-word;"><span style=
+=3D""><b>Describes images:</b></span><span style=3D""> Adds LLM-generated a=
+lt text for visuals.</span></p></li><li class=3D"listItem ultext"><p style=
+=3D"line-height:1.5;padding:0px;text-align:left;word-break:break-word;"><sp=
+an style=3D""><b>Handles batch jobs:</b></span><span style=3D""> Process mu=
+ltiple files at once with ease</span></p></li></ul></div></td></tr><tr><td =
+class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-=
+break:break-word;"><p style=3D"line-height:1.5;"><span style=3D"">This tool=
+ streamlines the process of preparing diverse data types for LLM applicatio=
+ns, making it easier to integrate various document formats into AI workflow=
+s</span></p></td></tr><tr><td align=3D"center" valign=3D"top" style=3D"padd=
+ing-bottom:20px;padding-left:15px;padding-right:15px;padding-top:20px; " cl=
+ass=3D"dd"><table role=3D"none" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td align=3D"center" valign=3D"t=
+op" style=3D"width:630px;"><img src=3D"https://media.beehiiv.com/cdn-cgi/im=
+age/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80/uploads/=
+asset/file/229ccd79-8113-429e-af11-a67545a74999/1744442451347.jpeg?t=3D1746=
+347978" alt=3D"" height=3D"auto" width=3D"630" style=3D"display:block;width=
+:100%;" border=3D"0"/></td></tr></table></td></tr></table></td></tr></table=
+></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;te=
+xt-align:left;word-break:break-word;"><p style=3D"line-height:1.5;"></p></t=
+d></tr><tr><td><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"transparent" style=
+=3D"background-color:transparent;border-color:#222222;border-radius:6px;bor=
+der-style:solid;border-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table r=
+ole=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+"><tr><td class=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#2A2A2A=
+;font-weight:normal;padding:0px 15px;text-align:left;"><h2 style=3D"color:#=
+2A2A2A;font-weight:normal;"><span style=3D""><a class=3D"link" href=3D"http=
+s://link.mail.beehiiv.com/ss/c/u001.urXmpmLWZouIfUU5cl7ULdbnJMd-E5b3zr5-N95=
+nNeiwnME3HoTrHq4LQoeLX3XEix7Ijvk5T9w2OL9tzvYzwGsSnxdlDLaMtFG6Z9UYtOusPRSFi1=
+WfG58Qunhd8DsPDfjgw3kmtXBv4GSUW9cUWIXx9ZemNnTn7Vig-fg_OO5OaiIGQ6Y79q0C64ymB=
+y9DDzQEyYhBGr1db3wtsHUb6fn-QLrivbJ7tZdHCGxl9f7Qzm3UPv74Hw650Oenog7WcexlIFk4=
+YC2uE66Cb4d-Hdwp_TN_rJ1dCDmDecIea3jMO8JRvC9o9rxq8MHudG_Y/4g8/nteXjQ1eQAOXdU=
+A9zXKMyw/h10/h001.QD9xv1s4CF3DUmuvn_bRnC53OgFxtkbwhCJaBMnq0MY" target=3D"_b=
+lank" rel=3D"noopener noreferrer nofollow"><span>Top Tutorial - Stanford AI=
+ Agents Course</span></a></span><span style=3D"">=C2=A0</span></h2></td></t=
+r><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:=
+left;word-break:break-word;"><p style=3D"line-height:1.5;"><span style=3D""=
+>Stanford published a 1-hour lecture on Agentic AI, a compact yet comprehen=
+sive resource for anyone looking to understand or build agent-based LLM sys=
+tems.</span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padd=
+ing:0px 15px;text-align:left;word-break:break-word;"><p style=3D"line-heigh=
+t:1.5;"><span style=3D"">This session breaks down the fundamentals of how m=
+odern agents reflect, plan, reason, and interact with tools, ideal for engi=
+neers moving beyond basic prompting.</span></p></td></tr><tr><td class=3D"d=
+d" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:brea=
+k-word;"><p style=3D"line-height:1.5;"><span style=3D"">Key Topics Covered:=
+</span></p></td></tr><tr><td style=3D"padding-bottom:12px;padding-left:37px=
+;padding-right:27px;padding-top:12px;" class=3D"ee"><div style=3D"margin-le=
+ft:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:normal;list-sty=
+le-type:disc;margin-bottom:12px !important;margin-top:12px !important;paddi=
+ng:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=3D"line-height:=
+1.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D""><b=
+>LLM training & optimization:</b></span><span style=3D""> How models are ad=
+apted for different tasks</span></p></li><li class=3D"listItem ultext"><p s=
+tyle=3D"line-height:1.5;padding:0px;text-align:left;word-break:break-word;"=
+><span style=3D""><b>Prompt design:</b></span><span style=3D""> Techniques =
+for guiding model behavior effectively</span></p></li><li class=3D"listItem=
+ ultext"><p style=3D"line-height:1.5;padding:0px;text-align:left;word-break=
+:break-word;"><span style=3D""><b>Reflection:</b></span><span style=3D""> H=
+ow agents self-evaluate and iterate on outputs</span></p></li><li class=3D"=
+listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-align:left;wo=
+rd-break:break-word;"><span style=3D""><b>Planning:</b></span><span style=
+=3D""> Structuring multi-step reasoning processes</span></p></li><li class=
+=3D"listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-align:lef=
+t;word-break:break-word;"><span style=3D""><b>Tool use:</b></span><span sty=
+le=3D""> Integrating external functions and APIs</span></p></li><li class=
+=3D"listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-align:lef=
+t;word-break:break-word;"><span style=3D""><b>Agentic principles:</b></span=
+><span style=3D""> What defines an agentic system</span></p></li><li class=
+=3D"listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-align:lef=
+t;word-break:break-word;"><span style=3D""><b>Hands-on example:</b></span><=
+span style=3D""> Building a customer support AI agent</span></p></li><li cl=
+ass=3D"listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-align:=
+left;word-break:break-word;"><span style=3D""><b>Design patterns:</b></span=
+><span style=3D""> Structuring reliable agent workflows</span></p></li><li =
+class=3D"listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-alig=
+n:left;word-break:break-word;"><span style=3D""><b>Ethical considerations:<=
+/b></span><span style=3D""> Key risks and deployment guidelines</span></p><=
+/li></ul></div></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"paddi=
+ng:0px 15px;text-align:left;word-break:break-word;"><p style=3D"line-height=
+:1.5;"><span style=3D"">This lecture provides a clear and practical overvie=
+w of Agentic AI, useful for anyone working on LLM infrastructure or applied=
+ AI systems.</span></p></td></tr><tr><td align=3D"center" valign=3D"top" st=
+yle=3D"padding-bottom:20px;padding-left:15px;padding-right:15px;padding-top=
+:20px; " class=3D"dd"><table role=3D"none" border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td align=3D"center" v=
+align=3D"top" style=3D"width:630px;"><img src=3D"https://media.beehiiv.com/=
+cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D8=
+0/uploads/asset/file/b6e35d0d-f730-45de-8af2-f0e064ccbc72/1745753899067.jpe=
+g?t=3D1746347725" alt=3D"" height=3D"auto" width=3D"630" style=3D"display:b=
+lock;width:100%;" border=3D"0"/></td></tr></table></td></tr></table></td></=
+tr></table></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0=
+px 15px;text-align:left;word-break:break-word;"><p style=3D"line-height:1.5=
+;"></p></td></tr><tr><td><table role=3D"none" width=3D"100%" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"#222222" s=
+tyle=3D"background-color:#222222;border-color:#222222;border-radius:6px;bor=
+der-style:solid;border-width:2px;padding:3.0px 3.0px 3.0px 3.0px;"><table r=
+ole=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+"><tr><td class=3D"dd" align=3D"center" style=3D"padding:0px 15px;text-alig=
+n:center;word-break:break-word;"><p style=3D"line-height:1.5;"><span style=
+=3D"color:#F9FAFB;"><b>That=E2=80=99s a Wrap</b></span></p></td></tr></tabl=
+e></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"=
+padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"line-h=
+eight:1.5;"></p></td></tr><tr><td><table role=3D"none" width=3D"100%" borde=
+r=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"t=
+ransparent" style=3D"background-color:transparent;border-color:#222222;bord=
+er-radius:6px;border-style:solid;border-width:2px;padding:0.0px 0.0px 0.0px=
+ 0.0px;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0"><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px=
+ 15px;text-align:left;word-break:break-word;"><p style=3D"line-height:1.5;"=
+><span style=3D"">That=E2=80=99s all for today. Thank you for reading today=
+=E2=80=99s edition. See you in the next issue with more AI Engineering insi=
+ghts.</span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padd=
+ing:0px 15px;text-align:left;word-break:break-word;"><p style=3D"line-heigh=
+t:1.5;"><span style=3D""><b>PS:</b></span><span style=3D"color:rgb(0, 0, 0)=
+;font-size:medium;font-weight:400;"> We curate this AI Engineering content =
+for free, and your support means everything. If you find value in what you =
+read, consider sharing it with a friend or two.</span></p></td></tr><tr><td=
+ class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word=
+-break:break-word;"><p style=3D"line-height:1.5;"><span style=3D""><b>Your =
+feedback is valuable: </b></span><span style=3D"">If there=E2=80=99s a topi=
+c you=E2=80=99re stuck on or curious about, reply to this email. We=E2=80=
+=99re building this for you, and your feedback helps shape what we send.</s=
+pan></p></td></tr></table></td></tr></table></td></tr><tr><td class=3D"dd" =
+align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-w=
+ord;"><p style=3D"line-height:1.5;"></p></td></tr><tr><td><table role=3D"no=
+ne" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D""><tr><td bgcolor=3D"transparent" style=3D"background-color:transparent=
+;border-color:#222222;border-radius:6px;border-style:solid;border-width:2px=
+;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D"=
+left" valign=3D"top" style=3D"color:#2A2A2A;font-weight:normal;padding:0px =
+15px;text-align:left;"><h2 style=3D"color:#2A2A2A;font-weight:normal;"><spa=
+n style=3D""><b>WORK WITH US</b></span></h2></td></tr><tr><td class=3D"dd" =
+align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-w=
+ord;"><p style=3D"line-height:1.5;"><span style=3D"color:rgb(0, 0, 0);font-=
+size:medium;font-weight:400;">Looking to promote your company, product, or =
+service to </span><span style=3D"color:rgb(0, 0, 0);font-size:medium;font-w=
+eight:400;"><b>100K+ AI developers</b></span><span style=3D"color:rgb(0, 0,=
+ 0);font-size:medium;font-weight:400;">? </span><span style=3D"">Get in tou=
+ch today by replying to this email.</span></p></td></tr></table></td></tr><=
+/table></td></tr></table></td></tr></table></td></tr><tr><td align=3D"cente=
+r" valign=3D"top"><table role=3D"none" width=3D"100%" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td><tr><td class=3D"b" al=
+ign=3D"center" valign=3D"top" bgcolor=3D"#030712" style=3D"padding:0px 0px =
+0px 0px;border-style:solid;border-width: 0px 0px 0px 0px;border-color: #FFF=
+FFF;border-bottom-left-radius:10px;border-bottom-right-radius:10px;"><table=
+ role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" align=3D"center"><tr><td height=3D"10" style=3D"line-height:1px;font-si=
+ze:1px;height:10px;"> &nbsp; </td></tr><tr><td class=3D"w" align=3D"center"=
+ valign=3D"top" style=3D"padding:15px 15px 15px 15px;"><table role=3D"none"=
+ width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"c=
+enter"><tr><td align=3D"center" valign=3D"top"><p style=3D"font-family:'Ver=
+dana',Geneva,sans-serif;color:#FFFFFF!important;"> Update your email prefer=
+ences or unsubscribe <a class=3D"link" href=3D"https://link.mail.beehiiv.co=
+m/ss/c/u001.ZjNtPLJ73PCW3XxrAs_SNIw2kahvc0FhQ6HFupMs-wM2w_8zZ0sIhcXGwURiLHS=
+x1U7BKXW27zS--tbb2VmkcaCmVIGHgPbia2-3_VV48qmEgJbXdnqDTU7z60tLbDIy2ERBa3G6de=
+D6gJC2nP0lUCyflRk2MkwzmtY8XW8sLTcP5wW5KfYLMjl-OgW5AFciu3o7o7g5vw0t-RflhG2EB=
+2gw7mHmsGujRGHpL57aAmkAqvtInGH0VAniy1bkRH2WTnJGNxYtojHuKRtrb1o9MU37yLl45kRf=
+I_k3LkjOt40GgcIcmnsUbVhA3WuaTLjvryRY7095l8oztrmUnNfRZIlcUp4xhV2X_6J2CpV0c0m=
+ZP3HHXEUuYz_jK76tekCybCxIKCYtPTiwMdVRysKlDXhiKWjdLHm0uzc2cN-z9XRa9n_wN_KDTk=
+2Z8GI-qazRsJzYk1px59uTs4ETbOoRQY6ltWHRIg3O_Nz-1NLVxCkqQIQGjxEqXhbHsiNJuVKHc=
+SfAcdI-93e-HtOFAks48oWirbVYFiGZr8-vr2V7SojAHZvj7U0f8j_u0-5Eq0bkF7ZDstOa2XgO=
+OZF2urWrqAcAHD-91t3X384-QOizD0IgQNQebmuna4pcMeS8xc1Kz8jGJlWIiZSsgSTaz63l69P=
+GfHOy7w5frctw0CnkwfeySo9uzXwgTXTPC4xlBVI0j5XxCkWzhGgeTLj3zTjn4xTduIToMUMTZL=
+MiLXc6YUluO4mR1-3-qd3SS5LBqBUYyQ_q4fjlBmVT-UTKYPjQXCeaLhF7OTOXvRZec6oHKQQi8=
+fct6q68NBibGoghWLSeXMkMivmQmPTPyKYqMviOu_oXwCULftR8613Za-M2vSM/4g8/nteXjQ1e=
+QAOXdUA9zXKMyw/h11/h001.cG-aZ_aZRJDWJP7buIOvrtqkC7vhpkeIZYhTypy7ZKw" style=
+=3D"text-decoration:underline;text-decoration-color:#FFFFFF!important;color=
+:#FFFFFF!important;"> here</a></p><p class=3D"copyright" style=3D"font-fami=
+ly:'Verdana',Geneva,sans-serif;color:#FFFFFF!important;"> &copy; 2025 AI En=
+gineering </p><p style=3D"font-family:'Verdana',Geneva,sans-serif;color:#FF=
+FFFF!important;"> 228 Park Ave S, #29976, New York, New York 10003, United =
+States </p></td></tr><tr style=3D"display: table-row !important;"><td align=
+=3D"center" valign=3D"top" style=3D"padding-top:20px;" style=3D"display:tab=
+le-cell !important;"><table role=3D"none" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" align=3D"center" style=3D"display:table !important;"><tr st=
+yle=3D"display:table-row !important;"><td class=3D"u" align=3D"center" vali=
+gn=3D"middle" height=3D"32" style=3D"height:32px;display:table-cell !import=
+ant; max-height: 32px !important;margin:0px !important; background-color: #=
+ffffff !important;"><a style=3D"line-height:32px !important;text-decoration=
+:none;display:block !important;" href=3D"https://link.mail.beehiiv.com/ss/c=
+/u001.anzhxTgRwBHOEcNie9uXl5sB1z7_5vGmkoTc4GPISXiKxtJVIx76hFA5zLaII7HP1z-2O=
+aZgZSuHKSdXMQSu0nFpjCi8-0JF-qA_G28vlpvak_wwAHEfkejCgrixAeC7wF4umYFxxjFx_mn_=
+qxTQ5r5v25DmNip3t7fZblqOac2Lvx6E5Nu-ykuCK68TscSYuGbk9iCdzVwCTmnR1nSFh7_UlNO=
+U7sGPulFZe7hyezw4k_CxiF_fJPXGVqqWWsIU/4g8/nteXjQ1eQAOXdUA9zXKMyw/h12/h001.m=
+XaHo4IV7g_KwrNbzmSo5wKgMAsewXXpMj4ZKz1_BJo"><img src=3D"https://media.beehi=
+iv.com/output-onlinepngtools.png" width=3D"16" alt=3D"beehiiv logo" style=
+=3D"display:inline-block !important;max-width:16px !important; vertical-ali=
+gn:-3px !important;width: 16px !important;" border=3D"0"/><span style=3D"pa=
+dding-left:11px !important;display: inline-block !important;">Powered by be=
+ehiiv</span></a></td></tr></table></td></tr><tr><td align=3D"left" valign=
+=3D"top" height=3D"2" style=3D"height:2px;"><a href=3D'https://link.mail.be=
+ehiiv.com/ss/c/u001.zTocUfcYSJ_RY3UOoZIY6du1AlUAy8Kv1Kx7Sb7RwctmsFbXMwF_6kg=
+FvoHZcU5D6jISPMPRk52KLMkovok4PxWSHCqQff2uDJ2XhSjiVU8/4g8/nteXjQ1eQAOXdUA9zX=
+KMyw/h13/h001.E9VsabRB3SG8IpVamzP7xAz7KmDdMEfxB01x-a1eweo' style=3D"color: =
+#030712 !important; cursor: default; font-size: 1px; text-decoration: none;=
+"> Terms of Service </a></td></tr></table></td></tr></table></td></tr></td>=
+</tr></table></td></tr></table></td></tr></table></td></tr></table></div></=
+body></html>
+--2a0cf8720176364a6062ec80d8724321be9c103f59fc52eb6691ef7beae4--

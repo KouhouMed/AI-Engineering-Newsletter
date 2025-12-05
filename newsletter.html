@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter View</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="container">
+        <a href="index.html">&larr; Back to Archive</a>
+    </nav>
+
+    <article class="container" id="article-container">
+        <header id="article-header">
+        </header>
+
+        <div id="table-of-contents" class="toc">
+        </div>
+
+        <div id="article-content" class="content">
+        </div>
+    </article>
+
+    <script src="script.js"></script>
+    <script>
+        // Load specific newsletter on init
+        document.addEventListener('DOMContentLoaded', () => loadNewsletter());
+    </script>
+</body>
+
+</html>

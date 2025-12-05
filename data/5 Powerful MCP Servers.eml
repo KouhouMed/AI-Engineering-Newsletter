@@ -1,0 +1,1242 @@
+Delivered-To: mohamedkouhou@gmail.com
+Received: by 2002:a05:6124:6d2:b0:3dc:661a:9ab9 with SMTP id p18csp1754100vlo;
+        Mon, 21 Apr 2025 06:03:40 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHA6xJ9qLWNEjtCnrqeN7xwWl+Pnq/bXaPNg0ZNxzwdwN2R5mia8v3FHUiR/lpBiWmBF4do
+X-Received: by 2002:a05:6a20:d50d:b0:1f5:7b6f:f8e8 with SMTP id adf61e73a8af0-203cbc253e1mr16774236637.6.1745240620421;
+        Mon, 21 Apr 2025 06:03:40 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1745240620; cv=none;
+        d=google.com; s=arc-20240605;
+        b=eyEIqvp941H5xv98qvkTTgVvuGPtLA4+6i4alVdK3qjAf/viE+gsHGLbDgmrZnX3w8
+         0IIoJ4YJhGkZtsIbe/EYiYGmiOtg2GMAxYcmBWi/HGd/skxTPxeTLQ2XCUKuGmHMiVAS
+         U6doz+GxyIcCL4WFbQ/+pwlBhg4dgcxpXiZ2zM6V2YjAPU9+kXRAHddT6JxpG6CFouur
+         jfQEKe+4x5aLEaAABbti8zvqjPDzxq9RneSEM1FMQCycPjrdevey60fNwqHu/9j/lJZB
+         ClBD+CjjoHaTQhvQSMJ73biW5pdutlwjc1VVIPLp9MGDvWmSQznLLS6GuP2rxYx50oJj
+         HIeA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:sid:list-unsubscribe-post:list-unsubscribe:feedback-id:reply-to
+         :subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=JB2pWXzuhO2i2TMVs0BKvepvXPi5WuKyCicS6jJQwBQ=;
+        fh=oJNjDw8DTqGeUb+omsh4Xn3z5QOYFzPyOWGWF6z0SOE=;
+        b=A3Nb8n0EtF8PPnQcOnnFpRT8VyvzOx5jtKb5ZY3jdZZiZ9tXim5UxYXlDL40uDG8Fi
+         uQBqoPJIPw8phZgd1PaBu3EOjhHQipfW85p0G0LqS4mzOwy1thnIIvtNcKsiAonLdpQX
+         gzKKzrpIkoQF6S3XV50hEAUye2DgLRL25nlVz+E8XtFM8ISnmL7Eh+N/NB259RSPCkgP
+         n4tRHkDmsEvAIwlxSx4inpNRfRxsSH7C0c4F2GrnVX+OG6nWGfOSGk5bLhXdQCBWgqVj
+         OiqCuqo6p1FfAkHMpmQh6X7rCCkE1dBAb/+pUdy6evvcxDTWSYxzB/RnROruYjoOTDlK
+         onXA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.beehiiv.com header.s=s1 header.b=izQkilNG;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=IpyOsDzf;
+       spf=pass (google.com: domain of bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com designates 159.183.140.172 as permitted sender) smtp.mailfrom="bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=beehiiv.com
+Return-Path: <bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com>
+Received: from o170.ptr9231.mail.beehiiv.com (o170.ptr9231.mail.beehiiv.com. [159.183.140.172])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-b0db14114b4si9835625a12.221.2025.04.21.06.03.39
+        for <mohamedkouhou@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 21 Apr 2025 06:03:40 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com designates 159.183.140.172 as permitted sender) client-ip=159.183.140.172;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.beehiiv.com header.s=s1 header.b=izQkilNG;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=IpyOsDzf;
+       spf=pass (google.com: domain of bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com designates 159.183.140.172 as permitted sender) smtp.mailfrom="bounces+42633902-bded-mohamedkouhou=gmail.com@em2003.mail.beehiiv.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=beehiiv.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mail.beehiiv.com;
+	h=content-type:from:mime-version:subject:reply-to:feedback-id:
+	list-unsubscribe:list-unsubscribe-post:to:cc:content-type:feedback-id:from:subject:to;
+	s=s1; bh=JB2pWXzuhO2i2TMVs0BKvepvXPi5WuKyCicS6jJQwBQ=;
+	b=izQkilNGsKa7s/Ew+tM1lAnVSSvVzu8NGwpLNMqpqBOWN6SUyGQ8+2bBgvlsNdlkBFTI
+	o2ppvOYi+U2lz2bfHocw/yDEkw5idm/y3Py26H5GFVDS6LYmEm5bCwkS1FJkLYx/fo0Szt
+	Gjob5QB3Y1DYoyUEqQU0uSg0VYN2E0yyTUJWHqN4fkX5ZzLs429ZkWoTEDoyG4VkM6ObAc
+	Pv/9544HOVeZtUp/SErpR5CZJxLzQj06Y/DeWRpu8NCjKpnXX8MYMtdIKRhlljlKVd4jAm
+	x/JJhErAeLOA9M2yuASrZAueQtkyvEZ/rMRfZlZkF0T+7RzYXjib0Lgp67O51Rew==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:feedback-id:
+	list-unsubscribe:list-unsubscribe-post:to:cc:content-type:feedback-id:from:subject:to;
+	s=smtpapi; bh=JB2pWXzuhO2i2TMVs0BKvepvXPi5WuKyCicS6jJQwBQ=;
+	b=IpyOsDzf+bkhgiAID1/wHW/xjHMaaITyc0loWLRKVn9acw7B12341Wp50LoupuNgTCx+
+	RGGA1FfMID0FeiImxm0Nwj9oqCqyoGAodDE32Wj1ln0rJd1dbv0af+tEMi8cicn5zvKaCd
+	rKUZBuiE7bgrc1vIrTT9fDzU8jlb3O7b8=
+Received: by recvd-84ff9c6c5c-f6x7w with SMTP id recvd-84ff9c6c5c-f6x7w-1-6806421E-46
+	2025-04-21 13:03:26.56223488 +0000 UTC m=+1090331.688709380
+Received: from NDI2MzM5MDI (unknown)
+	by geopod-ismtpd-17 (SG) with HTTP
+	id C8LJu0lmQAaX11Y0u4eqTw
+	Mon, 21 Apr 2025 13:03:26.485 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=96d1cfd38e9e08e9c520e8a78f8628fee7431cf613d110dfb7e656643e3e
+Date: Mon, 21 Apr 2025 13:03:39 +0000 (UTC)
+From: AI Engineering <aiengineering@mail.beehiiv.com>
+Mime-Version: 1.0
+Message-ID: <C8LJu0lmQAaX11Y0u4eqTw@geopod-ismtpd-17>
+Subject: 5 Powerful MCP Servers
+Reply-To: AI Engineering <ai.engineering.sumanth@gmail.com>
+Feedback-ID: 
+ =?us-ascii?Q?86a37c8e-8544-4696-97a6-2b038a9d8683=3Anewsletter=3Aee0aaff6-3e4e-?=
+ =?us-ascii?Q?4900-88b4-a9b4a51ee2d6=3A2bba56f5114e362?=
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aee0aaff6-3e4e-4900-88b4-a9b4a51ee2d6+28735b41-2ec7-4eb?=
+ =?us-ascii?Q?7-acc6-0aa3cb1a6790+86a37c8e-8544-4696-?=
+ =?us-ascii?Q?97a6-2b038a9d8683=40unsub=2Ebeehiiv=2Ecom=3E=2C?=
+ =?us-ascii?Q?_=3Chttps=3A=2F=2Faiengineering=2Ebeehiiv=2Ecom=2Funsubscribe=2FeyJ0eXAiOiJKV1Q?=
+ =?us-ascii?Q?iLCJhbGciOiJIUzI1NiJ9=2EeyJzdWJzY3JpYmVyX?=
+ =?us-ascii?Q?2lkIjoiMjg3MzViNDEtMmVjNy00ZWI3LWFjYzYt?=
+ =?us-ascii?Q?MGFhM2NiMWE2NzkwIiwicG9zdF9pZCI6Ijg2YTM?=
+ =?us-ascii?Q?3YzhlLTg1NDQtNDY5Ni05N2E2LTJiMDM4YTlkOD?=
+ =?us-ascii?Q?Y4MyIsImxhc3RfcmVzb3VyY2VfZ3VpZCI6IlBvc?=
+ =?us-ascii?Q?3Q6ODZhMzdjOGUtODU0NC00Njk2LTk3YTYtMmIw?=
+ =?us-ascii?Q?MzhhOWQ4NjgzIn0=2EvZgtxXPPnOw=5FO6q5eYavMOH?=
+ =?us-ascii?Q?Jbzi8LDqNKHgJ289tOic=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+sId: ee0aaff6-3e4e-4900-88b4-a9b4a51ee2d6
+x-beehiiv-ids: 
+ =?us-ascii?Q?{=22account=5Fname=22=3A=22https=3A=2F=2Faiengineering=2Ebeehiiv=2Ecom=2F=22=2C=22campaign?=
+ =?us-ascii?Q?=5Fid=22=3A=2286a37c8e-8544-4696-97a6-2b038a9d8?=
+ =?us-ascii?Q?683=22=2C=22category=22=3A=22newsletter=22=2C=22email=5Fgen?=
+ =?us-ascii?Q?erated=5Fat=22=3A1745240606=2C=22user=5Fid=22=3A=22ee0aaf?=
+ =?us-ascii?Q?f6-3e4e-4900-88b4-a9b4a51ee2d6=22}?=
+x-beehiiv-type: newsletter
+x-list-id: ee0aaff6-3e4e-4900-88b4-a9b4a51ee2d6
+x-list-owner: <mailto:ai.engineering.sumanth@gmail.com>
+x-newsletter: https://aiengineering.beehiiv.com/p/5-powerful-mcp-servers
+x-newsletter-id: https://aiengineering.beehiiv.com/
+x-newsletter-signup: https://aiengineering.beehiiv.com/subscribe
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EekyNxagh4b7LFzedssaxAB=2FRYmMfHMvupA41zo66Mwkcd=2FwUH0gIPwv1N?=
+ =?us-ascii?Q?lkAXPd6Z6txtIAm9zaW6tcNVr3pdvwqDIsj69f5?=
+ =?us-ascii?Q?b4o8XP2yuK3GeDacWmxcONcoCbWhjxXwsUURBle?=
+ =?us-ascii?Q?tJsdwQgQ0H7BWWqtlX0Gi8ROL5E+aOZRphNpy2T?=
+ =?us-ascii?Q?OiVhMRwzXCHaYLrcXE=2FAXGH3w5MgdaR0N2zrFB4?=
+ =?us-ascii?Q?3Dj7v6iXx4y59UlfvRJggj0+W8LvtVwedU=2FbNfB?=
+ =?us-ascii?Q?vn2fJoCO2RgbHhEU6Xxy=2FCCh0Q=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprD1ZcmFObA4po1bG?=
+ =?us-ascii?Q?aUE6gycYObA=2FCMj4uRjCl4QB72E4P+C88FJcHwK?=
+ =?us-ascii?Q?rQcDE47kZEgN75tnakhEC6a0FC034duHusKab+a?=
+ =?us-ascii?Q?0Qqu6KSnGdL8=2FhBKEVCGYg4rYVX=2FafquYBcGlOx?=
+ =?us-ascii?Q?UFOMdRfNa29kTANV2xsfuA5sDvUGSs50NmZKdxc?=
+ =?us-ascii?Q?jeQmndYWXWQJbdtJSb+0fSaNdofNLRjW2oXmHxD?=
+ =?us-ascii?Q?R+czk0cN5sILWUEdXcWkt+kRz1ZpzqLtawr0uVg?=
+ =?us-ascii?Q?sX4B=2FpreiawJg4JP1PCYNgeJfBcCoR3QBaNr0vJ?=
+ =?us-ascii?Q?nMLjxsei02Fg=3D=3D?=
+To: "mohamedkouhou@gmail.com" <mohamedkouhou@gmail.com>
+X-Entity-ID: u001.0HCrxgJCQAVVGKXTne9JeQ==
+
+--96d1cfd38e9e08e9c520e8a78f8628fee7431cf613d110dfb7e656643e3e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+----------
+# In today=E2=80=99s newsletter:
+
+* 5 Powerful MCP Servers.
+
+* MCP-Use: Open Source Library to connect any LLM to any MCP server.
+
+_Reading time: 3 minutes._
+
+
+----------
+
+----------
+# 5 Powerful MCP Servers
+
+MCP (**Model Context Protocol)**, an open standard that lets AI models conn=
+ect to external tools like APIs, databases, file systems, and more, without=
+ needing custom code or plugins. Think of it as a universal adapter that gi=
+ves LLMs access to the outside world.
+
+MCP servers bring this protocol to life. They expose real-world tools in a =
+format LLMs can understand and use directly, with no API docs, no wrappers,=
+ and no SDKs. Just connect and run. Your agents can scrape websites, query =
+APIs, sync files, or trigger actions instantly.
+
+Here are the top 5 MCP servers that give superpowers to your AI agents.
+
+## 1. [Firecrawl MCP Server](https://github.com/mendableai/firecrawl-mcp-se=
+rver)
+
+Firecrawl let=E2=80=99s you turn entire websites into LLM-ready markdown or=
+ structured data. You can Scrape, crawl and extract with a single API.
+
+This MCP server integrates with _[Firecrawl](https://github.com/mendableai/=
+firecrawl)_ for web scraping capabilities. You can directly connect this se=
+rver within your favourite MCP client like Cursor, Windsurf, Goose or Cline=
+.
+
+**Key Features:**
+
+* Scrape, crawl, search, extract, deep research and batch scrape support
+
+* Web scraping with JS rendering
+
+* URL discovery and crawling
+
+* Web search with content extraction
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/c74aff84-1bb7-4=
+8c7-aad3-3198b93070db/firecrawl_mcp.gif?t=3D1745060525)
+Caption: firecrawl MCP
+
+## 2. [Browser Use MCP Server](https://github.com/co-browser/browser-use-mc=
+p-server)
+
+This MCP server enables AI agents to control web browsers using=C2=A0_[brow=
+ser-use](https://github.com/browser-use/browser-use)_.
+
+**Key Features:**
+
+* **Browser Automation**: Control browsers through AI agents
+
+* **Dual Transport**: Support for both SSE and stdio protocols
+
+* **VNC Streaming**: Watch browser automation in real-time
+
+* **Async Tasks**: Execute browser operations asynchronously
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/93ca0b21-db34-4=
+538-ba09-419a38a1dcfc/Screenshot_2025-04-19_at_4.22.34_PM.png?t=3D174505999=
+8)
+Caption: browser-use MCP
+
+## 3. [Opik MCP Server](https://github.com/comet-ml/opik-mcp)
+
+Opik is an Open source LLM evaluation framework
+
+This MCP Server enables traceability into AI Agents and lets you monitor yo=
+ur LLM applications
+
+**Key Features:**
+
+* **Prompts Management**: Create, list, update, and delete prompts
+
+* **Projects/Workspaces Management**: Organize and manage projects
+
+* **Traces**: Track and analyze trace data
+
+* **Metrics**: Gather and query metrics data
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/a1b6c627-7833-4=
+c1d-8cf7-6130e37085ab/Screenshot_2025-04-19_at_2.47.09_PM.png?t=3D174505500=
+8)
+Caption: Opik MCP
+
+## 4. [Fast API MCP Server](https://github.com/tadata-org/fastapi_mcp)
+
+Turn any FastAPI app into an MCP server!
+
+FastAPI-MCP is a zero-configuration tool for automatically exposing FastAPI=
+ endpoints as Model Context Protocol (MCP) tools.
+
+**Key Features:**
+
+* **Direct integration:** Mount MCP server to your FastAPI app
+
+* **Zero configuration:** Simply point to your app and it works
+
+* **Auto discovery:** Converts FastAPI endpoints to MCP tools
+
+* **Swagger docs:** Maintains endpoint documentation
+
+* **Flexible deployment:** Mount MCP to the same app or deploy separately
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/ab804beb-bea6-4=
+f3b-a689-cd5ca779b821/Screenshot_2025-04-19_at_3.52.58_PM.png?t=3D174505828=
+4)
+Caption: FastAPI MCP
+
+## 5. [Github MCP Server](https://github.com/github/github-mcp-server)
+
+The Github Official MCP server comes with seamless integration with GitHub =
+APIs, enabling advanced automation and interaction capabilities for develop=
+ers & tools.
+
+**Key Features:**
+
+* One-click Docker installation=20
+
+* Automate GitHub workflows and processes=20
+
+* Extract and analyze data from your repos=20
+
+* Build AI-powered tools that talk directly to GitHub ecosystem
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/688130e4-7543-4=
+aed-aca6-abe248c2b70d/1743856752864.jpeg?t=3D1745058011)
+Caption: Github MCP
+
+
+----------
+
+----------
+# [MCP-Use](https://github.com/pietrozullo/mcp-use)
+
+Connect any LLM to any MCP server and build custom AI agents!
+
+MCP-Use is the open source MCP Client Library to connect any LLM to any MCP=
+ server and build custom agents with tool access, without relying on closed=
+ source or app-specific clients.
+
+Key Features:
+
+* =F0=9F=94=84 Spin up your first MCP-capable agent in just 6 lines of code
+
+* =F0=9F=A4=96 Works with any LangChain-supported LLM that supports tool us=
+e
+
+* =F0=9F=8C=90=C2=A0Connect directly to MCP servers via HTTP
+
+* =F0=9F=A7=A9 Run multiple MCP servers in a single agent
+
+* =F0=9F=9B=A1=EF=B8=8F Restrict dangerous tools like file system or networ=
+k access
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/d0a14727-6c4b-4=
+fd2-9421-489002a0cc4b/Screenshot_2025-04-19_at_3.56.16_PM.png?t=3D174505850=
+5)
+Caption: mcp-use
+
+
+
+
+
+----------
+
+----------
+**That=E2=80=99s a Wrap**
+
+
+----------
+
+----------
+That=E2=80=99s all for today. Thank you for reading today=E2=80=99s edition=
+. See you in the next issue with more AI Engineering insights.
+
+**PS:** We curate this AI Engineering content for free, and your support me=
+ans everything. If you find value in what you read, consider sharing it wit=
+h a friend or two.
+
+**Your feedback is valuable: **If there=E2=80=99s a topic you=E2=80=99re st=
+uck on or curious about, reply to this email. We=E2=80=99re building this f=
+or you, and your feedback helps shape what we send.
+
+
+----------
+
+----------
+## **WORK WITH US**
+
+Looking to promote your company, product, or service to **100K+ AI develope=
+rs**? Get in touch today by replying to this email.
+
+
+----------
+=E2=80=94=E2=80=94=E2=80=94
+
+You are reading a plain text version of this post. For the best experience,=
+ copy and paste this link in your browser to view the post online:
+https://aiengineering.beehiiv.com/p/5-powerful-mcp-servers
+
+--96d1cfd38e9e08e9c520e8a78f8628fee7431cf613d110dfb7e656643e3e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html><html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xml=
+ns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com=
+:office:office" style=3D"font-size:16px;"><head></head><head><meta charset=
+=3D"utf-8"/><!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compatible" content=
+=3D"IE=3Dedge"/><!--<![endif]--><meta name=3D"viewport" content=3D"width=3D=
+device-width,initial-scale=3D1"/><meta name=3D"x-apple-disable-message-refo=
+rmatting"/><meta name=3D"format-detection" content=3D"telephone=3Dno,addres=
+s=3Dno,email=3Dno,date=3Dno,url=3Dno"/><meta name=3D"color-scheme" content=
+=3D"light"/><meta name=3D"supported-color-schemes" content=3D"light"/><titl=
+e>5 Powerful MCP Servers </title><!--[if mso]><xml><o:OfficeDocumentSetting=
+s><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSetti=
+ngs></xml><![endif]--><style>
+  :root { color-scheme: light; supported-color-schemes: light; }
+  body { margin: 0; padding: 0; min-width: 100%!important; -ms-text-size-ad=
+just: 100% !important; -webkit-transform: scale(1) !important; -webkit-text=
+-size-adjust: 100% !important; -webkit-font-smoothing: antialiased !importa=
+nt; }
+  .body { word-wrap: normal; word-spacing:normal; }
+  table.mso { width: 100%; border-collapse: collapse; padding: 0; table-lay=
+out: fixed; }
+  img { border: 0; outline: none; }
+  table {  mso-table-lspace: 0px; mso-table-rspace: 0px; }
+  td, a, span {  mso-line-height-rule: exactly; }
+  #root [x-apple-data-detectors=3Dtrue],
+  a[x-apple-data-detectors=3Dtrue],
+  #MessageViewBody a { color: inherit !important; text-decoration: inherit =
+!important; font-size: inherit !important; font-family: inherit !important;=
+ font-weight: inherit !important; line-height: inherit !important; }
+  span.MsoHyperlink { color: inherit !important; mso-style-priority: 99 !im=
+portant; }
+  span.MsoHyperlinkFollowed { color: inherit !important; mso-style-priority=
+: 99 !important; }
+  .a { background-color:#FFFFFF; }
+  .b { background-color:#030712; }
+  .c  { background-color:#FFFFFF; }
+  .d { background-color:#EAEBEC; }
+  .d2 { background-color:#FFFFFF; }
+  .d3 { background-color:#FFFFFF; }
+  h1 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h2 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h3 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h4 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h5 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h6 a { text-decoration:underline;color:#0C4A6E;font-style:italic; }
+  h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a, ul, li, ol, p=
+, p a { margin: 0;padding: 0; }
+  h1 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:28px;color:#2A2A2A;line-height:1.75;padding-bottom:4px;p=
+adding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h2 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:24px;color:#2A2A2A;line-height:1.5;padding-bottom:4px;pa=
+dding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h3 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:20px;color:#2A2A2A;line-height:1.25;padding-bottom:4px;p=
+adding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h4 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:18px;color:#2A2A2A;line-height:1.125;padding-bottom:4px;=
+padding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h5 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:16px;color:#2A2A2A;line-height:1;padding-bottom:4px;padd=
+ing-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h6 { font-family:'Trebuchet MS','Lucida Grande',Tahoma,sans-serif;font-we=
+ight:400;font-size:14px;color:#2A2A2A;line-height:0.875;padding-bottom:4px;=
+padding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  p { font-family:'Helvetica',Arial,sans-serif;font-weight:400;color:#2D2D2=
+D;font-size:16px;line-height:1.5;padding-bottom:12px;padding-top:12px;mso-m=
+argin-top-alt:12px;mso-margin-bottom-alt:12px; }
+  p a, .e a, ul a, li a, .h a, .h2 a, .h3 a { word-break:break-word;color:#=
+0C4A6E !important;text-decoration:underline;text-decoration-color:#0C4A6E;f=
+ont-style:italic; }
+  p a span, .e a span, ul a span, li a span { color: inherit }
+  p .bold { font-weight:bold;color:#2D2D2D; }
+  p span[style*=3D"font-size"] { line-height: 1.6; }
+  .f p { font-size:12px;line-height:15px;color:#2D2D2D;padding:0; }
+  .f p a { color:#2D2D2D !important; }
+  .g p { font-family:'Helvetica',Arial,sans-serif;font-size:14px;line-heigh=
+t:20px;font-weight:normal;margin:0; }
+  .g p a  { text-decoration: underline; }
+  .i p { font-family:'Helvetica',Arial,sans-serif;line-height:1.5;font-size=
+:15px;color:#2D2D2D; }
+  .i p a { color:#2D2D2D !important; }
+  .i2 p { font-family:'Helvetica',Arial,sans-serif;line-height:1.5;font-siz=
+e:15px;color:#2D2D2D; }
+  .i2 p a { color:#2D2D2D !important; }
+  .i3 p { font-family:'Helvetica',Arial,sans-serif;line-height:1.8;font-siz=
+e:24px;color:#2D2D2D; }
+  .i3 p a { color:#2D2D2D !important; }
+  .h p a { color:#0C4A6E !important; }
+  .h2 p a { color:#0C4A6E !important; }
+  .h3 p a { color:#0C4A6E !important; }
+  .f p a, .i p a, .i2 p a, .i3 p a, .h p a, .h2 p a, .h3 p a { text-decorat=
+ion:underline; }
+  .j { border-top:3px solid #030712; }
+  .k p { padding-left:15px;padding-bottom:0px;padding-top:6px;mso-margin-to=
+p-alt:6px;mso-margin-bottom-alt:0px;mso-margin-left-alt:15px; }
+  .o { background-color:#FFFFFF;border:1px solid #F1F1F1;border-radius:5px;=
+ }
+  .o p { font-family:'Helvetica',Arial,sans-serif;padding:0px;margin:0px; }
+  .l p,
+  .l p a { font-size:14px;line-height:20px;font-weight: bold;color:#2D2D2D;=
+padding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .m p,
+  .m p a { font-size:13px;line-height:18px;font-weight:400;color:#2D2D2D;pa=
+dding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .n p,
+  .n p a { font-size:12px;line-height:17px;font-weight:400;color:#2D2D2D;pa=
+dding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .p { background-color:#FFFFFF;max-width:520px;border:1px solid #E1E8ED;bo=
+rder:1px solid rgba(80, 80, 80, 0.3);border-radius:5px; }
+  .q { font-size:16px;font-family:Helvetica,Roboto,Calibri,sans-serif !impo=
+rtant;border:1px solid #e1e8ed;border:1px solid rgba(80, 80, 80, 0.3);borde=
+r-radius:10px;background-color:#FFFFFF; }
+  .q p { font-size:16px;font-family:system-ui,Helvetica,Roboto,Calibri,sans=
+-serif !important;color:#222222;padding:4px 0; }
+  .r { border:1px solid #E1E8ED !important;border-radius:5px; }
+  .s p { font-size: 14px; line-height: 17px; font-weight: 400; color: #6978=
+82; text-decoration: none; }
+  .t p { font-family:'Helvetica',Arial,sans-serif;font-size:12px;line-heigh=
+t:1.5;font-weight:400;color:#000000;font-style:italic;padding:0; }
+  .v { border-radius:10px;border:solid 0px #030712;background-color:#030712=
+;font-family:'Verdana',Geneva,sans-serif;color:#FFFFFF; }
+  .v a { text-decoration:none;display:block;color:#FFFFFF; }
+  .w p { font-size:12px;line-height:15px;font-weight:400;color:#FFFFFF; }
+  .w p a { text-decoration: underline !important;color:#FFFFFF !important; =
+}
+  ul { font-family:'Helvetica',Arial,sans-serif;margin:0px 0px 0px 25px !im=
+portant;padding:0px !important;color:#2D2D2D;line-height:24px;list-style:di=
+sc;font-size:16px; }
+  ul > li { font-family:'Helvetica',Arial,sans-serif;margin:10px 0px 0px 0p=
+x !important;padding: 0px 0px 0px 0px !important; color: #2D2D2D; list-styl=
+e:disc; }
+  ol { font-family:'Helvetica',Arial,sans-serif;margin: 0px 0px 0px 25px !i=
+mportant;padding:0px !important;color:#2D2D2D;line-height:24px;list-style:d=
+ecimal;font-size:16px; }
+  ol > li { font-family:'Helvetica',Arial,sans-serif;margin:10px 0px 0px 0p=
+x !important;padding: 0px 0px 0px 0px !important; color: #2D2D2D; list-styl=
+e:decimal; }
+  .e h3,
+  .e p,
+  .e span { padding-bottom:0px;padding-top:0px;mso-margin-top-alt:0px;mso-m=
+argin-bottom-alt:0px; }
+  .e span,
+  .e li { font-family:'Helvetica',Arial,sans-serif;font-size:16px;color:#2D=
+2D2D;line-height:24px; }
+  .rec { font-family:  ui-sans-serif, system-ui, -apple-system, BlinkMacSys=
+temFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-ser=
+if, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color E=
+moji" !important; }
+  .rec__button:hover { background-color: #f9fafb !important; }
+  .copyright a {color: inherit !important; text-decoration: none !important=
+; font-size: inherit !important; font-family: inherit !important; font-weig=
+ht: inherit !important; line-height: inherit !important;}
+  .txt_social p { padding: 0; word-break: break-all; }
+  .table, .table-c, .table-h { border: 1px solid #C0C0C0; }
+  .table-c { padding:5px; background-color:#FFFFFF; }
+  .table-c p { color: #2D2D2D; font-family:'Helvetica',Arial,sans-serif !im=
+portant;overflow-wrap: break-word; }
+  .table-h { padding:5px; background-color:#F1F1F1; }
+  .table-h p { color: #2A2A2A; font-family:'Trebuchet MS','Lucida Grande',T=
+ahoma,sans-serif !important;overflow-wrap: break-word; }
+  @media only screen and (max-width:667px) {
+    .aa { width: 100% !important; }
+    .bb img { width: 100% !important; height: auto !important; max-width: n=
+one !important; }
+    .cc { padding: 0px 8px !important; }
+    .ee { padding-top:10px !important;padding-bottom:10px !important; }
+    .ff ul, .ff ol { margin: 0px 0px 0px 10px !important;padding: 0px !impo=
+rtant; }
+    .ff li { margin:10px 0px 0px 10px !important; }
+    .r {height:140px !important;}
+    .s p { font-size:13px !important;line-height:15px !important; }
+    .mob-hide {display:none !important;}
+    .mob-stack {display:block !important;width:100% !important;}
+    .mob-w-full {width:100% !important;}
+    .mob-block {display:block !important;}
+    .embed-img {padding:0px 0px 12px 0px !important;}
+    .socialShare {padding-top:15px !important;}
+    .rec { padding-left:15px!important;padding-right:15px!important; }
+    .bodyWrapper { padding:10px 4px 10px 4px !important; }
+    .social-mobile {float:left !important;margin-top:10px !important;}
+  }
+  @media screen and (max-width: 480px) {
+    u + .a .gg { width: 100% !important; width: 100vw !important; }
+    .tok-heart { padding-top:75% !important; }
+    .tok-play { padding-top: 250px !important; }
+  }
+  @media screen and (max-width: 320px) {
+    .tok-heart { padding-top:65% !important; }
+  }
+  .u { border: 1px solid #CACACA !important; border-radius: 2px !important;=
+ background-color: #ffffff !important; padding: 0px 13px 0px 13px !importan=
+t; font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Se=
+goe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif !important;fon=
+t-size: 12px !important; color: #767676 !important; }
+  .u a { text-decoration: none; display: block !important; color: #767676 !=
+important; margin: 0px !important; }
+  .u span, .u img { color: #767676 !important;margin:0px !important; max-he=
+ight:32px !important;background-color:#ffffff !important; }
+</style><!--[if mso]><style type=3D"text/css">
+    sup { font-size: 100% !important;vertical-align: .5em !important;mso-te=
+xt-raise: -1.5% !important;line-height: 0 !important; }
+    ul { margin-left:0px !important; margin-right:10px !important; margin-t=
+op:20px !important; margin-bottom:20px !important; }
+    ul li { margin-left: 0px !important; mso-special-format: decimal; }
+    ol { margin-left:0px !important; margin-right:10px !important; margin-t=
+op:20px !important; margin-bottom:20px !important; }
+    ol li { margin-left: 0px !important; mso-special-format: decimal; }
+    li.listItem { margin-left:15px !important; margin-top:0px !important; }
+    .paddingDesktop { padding: 10px 0 !important; }
+    .edm_outlooklist { margin-left: -20px !important; }
+    .embedImage { display:none !important; }
+</style><![endif]--><style></style></head><body class=3D"a" style=3D"margin=
+:0px auto;padding:0px;word-wrap:normal;word-spacing:normal;background-color=
+:#FFFFFF;"><div role=3D"article" aria-roledescription=3D"email" aria-label=
+=3D"email_name" lang=3D"en" style=3D"font-size:1rem"><div style=3D"display:=
+none;max-height:0px;overflow:hidden;"> .. to give superpowers to your AI Ag=
+ents &#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204; </div><table role=
+=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" align=3D"center" ce=
+llpadding=3D"0" class=3D"gg"><tr><td align=3D"center" valign=3D"top"><table=
+ role=3D"none" width=3D"670" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" class=3D"aa" style=3D"width:670px;table-layout:fixed;"><tr><td class=3D"=
+bodyWrapper" align=3D"center" valign=3D"top" style=3D"padding:10px 5px 10px=
+ 5px;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0" align=3D"center"><tr><td align=3D"center" valign=3D"top" s=
+tyle=3D"border-width:0px 0px 0px 0px;border-style: solid; border-color: #FF=
+FFFF;border-radius:10px 10px 0px 0px;background-color:#FFFFFF;" class=3D"c"=
+><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0" align=3D"center"><tr id=3D"header"><td style=3D"padding:15px 15p=
+x 0 15px;"><div style=3D"padding-top:0px;padding-right:0px;padding-bottom:2=
+0px;padding-left:0px;"><table role=3D"none" width=3D"100%" border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td class=3D"f" align=
+=3D"right" valign=3D"top"><p> April 21, 2025 &nbsp; | &nbsp; <a href=3D"htt=
+ps://link.mail.beehiiv.com/ss/c/u001.ZjNtPLJ73PCW3XxrAs_SNIw2kahvc0FhQ6HFup=
+Ms-wNTEeRqkYNoF9Q1vwhRRF0jLQrLCSayf6bGuqKx45ZehVr03GWLz_pUMPLFvU-SqCzMa2Sg6=
+ikSOh2D73zP0n3zWqKp9DJ8Kovzxyi9YHFfQ3CeYRkVWEqGkqQPwNB4gbdQMzXnVJ1M_mth9ZKc=
+cr_uM0gty_Bf53mzrFpeFjqMgeT8QZ3iAc-aNFef6HvHIfhIIWQsmBTIMNPuDa73nmSVvC0kCdF=
+C4n5KysyO2hPHfPm27sbBTl3e79epJ8OUtRgkoBRe5XJJgHfgSeLS33SpI1IwpK7cVX3TDpPNvg=
+-2xvteCDWN9j-g3ocS0D9TiyB6sknIa5nU7b5E6r_BIvp1UPnFxmgmpykBvDeznXOtRWsV3U7kM=
+j3tfZE9xzyPBgBoUVxL6SjIO8apdnziIg_0GmGtgy07SWspODFyYFFrgEndQZVfA6izyOlebJN9=
+xHKxfSwJ-YL28mYWjdlyPmllR_cF-isGlL4bytkOlu6v3EusnPwCUYPv42kvmPjkD70cP_BPOck=
+ygVh5-Yqd6Mbmz6iV8phEL2qKDycgTUI1hpfXG_QQGvM_dxjuQ30aQtFdrvunxcjT-MMK61iZsq=
+kjO1fI7MuVSfNC9YKEQoKVFKhRq97mPTCTUA4NT7WMK9-FwMyoKDJ8r_L-Lq3ewArOF1csMixnk=
+dj8TxsaPyEIo8Y_wTViNyJ9rpFnQWT1mFxKCIufWNadLozFqJDYylBj35b4fru3n6nGT14Dyi8x=
+MMhMu87-nKta-pXXU1hbesE/4fu/UTIrowHFROOm-ayyQba5mw/h0/h001.itHJAu4ukTQl7DbS=
+MYwn_nho9N4ssVRwC9GZvhsSflA"><span class=3D"translation_missing" title=3D"t=
+ranslation missing: en.templates.posts.email.v3.header.read_online">Read On=
+line</span></a></p></td></tr><tr><td class=3D"dd" align=3D"center" valign=
+=3D"top" style=3D"padding:15px 0;"><table role=3D"none" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td align=
+=3D"center" valign=3D"top"><h1 style=3D"text-align:left;font-family:'Trebuc=
+het MS','Lucida Grande',Tahoma,sans-serif;font-weight:Bold;font-size:32px;c=
+olor:#2A2A2A;padding:2px 0;line-height:38px;"> 5 Powerful MCP Servers </h1>=
+<p style=3D"text-align:left;font-family:'Helvetica',Arial,sans-serif;font-w=
+eight:normal;font-size:20px;color:#3E3E3E;padding:5px 0;line-height:24px;">=
+ .. to give superpowers to your AI Agents </p></td></tr></table></td></tr><=
+tr><td align=3D"center" valign=3D"top" class=3D"dd"><table role=3D"none" wi=
+dth=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"cent=
+er"><tr><td aling=3D"center" valign=3D"middle" class=3D"mob-stack"><table r=
+ole=3D"none" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left=
+" class=3D"mob-stack" style=3D"width:100%;"><tr><td align=3D"left" valign=
+=3D"middle" style=3D"padding: 5px 0px 5px 0px;"><table role=3D"none" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left"><tr><td align=3D"=
+center" valign=3D"middle"><img src=3D"https://media.beehiiv.com/cdn-cgi/ima=
+ge/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80/uploads/u=
+ser/profile_picture/0d0a6732-ad89-4db8-8fd3-ae0552a463f7/thumb_NH-IIitW_400=
+x400.jpg" width=3D"40" alt=3D"" style=3D"display:block;max-width:40px;borde=
+r-radius:50%;position:relative;border:4px solid rgba(0,0,0,0) !important;le=
+ft:-4px;box-sizing:content-box;z-index:10;" border=3D"0"/></td><td width=3D=
+"5" style=3D"width:5px;">&nbsp;</td><td align=3D"left" valign=3D"middle" cl=
+ass=3D"g" style=3D"position:relative;left:8px;width:100%;"><p style=3D"padd=
+ing:0px;color:#2D2D2D;"><a href=3D"https://link.mail.beehiiv.com/ss/c/u001.=
+anzhxTgRwBHOEcNie9uXl4xnS4v0NC4FylgPipG6S6mnfGADB4t63IVoGRFM9gcrPIO_trdwByY=
+CFqA7DGy2D0mciEYIAO0QATaQlQWRyc50kYYivmomz5NYUnTgMF89gAQdM9fQgKFZMAi9MCyK1V=
+jujsYES1iZ3i6FfeOU8QVulGytLHwpeD9D868aHVBY3RoP8a2NrBnFFLRmuunTacSmnDVr9qZT7=
+maCdE8O0kdyXYPUkoFeQC_1kYoN7h01/4fu/UTIrowHFROOm-ayyQba5mw/h1/h001.qAZtAsi0=
+jT3L4XhOROuKZ8l43CZYSz_5cEpQa8ojLjw" target=3D"_blank" style=3D"color:#2D2D=
+2D !important;text-decoration:underline !important;">Sumanth P</a></p></td>=
+</tr></table></td></tr></table></td><td align=3D"left" valign=3D"middle" cl=
+ass=3D"mob-stack"><table role=3D"none" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" align=3D"right" class=3D"social-mobile"><tr><td align=3D"left"=
+ valign=3D"middle"><table role=3D"none" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0" align=3D"left" style=3D"width:100%"><tr><td align=3D"center" =
+valign=3D"middle"><a href=3D"https://link.mail.beehiiv.com/ss/c/u001.anzhxT=
+gRwBHOEcNie9uXl4-z4heGB1uqqUSHQTjz8dhMhJlxnSx77lKOiFq1bycBZsR38Kg2S_9IYoXGW=
+4Iz9K8vJqKyaa_1i9u7rTX7VAD4QsDEhKDZ0YkPzPqM4cYK3OidlNiNSWFsZUWqU_Rc_GgBB4Pj=
+x4XK0TTsABaAXi3SnyuhBgadBDbIzZFeN46geOJVya7mhE087KzgznzUY1p9omUCfhWHvQjy3Di=
+P9bkZJzvXMBCUD7ePnDo5XPZtV5nOFlGCPC_s6h2MuKa1JJCo5bU7WVbtB24Up9ql6OVQ-PW3yg=
+4VpnJ3d_bOr0nhjc9hCXFlnAFs5oMbw3UhtpcrVBlOqR8OdM07QDDmgAw/4fu/UTIrowHFROOm-=
+ayyQba5mw/h2/h001.5dig-dUUBC9HOuna642emmCYxdVJZeE061lhc3q5zGE" style=3D"tex=
+t-decoration:none; display:block;"><table role=3D"none" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td align=3D"center" val=
+ign=3D"middle" style=3D"border: 1px solid #E5E7EB; border-radius: 100%; wid=
+th: 18px; height: 18px; padding: 8px;"><img style=3D"display:block; width:1=
+00%; height:100%; max-width:18px; max-height:18px; object-fit: contain;" al=
+t=3D"share on facebook" width=3D"18" border=3D"0" src=3D"https://media.beeh=
+iiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,qua=
+lity=3D80/static_assets/header/facebook.png"/></td></tr></table></a></td><t=
+d width=3D"8" style=3D"width:8px;">&nbsp;</td><td align=3D"center" valign=
+=3D"middle"><a href=3D"https://link.mail.beehiiv.com/ss/c/u001.wz0frdqEfXa7=
+HDEi98Gntb1uXLM9f6FUA-0CLPLghq4UXw6f5kQE-ox-FyxWnzH0nE91xuVG4inXyRqsOhIM1mh=
+tp9MENCAsH3doUMy5CGXXPpYBW4aNnaRnsffbeEaLOzIA1VKZYNgDRAyIn85SjGqzzbAMjFb0VF=
+6tvolR6x-XT2CmwjD8-zRwQHB6x_ovQ2EYP_keAXrgp6iBnUQ74MYZbfCiIam-NGfSuA4JYeMsn=
+-lNMzyP6zBqW6SG7n6ftrpEJI8Wwsku32FHSybhBI6GcLz5bOBqllsTy5Zo7f9iPxavH2yF1PK6=
+NlA48ZsKeBUwdJ9BxetMKgJsHREPuMXrsd4pi7oeBma4_F340dS3NdzYJ4QpHF8Kgidl8MHJlrF=
+5PzLGAcY9qE3Czc05MkuafnDU2plbW4VxdQcGPyY/4fu/UTIrowHFROOm-ayyQba5mw/h3/h001=
+.O1pa7W3JLpBvanZiH33a5ds0FwQlHFFPjgLG3E4yBMs" style=3D"text-decoration:none=
+; display:block;"><table role=3D"none" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" align=3D"center"><tr><td align=3D"center" valign=3D"middle" st=
+yle=3D"border: 1px solid #E5E7EB; border-radius: 100%; width: 18px; height:=
+ 18px; padding: 8px;"><img style=3D"display:block; width:100%; height:100%;=
+ max-width:18px; max-height:18px; object-fit: contain;" alt=3D"share on twi=
+tter" width=3D"18" height=3D"18" border=3D"0" src=3D"https://media.beehiiv.=
+com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=
+=3D80/static_assets/header/x.png"/></td></tr></table></a></td><td width=3D"=
+8" style=3D"width:8px;">&nbsp;</td><td align=3D"center" valign=3D"middle"><=
+a href=3D"https://link.mail.beehiiv.com/ss/c/u001.anzhxTgRwBHOEcNie9uXl1LZA=
+gsCdygTbgzWSePZMDHnRjeNPDofsfllhWns6-nSzIjRGxdUCMhcxzyV5B5YjtpogTSh0m2VAY5P=
+dXgYof0v0ZZTncETgKgyTG-za1Xr-VzEE-cLKPDa1PDIEgFo_-ssLVNzEbHf4SD2wEe82_DUSio=
+T5-Vm6w0-ES1OiaHSOqw71u5pHcxCNXNfp4wJrFJu2O26c5Obm8AI9XV1x6-T8f6ony4et9BGOi=
+ruQOHSl_4t3h6CmAunFah24WLYohZqiRttxmcmIh_BEezeeQ0yLvBlOH_tteTYu3Ep5QQSwz9NZ=
+SMbe0fXXhQldKKg0EC2GZzFA8LXrzGRE_mmT5hf5RUB8_w6_bLNL-3IU93mZkfN8qL135EFP0kw=
+qOe02w/4fu/UTIrowHFROOm-ayyQba5mw/h4/h001.MLdfgdCFjp_FuM3V-J5mExHWc6XNAReOM=
+aEKDfPTHSw" style=3D"text-decoration:none; display:block;"><table role=3D"n=
+one" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr>=
+<td align=3D"center" valign=3D"middle" style=3D"border: 1px solid #E5E7EB; =
+border-radius: 100%; width: 18px; height: 18px; padding: 8px;"><img style=
+=3D"display:block; width:100%; height:100%; max-width:18px; max-height:18px=
+; object-fit: contain;" alt=3D"share on threads" width=3D"18" height=3D"18"=
+ border=3D"0" src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-do=
+wn,format=3Dauto,onerror=3Dredirect,quality=3D80/static_assets/header/threa=
+ds.png"/></td></tr></table></a></td><td width=3D"8" style=3D"width:8px;">&n=
+bsp;</td><td align=3D"center" valign=3D"middle"><a href=3D"https://link.mai=
+l.beehiiv.com/ss/c/u001.anzhxTgRwBHOEcNie9uXl6BkbL8eSc_pwkaY_CKmETASLRnbreO=
+k0cpBzKzkS5p4aclJQVFG92mH9wCSsnyGhPgsxOftngp1lH5FKBHl470WSKvgVgHtIVUPmNOJjh=
+6UKM_nIwLv6nMHI8oM3EVUu-dwyBAkr2o7qYYqbzesCeDn2_IR7UNcuDECW_hX08QTtRAqr9zJw=
+42Q5VjS1GeGOi-q3LhJQ2zJUmIV3n0Ef5IRTCE4lGpAFMq5JGnTPwQfYq9xD122TdPxbshGdDt-=
+tbkKVBPLelqDEd-h_pfU37wq2LDAqZG_TcV6Sh359d6BPsQaaOA1UxbfOGbLcP6lBkpimwj0sga=
+kVdjlwq4urrU/4fu/UTIrowHFROOm-ayyQba5mw/h5/h001.ZZcXqQat6oJ6J7UCu1tapZaDhGz=
+r8sYdwbCl7knQvHk" style=3D"text-decoration:none; display:block;"><table rol=
+e=3D"none" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center=
+"><tr><td align=3D"center" valign=3D"middle" style=3D"border: 1px solid #E5=
+E7EB; border-radius: 100%; width: 18px; height: 18px; padding: 8px;"><img s=
+tyle=3D"display:block; width:100%; height:100%; max-width:18px; max-height:=
+18px; object-fit: contain;" alt=3D"share on linkedin" width=3D"18" height=
+=3D"18" border=3D"0" src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Ds=
+cale-down,format=3Dauto,onerror=3Dredirect,quality=3D80/static_assets/heade=
+r/linkedin.png"/></td></tr></table></a></td></tr></table></td></tr></table>=
+</td></tr></table></td></tr><tr><td style=3D"height:0px;width:0px;"><div st=
+yle=3D"height:1px;" data-open-tracking=3D"true"> <img src=3D"https://link.m=
+ail.beehiiv.com/ss/o/u001.kApawdKBJJ7lcBKzmfFGeQ/4fu/UTIrowHFROOm-ayyQba5mw=
+/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px=
+ !important;width:1px !important;border-width:0 !important;margin-top:0 !im=
+portant;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 =
+!important;padding-top:0 !important;padding-bottom:0 !important;padding-rig=
+ht:0 !important;padding-left:0 !important;"/> </div></td></tr></table></div=
+></td></tr><tr id=3D"content-blocks"><td class=3D"email-card-body" align=3D=
+"center" valign=3D"top" style=3D"padding-bottom:15px;"><table role=3D"none"=
+ width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"c=
+enter"><tr><td><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"transparent" style=
+=3D"background-color:transparent;border-color:#222222;border-radius:6px;bor=
+der-style:solid;border-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table r=
+ole=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+"><tr><td class=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#2A2A2A=
+;font-weight:normal;padding:0px 15px;text-align:left;"><h1 style=3D"color:#=
+2A2A2A;font-weight:normal;"><span style=3D"">In today=E2=80=99s newsletter:=
+</span></h1></td></tr><tr><td style=3D"padding-bottom:12px;padding-left:37p=
+x;padding-right:27px;padding-top:12px;" class=3D"ee"><div style=3D"margin-l=
+eft:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:normal;list-st=
+yle-type:disc;margin-bottom:12px !important;margin-top:12px !important;padd=
+ing:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=3D"line-height=
+:1.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D"">5=
+ Powerful MCP Servers.</span></p></li><li class=3D"listItem ultext"><p styl=
+e=3D"line-height:1.5;padding:0px;text-align:left;word-break:break-word;"><s=
+pan style=3D"">MCP-Use: Open Source Library to connect any LLM to any MCP s=
+erver.</span></p></li></ul></div></td></tr><tr><td class=3D"dd" align=3D"le=
+ft" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p st=
+yle=3D"line-height:1.5;"><span style=3D""><i>Reading time: 3 minutes.</i></=
+span></p></td></tr></table></td></tr></table></td></tr><tr><td class=3D"dd"=
+ align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-=
+word;"><p style=3D"line-height:1.5;"></p></td></tr><tr><td><table role=3D"n=
+one" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D""><tr><td bgcolor=3D"transparent" style=3D"background-color:transparent=
+;border-color:#222222;border-radius:6px;border-style:solid;border-width:2px=
+;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D"=
+left" valign=3D"top" style=3D"color:#2A2A2A;font-weight:normal;padding:0px =
+15px;text-align:left;"><h1 style=3D"color:#2A2A2A;font-weight:normal;"><spa=
+n style=3D"">5 Powerful MCP Servers</span></h1></td></tr><tr><td class=3D"d=
+d" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:brea=
+k-word;"><p style=3D"line-height:1.5;"><span style=3D"">MCP (</span><span s=
+tyle=3D""><b>Model Context Protocol)</b></span><span style=3D"">, an open s=
+tandard that lets AI models connect to external tools like APIs, databases,=
+ file systems, and more, without needing custom code or plugins. Think of i=
+t as a universal adapter that gives LLMs access to the outside world.</span=
+></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15p=
+x;text-align:left;word-break:break-word;"><p style=3D"line-height:1.5;"><sp=
+an style=3D"">MCP servers bring this protocol to life. They expose real-wor=
+ld tools in a format LLMs can understand and use directly, with no API docs=
+, no wrappers, and no SDKs. Just connect and run. Your agents can scrape we=
+bsites, query APIs, sync files, or trigger actions instantly.</span></p></t=
+d></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-a=
+lign:left;word-break:break-word;"><p style=3D"line-height:1.5;"><span style=
+=3D"">Here are the top 5 MCP servers that give superpowers to your AI agent=
+s.</span></p></td></tr><tr><td class=3D"dd" align=3D"left" valign=3D"top" s=
+tyle=3D"color:#2A2A2A;font-weight:normal;padding:0px 15px;text-align:left;"=
+><h2 style=3D"color:#2A2A2A;font-weight:normal;"><span style=3D"">1. </span=
+><span style=3D""><a class=3D"link" href=3D"https://link.mail.beehiiv.com/s=
+s/c/u001.fEwxncMfw7gJKZ9GjSmhxQOFxozo2dw7aq7sSYIJO4pjgIRQHR_SpH4-TC6OhyYjsy=
+OHPsda7YS5CzeFSFmEs7FSmeD7mpVRDz0wzXaQJ75Aek2M_n04-v0e73AMJ2L3A54alpLpMHPdj=
+1dhztJ7PSYGcoJCqDvMdk1PtQ5_2YDSRd18MJ9mvMpOOfm0SS4DcvpFvUtsjnR1Esk7_sZW7jwV=
+b0Tqkla6HbzPjEGWHLW7kFRa-TykvBR_GFs7xBWRl3hMQI32dKTKixYLu9RNdQ/4fu/UTIrowHF=
+ROOm-ayyQba5mw/h6/h001.HfQ7V9kZRdBkwl7R3B3nlstODo_YJgtkxrQgh2FjMog" target=
+=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>Firecrawl MCP Server=
+</span></a></span></h2></td></tr><tr><td class=3D"dd" align=3D"left" style=
+=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"li=
+ne-height:1.5;"><span style=3D"color:rgb(31, 35, 40);font-family:-apple-sys=
+tem, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-se=
+rif, "Apple Color Emoji", "Segoe UI Emoji";font-size:16px;font-weight:400;"=
+>Firecrawl let=E2=80=99s you turn entire websites into LLM-ready markdown o=
+r structured data. You can Scrape, crawl and extract with a single API.</sp=
+an></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 1=
+5px;text-align:left;word-break:break-word;"><p style=3D"line-height:1.5;"><=
+span style=3D"color:rgb(31, 35, 40);font-family:-apple-system, BlinkMacSyst=
+emFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color=
+ Emoji", "Segoe UI Emoji";font-size:16px;font-weight:400;">This MCP server =
+integrates with </span><span style=3D""><span style=3D"text-decoration:unde=
+rline;"><a class=3D"link" href=3D"https://link.mail.beehiiv.com/ss/c/u001.f=
+EwxncMfw7gJKZ9GjSmhxQOFxozo2dw7aq7sSYIJO4rmBYyKkgQoYbngDMYW02GxEywVSe2JbXjK=
+dgkPJuJJn5btDZ_lE0gBFJ15NyInY6QEB6PwAl539u-dMHbWVtnrS63rhb_lHWTuPQhcUU8JpAj=
+Tbm2gR_5vVG082TlLY6EiCz4xKico0d_rpAkH8crBlQV3jgGrLgOpi2nTtBEtFAH-vm2ltRVhtV=
+irnnceXc3nC_Cik2AucPfKJV3XIlih/4fu/UTIrowHFROOm-ayyQba5mw/h7/h001.8VOwdKpS6=
+LS1Zu1_TYwbtK7g1Rg36MyJB6ajXnJjSPo" target=3D"_blank" rel=3D"noopener noref=
+errer nofollow"><span style=3D"color: var(--fgColor-accent, var(--color-acc=
+ent-fg))">Firecrawl</span></a></span></span><span style=3D"color:rgb(31, 35=
+, 40);font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans=
+", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";font=
+-size:16px;font-weight:400;"> for web scraping capabilities. You can direct=
+ly connect this server </span><span style=3D"">within your favourite MCP cl=
+ient like Cursor, Windsurf, Goose or Cline.</span></p></td></tr><tr><td cla=
+ss=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-bre=
+ak:break-word;"><p style=3D"line-height:1.5;"><span style=3D""><b>Key Featu=
+res:</b></span></p></td></tr><tr><td style=3D"padding-bottom:12px;padding-l=
+eft:37px;padding-right:27px;padding-top:12px;" class=3D"ee"><div style=3D"m=
+argin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:normal;=
+list-style-type:disc;margin-bottom:12px !important;margin-top:12px !importa=
+nt;padding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=3D"line=
+-height:1.5;padding:0px;text-align:left;word-break:break-word;"><span style=
+=3D"">Scrape, crawl, search, extract, deep research and batch scrape suppor=
+t</span></p></li><li class=3D"listItem ultext"><p style=3D"line-height:1.5;=
+padding:0px;text-align:left;word-break:break-word;"><span style=3D"">Web sc=
+raping with JS rendering</span></p></li><li class=3D"listItem ultext"><p st=
+yle=3D"line-height:1.5;padding:0px;text-align:left;word-break:break-word;">=
+<span style=3D"">URL discovery and crawling</span></p></li><li class=3D"lis=
+tItem ultext"><p style=3D"line-height:1.5;padding:0px;text-align:left;word-=
+break:break-word;"><span style=3D"">Web search with content extraction</spa=
+n></p></li></ul></div></td></tr><tr><td align=3D"center" valign=3D"top" sty=
+le=3D"padding-bottom:20px;padding-left:15px;padding-right:15px;padding-top:=
+20px; " class=3D"dd"><table role=3D"none" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td align=3D"center" va=
+lign=3D"top" style=3D"width:630px;"><img src=3D"https://media.beehiiv.com/c=
+dn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80=
+/uploads/asset/file/c74aff84-1bb7-48c7-aad3-3198b93070db/firecrawl_mcp.gif?=
+t=3D1745060525" alt=3D"" height=3D"auto" width=3D"630" style=3D"display:blo=
+ck;width:100%;" border=3D"0"/></td></tr><tr><td align=3D"center" valign=3D"=
+top" class=3D"t" style=3D"width:630px; padding: 4px 0px 4px 0px;"><p><span =
+style=3D"">firecrawl MCP</span></p></td></tr></table></td></tr><tr><td clas=
+s=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#2A2A2A;font-weight:n=
+ormal;padding:0px 15px;text-align:left;"><h2 style=3D"color:#2A2A2A;font-we=
+ight:normal;"><span style=3D"">2. </span><span style=3D""><a class=3D"link"=
+ href=3D"https://link.mail.beehiiv.com/ss/c/u001.fEwxncMfw7gJKZ9GjSmhxV9X1p=
+-PX3Ziw_joaQtPL4nPdOdHXO_djSHBJQMTC6teU-Bg2EhKGALvCCyMwFfioGIUs3j5uegbbYdjn=
+lFPRRUeq01pj9aLXP3dhu36IgnV9XYWU1Nvv5rSegzM7nD7lxpyJhj2dtQhIYJcW3xM0qt2-TcR=
+zixQO6irTuIKZe0shY_hse_KMkFaN0B_vmxUhTaS_ZMiFAo2PCOsbpbOHopo1j56OtBRxCtSmDv=
+r6YP7VYdkkRxaVebFYSWRMAhilg/4fu/UTIrowHFROOm-ayyQba5mw/h8/h001.sTrXUfPmM2WK=
+pufEo0FerezwpNiFu-_LR5ISzAmhA4o" target=3D"_blank" rel=3D"noopener noreferr=
+er nofollow"><span>Browser Use MCP Server</span></a></span></h2></td></tr><=
+tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:lef=
+t;word-break:break-word;"><p style=3D"line-height:1.5;"><span style=3D"">Th=
+is MCP server enables AI agents to control web browsers using=C2=A0</span><=
+span style=3D""><span style=3D"text-decoration:underline;"><a class=3D"link=
+" href=3D"https://link.mail.beehiiv.com/ss/c/u001.fEwxncMfw7gJKZ9GjSmhxXVvN=
+J7e7PrVf8hV-D3ul-YxB2X4v6rOrp-FfxKJRT4PuAKtSJzA18WQ-j6TqTlk5dt-InTne-hleoMv=
+laTZ-LT2I0a1TrD8C0Mq222fcq7EPsKBeSrURnYOynkiczQSOURW7GAS8GU15YrywktslJl8QZQ=
+-P4Gsy8pW6ph0f-md3dFgktUvwZ94gw7EJ6Uuv_0TI8JpN_lDKZnvO1FXNmmkGM1wolFse76ddb=
+SpSeqmbBFczdJ3lJ2SYc5bIJux6g/4fu/UTIrowHFROOm-ayyQba5mw/h9/h001.L305HVhELW9=
+YhnE93LK29N2F-PWpF275cQWIku_5wHs" target=3D"_blank" rel=3D"noopener norefer=
+rer nofollow"><span style=3D"color: rgb(68, 147, 248)">browser-use</span></=
+a></span></span><span style=3D"">.</span></p></td></tr><tr><td class=3D"dd"=
+ align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-=
+word;"><p style=3D"line-height:1.5;"><span style=3D""><b>Key Features:</b><=
+/span></p></td></tr><tr><td style=3D"padding-bottom:12px;padding-left:37px;=
+padding-right:27px;padding-top:12px;" class=3D"ee"><div style=3D"margin-lef=
+t:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:normal;list-styl=
+e-type:disc;margin-bottom:12px !important;margin-top:12px !important;paddin=
+g:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=3D"line-height:1=
+.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D""><b>=
+Browser Automation</b></span><span style=3D"">: Control browsers through AI=
+ agents</span></p></li><li class=3D"listItem ultext"><p style=3D"line-heigh=
+t:1.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D"">=
+<b>Dual Transport</b></span><span style=3D"">: Support for both SSE and std=
+io protocols</span></p></li><li class=3D"listItem ultext"><p style=3D"line-=
+height:1.5;padding:0px;text-align:left;word-break:break-word;"><span style=
+=3D""><b>VNC Streaming</b></span><span style=3D"">: Watch browser automatio=
+n in real-time</span></p></li><li class=3D"listItem ultext"><p style=3D"lin=
+e-height:1.5;padding:0px;text-align:left;word-break:break-word;"><span styl=
+e=3D""><b>Async Tasks</b></span><span style=3D"">: Execute browser operatio=
+ns asynchronously</span></p></li></ul></div></td></tr><tr><td align=3D"cent=
+er" valign=3D"top" style=3D"padding-bottom:20px;padding-left:15px;padding-r=
+ight:15px;padding-top:20px; " class=3D"dd"><table role=3D"none" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><=
+td align=3D"center" valign=3D"top" style=3D"width:630px;"><img src=3D"https=
+://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=
+=3Dredirect,quality=3D80/uploads/asset/file/93ca0b21-db34-4538-ba09-419a38a=
+1dcfc/Screenshot_2025-04-19_at_4.22.34_PM.png?t=3D1745059998" alt=3D"" heig=
+ht=3D"auto" width=3D"630" style=3D"display:block;width:100%;" border=3D"0"/=
+></td></tr><tr><td align=3D"center" valign=3D"top" class=3D"t" style=3D"wid=
+th:630px; padding: 4px 0px 4px 0px;"><p><span style=3D"">browser-use MCP</s=
+pan></p></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"left" val=
+ign=3D"top" style=3D"color:#2A2A2A;font-weight:normal;padding:0px 15px;text=
+-align:left;"><h2 style=3D"color:#2A2A2A;font-weight:normal;"><span style=
+=3D"">3. </span><span style=3D""><a class=3D"link" href=3D"https://link.mai=
+l.beehiiv.com/ss/c/u001.fEwxncMfw7gJKZ9GjSmhxXpX2vO63z5hI5-pJtdZFwuEnJumOQt=
+IA97K3HlMBYO3WDBjIZA7TrFbAAiice7JnD6yS_mDHzFS4YWvc2F2dP6g5HFNEUPqPAek6gI2Z9=
+gX7jfw-ZBK9dbihvs-H8WQWipU8mqS0zZv_M7sNIix3bLzUkff53xSBMbjnifjy-dBO1WGlEct6=
+Z6sA-XYUFdnFqQ2ycqhqLqZolJ3y0BMeSFSO0aSr9B6bA_-pzTDxdeD/4fu/UTIrowHFROOm-ay=
+yQba5mw/h10/h001.M_WPA9gOkSno2ErlQPBrOauBFoJec9TuPIIx7hcwkmE" target=3D"_bl=
+ank" rel=3D"noopener noreferrer nofollow"><span>Opik MCP Server</span></a><=
+/span></h2></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0=
+px 15px;text-align:left;word-break:break-word;"><p style=3D"line-height:1.5=
+;"><span style=3D"">Opik is an Open source LLM evaluation framework</span><=
+/p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;=
+text-align:left;word-break:break-word;"><p style=3D"line-height:1.5;"><span=
+ style=3D"">This MCP Server enables traceability into AI Agents and lets yo=
+u monitor your LLM applications</span></p></td></tr><tr><td class=3D"dd" al=
+ign=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-wor=
+d;"><p style=3D"line-height:1.5;"><span style=3D""><b>Key Features:</b></sp=
+an></p></td></tr><tr><td style=3D"padding-bottom:12px;padding-left:37px;pad=
+ding-right:27px;padding-top:12px;" class=3D"ee"><div style=3D"margin-left:0=
+px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:normal;list-style-t=
+ype:disc;margin-bottom:12px !important;margin-top:12px !important;padding:0=
+px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=3D"line-height:1.5;=
+padding:0px;text-align:left;word-break:break-word;"><span style=3D""><b>Pro=
+mpts Management</b></span><span style=3D"">: Create, list, update, and dele=
+te prompts</span></p></li><li class=3D"listItem ultext"><p style=3D"line-he=
+ight:1.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D=
+""><b>Projects/Workspaces Management</b></span><span style=3D"">: Organize =
+and manage projects</span></p></li><li class=3D"listItem ultext"><p style=
+=3D"line-height:1.5;padding:0px;text-align:left;word-break:break-word;"><sp=
+an style=3D""><b>Traces</b></span><span style=3D"">: Track and analyze trac=
+e data</span></p></li><li class=3D"listItem ultext"><p style=3D"line-height=
+:1.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D""><=
+b>Metrics</b></span><span style=3D"">: Gather and query metrics data</span>=
+</p></li></ul></div></td></tr><tr><td align=3D"center" valign=3D"top" style=
+=3D"padding-bottom:20px;padding-left:15px;padding-right:15px;padding-top:20=
+px; " class=3D"dd"><table role=3D"none" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td align=3D"center" vali=
+gn=3D"top" style=3D"width:630px;"><img src=3D"https://media.beehiiv.com/cdn=
+-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80/u=
+ploads/asset/file/a1b6c627-7833-4c1d-8cf7-6130e37085ab/Screenshot_2025-04-1=
+9_at_2.47.09_PM.png?t=3D1745055008" alt=3D"" height=3D"auto" width=3D"630" =
+style=3D"display:block;width:100%;" border=3D"0"/></td></tr><tr><td align=
+=3D"center" valign=3D"top" class=3D"t" style=3D"width:630px; padding: 4px 0=
+px 4px 0px;"><p><span style=3D"">Opik MCP</span></p></td></tr></table></td>=
+</tr><tr><td class=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#2A2=
+A2A;font-weight:normal;padding:0px 15px;text-align:left;"><h2 style=3D"colo=
+r:#2A2A2A;font-weight:normal;"><span style=3D"">4. </span><span style=3D"">=
+<a class=3D"link" href=3D"https://link.mail.beehiiv.com/ss/c/u001.fEwxncMfw=
+7gJKZ9GjSmhxXbDgHQ2fRGJt0G-Gu5akKt5msdhOXcHENlmXv7Y3bhmgwlzl_7ZLWX6ZyJ6FJdf=
+lBx3k1saPKz3kqUh0Lfc_DxlVH1-XzYCNWg4UEzGvJ8gBzfiKpGkyyltJkVFUyugw4vzqjDEx_O=
+RGI-1njmvk_zaWJ6U2MVdTuHRXykDkvVh24lFo9pvE7-t3fW2XJY_KRSoqeyWCFQVmozwIY3imn=
+m6eyDxIl3VbTWpiC0FYxeD/4fu/UTIrowHFROOm-ayyQba5mw/h11/h001.OfdiotzsBqJBJohY=
+XCObKUpkNCfenfTHKqj91y3UIPA" target=3D"_blank" rel=3D"noopener noreferrer n=
+ofollow"><span>Fast API MCP Server</span></a></span></h2></td></tr><tr><td =
+class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-=
+break:break-word;"><p style=3D"line-height:1.5;"><span style=3D"">Turn any =
+FastAPI app into an MCP server!</span></p></td></tr><tr><td class=3D"dd" al=
+ign=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-wor=
+d;"><p style=3D"line-height:1.5;"><span style=3D"">FastAPI-MCP is a zero-co=
+nfiguration tool for automatically exposing FastAPI endpoints as Model Cont=
+ext Protocol (MCP) tools.</span></p></td></tr><tr><td class=3D"dd" align=3D=
+"left" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p=
+ style=3D"line-height:1.5;"><span style=3D""><b>Key Features:</b></span></p=
+></td></tr><tr><td style=3D"padding-bottom:12px;padding-left:37px;padding-r=
+ight:27px;padding-top:12px;" class=3D"ee"><div style=3D"margin-left:0px;" c=
+lass=3D"edm_outlooklist"><ul style=3D"font-weight:normal;list-style-type:di=
+sc;margin-bottom:12px !important;margin-top:12px !important;padding:0px 0px=
+ 0px 0px;"><li class=3D"listItem ultext"><p style=3D"line-height:1.5;paddin=
+g:0px;text-align:left;word-break:break-word;"><span style=3D""><b>Direct in=
+tegration:</b></span><span style=3D""> Mount MCP server to your FastAPI app=
+</span></p></li><li class=3D"listItem ultext"><p style=3D"line-height:1.5;p=
+adding:0px;text-align:left;word-break:break-word;"><span style=3D""><b>Zero=
+ configuration:</b></span><span style=3D""> Simply point to your app and it=
+ works</span></p></li><li class=3D"listItem ultext"><p style=3D"line-height=
+:1.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D""><=
+b>Auto discovery:</b></span><span style=3D""> Converts FastAPI endpoints to=
+ MCP tools</span></p></li><li class=3D"listItem ultext"><p style=3D"line-he=
+ight:1.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D=
+""><b>Swagger docs:</b></span><span style=3D""> Maintains endpoint document=
+ation</span></p></li><li class=3D"listItem ultext"><p style=3D"line-height:=
+1.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D""><b=
+>Flexible deployment:</b></span><span style=3D""> Mount MCP to the same app=
+ or deploy separately</span></p></li></ul></div></td></tr><tr><td align=3D"=
+center" valign=3D"top" style=3D"padding-bottom:20px;padding-left:15px;paddi=
+ng-right:15px;padding-top:20px; " class=3D"dd"><table role=3D"none" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 auto;">=
+<tr><td align=3D"center" valign=3D"top" style=3D"width:630px;"><img src=3D"=
+https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,oner=
+ror=3Dredirect,quality=3D80/uploads/asset/file/ab804beb-bea6-4f3b-a689-cd5c=
+a779b821/Screenshot_2025-04-19_at_3.52.58_PM.png?t=3D1745058284" alt=3D"" h=
+eight=3D"auto" width=3D"630" style=3D"display:block;width:100%;" border=3D"=
+0"/></td></tr><tr><td align=3D"center" valign=3D"top" class=3D"t" style=3D"=
+width:630px; padding: 4px 0px 4px 0px;"><p><span style=3D"">FastAPI MCP</sp=
+an></p></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"left" vali=
+gn=3D"top" style=3D"color:#2A2A2A;font-weight:normal;padding:0px 15px;text-=
+align:left;"><h2 style=3D"color:#2A2A2A;font-weight:normal;"><span style=3D=
+"">5. </span><span style=3D""><a class=3D"link" href=3D"https://link.mail.b=
+eehiiv.com/ss/c/u001.fEwxncMfw7gJKZ9GjSmhxWQAzV-rTVfo_VsuuRj1PWQdxmtDJdWZPp=
+pRlgqrIqd_mlCCV_oooyJFUaGRKVsJ49KYj76iBJuY0t5yPT8XHpwTZm44jyxO3wjDPR3wZVA_N=
+Pmr-9f07-fCvm38o176uK1e8rt9kC_W3WtgQ_FDV1bEj9wZJx6bc8ZG6hUmQ0-n_ihajV4nRarG=
+5auDLq-VO7mvQYI9tcoOoKSWTWeY1MLEiRmkt_mUtP6vigmoffVUAD2FdNj0IwKwzX3aXp0WjA/=
+4fu/UTIrowHFROOm-ayyQba5mw/h12/h001.CdJVTMe0NZ97tL9GnSj_ApBajclYhgw7rW_FywW=
+w4SM" target=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>Github M=
+CP Server</span></a></span></h2></td></tr><tr><td class=3D"dd" align=3D"lef=
+t" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p sty=
+le=3D"line-height:1.5;"><span style=3D"">The Github Official MCP server com=
+es with seamless integration with GitHub APIs, enabling advanced automation=
+ and interaction capabilities for developers & tools.</span></p></td></tr><=
+tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:lef=
+t;word-break:break-word;"><p style=3D"line-height:1.5;"><span style=3D""><b=
+>Key Features:</b></span></p></td></tr><tr><td style=3D"padding-bottom:12px=
+;padding-left:37px;padding-right:27px;padding-top:12px;" class=3D"ee"><div =
+style=3D"margin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weig=
+ht:normal;list-style-type:disc;margin-bottom:12px !important;margin-top:12p=
+x !important;padding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p sty=
+le=3D"line-height:1.5;padding:0px;text-align:left;word-break:break-word;"><=
+span style=3D"">One-click Docker installation </span></p></li><li class=3D"=
+listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-align:left;wo=
+rd-break:break-word;"><span style=3D"">Automate GitHub workflows and proces=
+ses </span></p></li><li class=3D"listItem ultext"><p style=3D"line-height:1=
+.5;padding:0px;text-align:left;word-break:break-word;"><span style=3D"">Ext=
+ract and analyze data from your repos </span></p></li><li class=3D"listItem=
+ ultext"><p style=3D"line-height:1.5;padding:0px;text-align:left;word-break=
+:break-word;"><span style=3D"">Build AI-powered tools that talk directly to=
+ GitHub ecosystem</span></p></li></ul></div></td></tr><tr><td align=3D"cent=
+er" valign=3D"top" style=3D"padding-bottom:20px;padding-left:15px;padding-r=
+ight:15px;padding-top:20px; " class=3D"dd"><table role=3D"none" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><=
+td align=3D"center" valign=3D"top" style=3D"width:630px;"><img src=3D"https=
+://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=
+=3Dredirect,quality=3D80/uploads/asset/file/688130e4-7543-4aed-aca6-abe248c=
+2b70d/1743856752864.jpeg?t=3D1745058011" alt=3D"" height=3D"auto" width=3D"=
+630" style=3D"display:block;width:100%;" border=3D"0"/></td></tr><tr><td al=
+ign=3D"center" valign=3D"top" class=3D"t" style=3D"width:630px; padding: 4p=
+x 0px 4px 0px;"><p><span style=3D"">Github MCP</span></p></td></tr></table>=
+</td></tr></table></td></tr></table></td></tr><tr><td class=3D"dd" align=3D=
+"left" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p=
+ style=3D"line-height:1.5;"></p></td></tr><tr><td><table role=3D"none" widt=
+h=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr>=
+<td bgcolor=3D"transparent" style=3D"background-color:transparent;border-co=
+lor:#222222;border-radius:6px;border-style:solid;border-width:2px;padding:0=
+.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D"left" vali=
+gn=3D"top" style=3D"color:#2A2A2A;font-weight:normal;padding:0px 15px;text-=
+align:left;"><h1 style=3D"color:#2A2A2A;font-weight:normal;"><span style=3D=
+""><a class=3D"link" href=3D"https://link.mail.beehiiv.com/ss/c/u001.fEwxnc=
+Mfw7gJKZ9GjSmhxZL7YksW1mpP1-U08bhuMkKpxhcb3TRGzrLx6ZM-gbV5Bgy3dziw8VWXXbVpN=
+YJWrdd5mpflwQGQNhf_FRnNM4I0AkMJ9EFc5h5-Pm3e9b-_FsRjYptfOLNjstl9yAG7pTFFg0n_=
+8BKCVv4zOewdKcTf4lJtwbgPkBuihJx1RafP9OEeRA78btPcTA82nx1v2D77EsWopHv0RNqcBkw=
+UFnJGRe7XQNcqJ1v3RsrLeBl7/4fu/UTIrowHFROOm-ayyQba5mw/h13/h001.l7NcGR7JNIdAA=
+VNCjFUPvCw7aX6yYOJRYjMBr5YPOEE" target=3D"_blank" rel=3D"noopener noreferre=
+r nofollow"><span>MCP-Use</span></a></span></h1></td></tr><tr><td class=3D"=
+dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:bre=
+ak-word;"><p style=3D"line-height:1.5;"><span style=3D"color:rgba(0, 0, 0, =
+0.9);font-family:-apple-system, system-ui, system-ui, "Segoe UI", Roboto, "=
+Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Dr=
+oid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe =
+UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;font-size:14px;fo=
+nt-weight:400;">Connect any LLM to any MCP server and build custom AI agent=
+s!</span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding=
+:0px 15px;text-align:left;word-break:break-word;"><p style=3D"line-height:1=
+.5;"><span style=3D"color:rgba(0, 0, 0, 0.9);font-family:-apple-system, sys=
+tem-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubunt=
+u, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Se=
+goe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvet=
+ica, Arial, sans-serif;font-size:14px;font-weight:400;">MCP-Use is the open=
+ source MCP Client Library to connect any LLM to any MCP server and build c=
+ustom agents with tool access, without relying on closed source or app-spec=
+ific clients.</span><br><br><span style=3D"color:rgba(0, 0, 0, 0.9);font-fa=
+mily:-apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Ne=
+ue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "=
+Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", =
+"Lucida Grande", Helvetica, Arial, sans-serif;font-size:14px;font-weight:40=
+0;">Key Features:</span></p></td></tr><tr><td style=3D"padding-bottom:12px;=
+padding-left:37px;padding-right:27px;padding-top:12px;" class=3D"ee"><div s=
+tyle=3D"margin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weigh=
+t:normal;list-style-type:disc;margin-bottom:12px !important;margin-top:12px=
+ !important;padding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p styl=
+e=3D"line-height:1.5;padding:0px;text-align:left;word-break:break-word;"> =
+=F0=9F=94=84<span style=3D"color:rgba(0, 0, 0, 0.9);font-family:-apple-syst=
+em, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans"=
+, Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoj=
+i", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande",=
+ Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;"> Spin up you=
+r first MCP-capable agent in just 6 lines of code</span></p></li><li class=
+=3D"listItem ultext"><p style=3D"line-height:1.5;padding:0px;text-align:lef=
+t;word-break:break-word;"> =F0=9F=A4=96<span style=3D"color:rgba(0, 0, 0, 0=
+.9);font-family:-apple-system, system-ui, system-ui, "Segoe UI", Roboto, "H=
+elvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Dro=
+id Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe U=
+I Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;font-size:14px;fon=
+t-weight:400;"> Works with any LangChain-supported LLM that supports tool u=
+se</span></p></li><li class=3D"listItem ultext"><p style=3D"line-height:1.5=
+;padding:0px;text-align:left;word-break:break-word;"> =F0=9F=8C=90<span sty=
+le=3D"color:rgba(0, 0, 0, 0.9);font-family:-apple-system, system-ui, system=
+-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Ox=
+ygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji",=
+ "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sa=
+ns-serif;font-size:14px;font-weight:400;">=C2=A0Connect directly to MCP ser=
+vers via HTTP</span></p></li><li class=3D"listItem ultext"><p style=3D"line=
+-height:1.5;padding:0px;text-align:left;word-break:break-word;"> =F0=9F=A7=
+=A9<span style=3D"color:rgba(0, 0, 0, 0.9);font-family:-apple-system, syste=
+m-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu,=
+ Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Sego=
+e UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetic=
+a, Arial, sans-serif;font-size:14px;font-weight:400;"> Run multiple MCP ser=
+vers in a single agent</span></p></li><li class=3D"listItem ultext"><p styl=
+e=3D"line-height:1.5;padding:0px;text-align:left;word-break:break-word;"><s=
+pan style=3D"color:rgba(0, 0, 0, 0.9);font-family:-apple-system, system-ui,=
+ system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxyg=
+en, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI =
+Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Ar=
+ial, sans-serif;font-size:14px;font-weight:400;">=F0=9F=9B=A1=EF=B8=8F Rest=
+rict dangerous tools like file system or network access</span></p></li></ul=
+></div></td></tr><tr><td align=3D"center" valign=3D"top" style=3D"padding-b=
+ottom:20px;padding-left:15px;padding-right:15px;padding-top:20px; " class=
+=3D"dd"><table role=3D"none" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" style=3D"margin:0 auto 0 auto;"><tr><td align=3D"center" valign=3D"top" =
+style=3D"width:630px;"><img src=3D"https://media.beehiiv.com/cdn-cgi/image/=
+fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asse=
+t/file/d0a14727-6c4b-4fd2-9421-489002a0cc4b/Screenshot_2025-04-19_at_3.56.1=
+6_PM.png?t=3D1745058505" alt=3D"" height=3D"auto" width=3D"630" style=3D"di=
+splay:block;width:100%;" border=3D"0"/></td></tr><tr><td align=3D"center" v=
+align=3D"top" class=3D"t" style=3D"width:630px; padding: 4px 0px 4px 0px;">=
+<p><span style=3D"">mcp-use</span></p></td></tr></table></td></tr><tr><td c=
+lass=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-b=
+reak:break-word;"><p style=3D"line-height:1.5;"><br></p></td></tr></table><=
+/td></tr></table></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"pad=
+ding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"line-heig=
+ht:1.5;"></p></td></tr><tr><td><table role=3D"none" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"#2=
+22222" style=3D"background-color:#222222;border-color:#222222;border-radius=
+:6px;border-style:solid;border-width:2px;padding:3.0px 3.0px 3.0px 3.0px;">=
+<table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0"><tr><td class=3D"dd" align=3D"center" style=3D"padding:0px 15px;t=
+ext-align:center;word-break:break-word;"><p style=3D"line-height:1.5;"><spa=
+n style=3D"color:#F9FAFB;"><b>That=E2=80=99s a Wrap</b></span></p></td></tr=
+></table></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"left" st=
+yle=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D=
+"line-height:1.5;"></p></td></tr><tr><td><table role=3D"none" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcol=
+or=3D"transparent" style=3D"background-color:transparent;border-color:#2222=
+22;border-radius:6px;border-style:solid;border-width:2px;padding:0.0px 0.0p=
+x 0.0px 0.0px;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D"left" style=3D"padd=
+ing:0px 15px;text-align:left;word-break:break-word;"><p style=3D"line-heigh=
+t:1.5;"><span style=3D"">That=E2=80=99s all for today. Thank you for readin=
+g today=E2=80=99s edition. See you in the next issue with more AI Engineeri=
+ng insights.</span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=
+=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"li=
+ne-height:1.5;"><span style=3D""><b>PS:</b></span><span style=3D"color:rgb(=
+0, 0, 0);font-size:medium;font-weight:400;"> We curate this AI Engineering =
+content for free, and your support means everything. If you find value in w=
+hat you read, consider sharing it with a friend or two.</span></p></td></tr=
+><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:l=
+eft;word-break:break-word;"><p style=3D"line-height:1.5;"><span style=3D"">=
+<b>Your feedback is valuable: </b></span><span style=3D"">If there=E2=80=99=
+s a topic you=E2=80=99re stuck on or curious about, reply to this email. We=
+=E2=80=99re building this for you, and your feedback helps shape what we se=
+nd.</span></p></td></tr></table></td></tr></table></td></tr><tr><td class=
+=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break=
+:break-word;"><p style=3D"line-height:1.5;"></p></td></tr><tr><td><table ro=
+le=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+ style=3D""><tr><td bgcolor=3D"transparent" style=3D"background-color:trans=
+parent;border-color:#222222;border-radius:6px;border-style:solid;border-wid=
+th:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" ali=
+gn=3D"left" valign=3D"top" style=3D"color:#2A2A2A;font-weight:normal;paddin=
+g:0px 15px;text-align:left;"><h2 style=3D"color:#2A2A2A;font-weight:normal;=
+"><span style=3D""><b>WORK WITH US</b></span></h2></td></tr><tr><td class=
+=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break=
+:break-word;"><p style=3D"line-height:1.5;"><span style=3D"color:rgb(0, 0, =
+0);font-size:medium;font-weight:400;">Looking to promote your company, prod=
+uct, or service to </span><span style=3D"color:rgb(0, 0, 0);font-size:mediu=
+m;font-weight:400;"><b>100K+ AI developers</b></span><span style=3D"color:r=
+gb(0, 0, 0);font-size:medium;font-weight:400;">? </span><span style=3D"">Ge=
+t in touch today by replying to this email.</span></p></td></tr></table></t=
+d></tr></table></td></tr></table></td></tr></table></td></tr><tr><td align=
+=3D"center" valign=3D"top"><table role=3D"none" width=3D"100%" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td><tr><td class=
+=3D"b" align=3D"center" valign=3D"top" bgcolor=3D"#030712" style=3D"padding=
+:0px 0px 0px 0px;border-style:solid;border-width: 0px 0px 0px 0px;border-co=
+lor: #FFFFFF;border-bottom-left-radius:10px;border-bottom-right-radius:10px=
+;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" align=3D"center"><tr><td height=3D"10" style=3D"line-height:1p=
+x;font-size:1px;height:10px;"> &nbsp; </td></tr><tr><td class=3D"w" align=
+=3D"center" valign=3D"top" style=3D"padding:15px 15px 15px 15px;"><table ro=
+le=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+ align=3D"center"><tr><td align=3D"center" valign=3D"top"><p style=3D"font-=
+family:'Verdana',Geneva,sans-serif;color:#FFFFFF!important;"> Update your e=
+mail preferences or unsubscribe <a class=3D"link" href=3D"https://link.mail=
+.beehiiv.com/ss/c/u001.ZjNtPLJ73PCW3XxrAs_SNIw2kahvc0FhQ6HFupMs-wM2w_8zZ0sI=
+hcXGwURiLHSx1U7BKXW27zS--tbb2VmkcaCmVIGHgPbia2-3_VV48qmEgJbXdnqDTU7z60tLbDI=
+yFnXssqkSfMZMb6974DFo_qZtwTKKky6RwJC0WN0v7QQz2zDzDX3DaKCYlJhX9fBgXEKPg_1h5X=
+TNdDJv6m00YIkTlNSatIgXLO6CQuqMRRxtmN6QIuKejVb9IMS8T09VSMnrVQB-qJpyu2M3zjAmN=
+NUYQPIyXCWzN7cSRI7kHyakCRU6pVtd6s4eMkErQjAR-3X5u7Iljbw5nJ4UEcLF0UyzYGEa3hfY=
+Ztmt3hiK1sVLxfU7PMGPLvEYr5AU9tg152eqEvdmFERiAED9b25M6Er9hgbnDFADlWBrrrTSWsW=
+ep5_Z2IMyOwZmLKuwcEfwRpDlqprU-ru2SjrEBx-2xWdhnHwFXM2_ZNeeLsel7hwxv1KqzwTTNv=
+8-GRYYr8aQr6k--LtD_KWVZNRDm_EmSgQn3vXjjqf0cWmQ2qTqKI5wMFHKXUJ46jCKs1xVYaY6L=
+j-iFd6TaNw4iV5xM_nVe7ve13v5ChUEgJy_pe-mF07L3EE3hU_Ml-vBbRmmOoociF2kfnXF8BZB=
+ZAPD5utHrBim4GkzwWUIQgjBWRQcARJOHz8GRsmdIqLXgy9iG8Ue3uRlP-ofPDx26385U1WtauY=
+7AIYlPtxhn-0CDmD64YE4ZwnYHU2QfCzrlNAmRFQYuOaPevkbgosWPRMoblM35MG1JP3inm2-av=
+t2xfUmapa98cqbYXnpTwS-QyWCDpXWAxzqoi4AsmwIYbDI8Q22G89uySlEaoW6cnuu280FJ5A/4=
+fu/UTIrowHFROOm-ayyQba5mw/h14/h001.QujO-i7YhSl8AGXFZtHhX4fiHZIK6ilRZURLe9eO=
+jjw" style=3D"text-decoration:underline;text-decoration-color:#FFFFFF!impor=
+tant;color:#FFFFFF!important;"> here</a></p><p class=3D"copyright" style=3D=
+"font-family:'Verdana',Geneva,sans-serif;color:#FFFFFF!important;"> &copy; =
+2025 AI Engineering </p><p style=3D"font-family:'Verdana',Geneva,sans-serif=
+;color:#FFFFFF!important;"> 228 Park Ave S, #29976, New York, New York 1000=
+3, United States </p></td></tr><tr style=3D"display: table-row !important;"=
+><td align=3D"center" valign=3D"top" style=3D"padding-top:20px;" style=3D"d=
+isplay:table-cell !important;"><table role=3D"none" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" align=3D"center" style=3D"display:table !importan=
+t;"><tr style=3D"display:table-row !important;"><td class=3D"u" align=3D"ce=
+nter" valign=3D"middle" height=3D"32" style=3D"height:32px;display:table-ce=
+ll !important; max-height: 32px !important;margin:0px !important; backgroun=
+d-color: #ffffff !important;"><a style=3D"line-height:32px !important;text-=
+decoration:none;display:block !important;" href=3D"https://link.mail.beehii=
+v.com/ss/c/u001.anzhxTgRwBHOEcNie9uXl5sB1z7_5vGmkoTc4GPISXiYM0F9KDxElAyOgdu=
+-gz9NLbMMZ0zzGw53Zkzmr-8uDfm7DoPNRyKStrIw2_XgS2GCSqa3EMiLeWJHBltyfbp9KKk-Hx=
+bo8JAGnJ0KfOY66c30r1X-eI38fM_qYpwc0xGu9btTpK1uae5WJlk_0ZawsBjhrdWqkLUBA0-rw=
+zKvXdt-oCBm3u7uDZskTEeX8s2eL0ffId0rOLeB0GmvTpD_/4fu/UTIrowHFROOm-ayyQba5mw/=
+h15/h001.gv5COm0AwNXJzKD3HyNT0xU5diIvdJpfK5nr2oz-jWs"><img src=3D"https://m=
+edia.beehiiv.com/output-onlinepngtools.png" width=3D"16" alt=3D"beehiiv log=
+o" style=3D"display:inline-block !important;max-width:16px !important; vert=
+ical-align:-3px !important;width: 16px !important;" border=3D"0"/><span sty=
+le=3D"padding-left:11px !important;display: inline-block !important;">Power=
+ed by beehiiv</span></a></td></tr></table></td></tr><tr><td align=3D"left" =
+valign=3D"top" height=3D"2" style=3D"height:2px;"><a href=3D'https://link.m=
+ail.beehiiv.com/ss/c/u001.zTocUfcYSJ_RY3UOoZIY6du1AlUAy8Kv1Kx7Sb7RwctmsFbXM=
+wF_6kgFvoHZcU5D6jISPMPRk52KLMkovok4PxWSHCqQff2uDJ2XhSjiVU8/4fu/UTIrowHFROOm=
+-ayyQba5mw/h16/h001.CAWYC8ZIfsoYo1N7MiIPzaC_JeOZwt4dpZhDZW9TyQQ' style=3D"c=
+olor: #030712 !important; cursor: default; font-size: 1px; text-decoration:=
+ none;"> Terms of Service </a></td></tr></table></td></tr></table></td></tr=
+></td></tr></table></td></tr></table></td></tr></table></td></tr></table></=
+div></body></html>
+--96d1cfd38e9e08e9c520e8a78f8628fee7431cf613d110dfb7e656643e3e--

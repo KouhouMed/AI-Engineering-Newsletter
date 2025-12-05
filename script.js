@@ -1,4 +1,7 @@
 const DATA_URL = './data/newsletters.json';
+const ITEMS_PER_PAGE = 9;
+let currentPage = 1;
+let currentFilteredNewsletters = [];
 
 // Fetch Data
 async function fetchNewsletters() {
@@ -12,15 +15,47 @@ async function initIndex() {
     const list = document.getElementById('newsletter-list');
     if (!list) return;
 
+    setDynamicGreeting();
+
     const newsletters = await fetchNewsletters();
     window.allNewsletters = newsletters; // Store for search
-    renderList(newsletters);
+    currentFilteredNewsletters = newsletters;
+    renderPage(1);
+}
+
+function setDynamicGreeting() {
+    const greetingElement = document.getElementById('greeting');
+    if (!greetingElement) return;
+
+    const hour = new Date().getHours();
+    let greeting = 'Hello, Engineer.';
+
+    if (hour < 12) greeting = 'Good Morning, Engineer.';
+    else if (hour < 18) greeting = 'Good Afternoon, Engineer.';
+    else greeting = 'Good Evening, Engineer.';
+
+    greetingElement.innerText = greeting;
+}
+
+function renderPage(page, shouldScroll = false) {
+    currentPage = page;
+    const start = (page - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const items = currentFilteredNewsletters.slice(start, end);
+
+    renderList(items);
+    renderPaginationControls();
+
+    // Scroll to top of page on page change
+    if (shouldScroll) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }
 
 function renderList(items) {
     const list = document.getElementById('newsletter-list');
-    list.innerHTML = items.map(item => `
-        <div class="card">
+    list.innerHTML = items.map((item, index) => `
+        <div class="card" style="animation-delay: ${index * 0.05}s">
             <div class="meta">${item.date}</div>
             <h2><a href="newsletter.html?id=${item.id}">${item.title}</a></h2>
             <p>${item.summary}</p>
@@ -29,14 +64,41 @@ function renderList(items) {
     `).join('');
 }
 
+function renderPaginationControls() {
+    const pagination = document.getElementById('pagination');
+    if (!pagination) return;
+
+    const totalPages = Math.ceil(currentFilteredNewsletters.length / ITEMS_PER_PAGE);
+
+    if (totalPages <= 1) {
+        pagination.innerHTML = '';
+        return;
+    }
+
+    let html = '';
+
+    // Previous Button
+    html += `<button class="page-btn" onclick="renderPage(${currentPage - 1}, true)" ${currentPage === 1 ? 'disabled' : ''}>&larr; Prev</button>`;
+
+    // Page Numbers
+    for (let i = 1; i <= totalPages; i++) {
+        html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="renderPage(${i}, true)">${i}</button>`;
+    }
+
+    // Next Button
+    html += `<button class="page-btn" onclick="renderPage(${currentPage + 1}, true)" ${currentPage === totalPages ? 'disabled' : ''}>Next &rarr;</button>`;
+
+    pagination.innerHTML = html;
+}
+
 // Search Function
 function filterNewsletters() {
     const query = document.getElementById('searchBar').value.toLowerCase();
-    const filtered = window.allNewsletters.filter(item =>
+    currentFilteredNewsletters = window.allNewsletters.filter(item =>
         item.title.toLowerCase().includes(query) ||
         item.summary.toLowerCase().includes(query)
     );
-    renderList(filtered);
+    renderPage(1); // Reset to first page on search
 }
 
 // Render Article Page
@@ -50,22 +112,35 @@ async function loadNewsletter() {
 
     if (article) {
         document.title = article.title;
-        document.getElementById('article-header').innerHTML = `
-            <h1>${article.title}</h1>
-            <p class="meta">Published on ${article.date}</p>
-        `;
-        document.getElementById('article-content').innerHTML = article.content_html;
-        generateTOC();
+        // Update article header/content if elements exist (for article page)
+        const headerEl = document.getElementById('article-header');
+        const contentEl = document.getElementById('article-content');
+
+        if (headerEl) {
+            headerEl.innerHTML = `
+                <h1>${article.title}</h1>
+                <p class="meta">Published on ${article.date}</p>
+            `;
+        }
+        if (contentEl) {
+            contentEl.innerHTML = article.content_html;
+            generateTOC();
+        }
     } else {
-        document.getElementById('article-content').innerHTML = "<p>Newsletter not found.</p>";
+        const contentEl = document.getElementById('article-content');
+        if (contentEl) contentEl.innerHTML = "<p>Newsletter not found.</p>";
     }
 }
 
 // Generate Table of Contents
 function generateTOC() {
     const content = document.getElementById('article-content');
+    if (!content) return;
+
     const headings = content.querySelectorAll('h2, h3');
     const toc = document.getElementById('table-of-contents');
+
+    if (!toc) return;
 
     if (headings.length === 0) {
         toc.style.display = 'none';
@@ -84,4 +159,6 @@ function generateTOC() {
 // Initialize based on page
 if (document.getElementById('newsletter-list')) {
     initIndex();
+} else {
+    loadNewsletter();
 }

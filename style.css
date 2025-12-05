@@ -81,6 +81,7 @@ h1 {
 /* Search Bar */
 .search-container {
     max-width: 600px;
+
     margin: 0 auto 3rem;
     position: relative;
 }
